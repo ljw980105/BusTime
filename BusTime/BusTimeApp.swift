@@ -11,7 +11,16 @@ import SwiftUI
 struct BusTimeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                StopMonitoringView(viewModel: .init(stopId: 502434, title: "Whitestone"))
+                    .tabItem {
+                        Label("Whitestone", systemImage: "mountain.2")
+                    }
+                StopMonitoringView(viewModel: .init(stopId: 502185, title: "Flushing"))
+                    .tabItem {
+                        Label("Flushing", systemImage: "toilet")
+                    }
+            }
         }
     }
 }

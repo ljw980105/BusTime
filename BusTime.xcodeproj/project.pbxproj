@@ -14,6 +14,14 @@
 		9408C5BB29A0A5EC005DE2EE /* BusTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5BA29A0A5EC005DE2EE /* BusTimeTests.swift */; };
 		9408C5C529A0A5EC005DE2EE /* BusTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5C429A0A5EC005DE2EE /* BusTimeUITests.swift */; };
 		9408C5C729A0A5EC005DE2EE /* BusTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5C629A0A5EC005DE2EE /* BusTimeUITestsLaunchTests.swift */; };
+		9408C5D829A0A68D005DE2EE /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5D729A0A68D005DE2EE /* GetRequest.swift */; };
+		9408C5DB29A0A741005DE2EE /* BusTimeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5DA29A0A741005DE2EE /* BusTimeAPI.swift */; };
+		9408C5DD29A0A863005DE2EE /* ServiceDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5DC29A0A863005DE2EE /* ServiceDelivery.swift */; };
+		9408C5E029A0ADA2005DE2EE /* StopMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5DF29A0ADA2005DE2EE /* StopMonitoringView.swift */; };
+		9408C5E229A0ADB3005DE2EE /* StopMonitoringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5E129A0ADB3005DE2EE /* StopMonitoringViewModel.swift */; };
+		9408C5E529A18635005DE2EE /* RouteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5E429A18635005DE2EE /* RouteDetailView.swift */; };
+		9408C5E729A18728005DE2EE /* RouteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5E629A18728005DE2EE /* RouteDetailViewModel.swift */; };
+		9408C5EB29A1892A005DE2EE /* KeyValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5EA29A1892A005DE2EE /* KeyValueCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		9408C5C029A0A5EC005DE2EE /* BusTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9408C5C429A0A5EC005DE2EE /* BusTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeUITests.swift; sourceTree = "<group>"; };
 		9408C5C629A0A5EC005DE2EE /* BusTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9408C5D729A0A68D005DE2EE /* GetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequest.swift; sourceTree = "<group>"; };
+		9408C5DA29A0A741005DE2EE /* BusTimeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeAPI.swift; sourceTree = "<group>"; };
+		9408C5DC29A0A863005DE2EE /* ServiceDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDelivery.swift; sourceTree = "<group>"; };
+		9408C5DF29A0ADA2005DE2EE /* StopMonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopMonitoringView.swift; sourceTree = "<group>"; };
+		9408C5E129A0ADB3005DE2EE /* StopMonitoringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopMonitoringViewModel.swift; sourceTree = "<group>"; };
+		9408C5E429A18635005DE2EE /* RouteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailView.swift; sourceTree = "<group>"; };
+		9408C5E629A18728005DE2EE /* RouteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailViewModel.swift; sourceTree = "<group>"; };
+		9408C5EA29A1892A005DE2EE /* KeyValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +110,10 @@
 		9408C5A829A0A5EA005DE2EE /* BusTime */ = {
 			isa = PBXGroup;
 			children = (
+				9408C5E329A18617005DE2EE /* RouteDetailView */,
+				9408C5DE29A0AD87005DE2EE /* StopMonitoringView */,
+				9408C5D929A0A733005DE2EE /* Models */,
+				9408C5D629A0A675005DE2EE /* Networking */,
 				9408C5A929A0A5EA005DE2EE /* BusTimeApp.swift */,
 				9408C5AB29A0A5EA005DE2EE /* ContentView.swift */,
 				9408C5AD29A0A5EB005DE2EE /* Assets.xcassets */,
@@ -127,6 +147,42 @@
 			path = BusTimeUITests;
 			sourceTree = "<group>";
 		};
+		9408C5D629A0A675005DE2EE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9408C5D729A0A68D005DE2EE /* GetRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9408C5D929A0A733005DE2EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9408C5DA29A0A741005DE2EE /* BusTimeAPI.swift */,
+				9408C5DC29A0A863005DE2EE /* ServiceDelivery.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9408C5DE29A0AD87005DE2EE /* StopMonitoringView */ = {
+			isa = PBXGroup;
+			children = (
+				9408C5DF29A0ADA2005DE2EE /* StopMonitoringView.swift */,
+				9408C5E129A0ADB3005DE2EE /* StopMonitoringViewModel.swift */,
+			);
+			path = StopMonitoringView;
+			sourceTree = "<group>";
+		};
+		9408C5E329A18617005DE2EE /* RouteDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				9408C5E429A18635005DE2EE /* RouteDetailView.swift */,
+				9408C5E629A18728005DE2EE /* RouteDetailViewModel.swift */,
+				9408C5EA29A1892A005DE2EE /* KeyValueCell.swift */,
+			);
+			path = RouteDetailView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +199,8 @@
 			dependencies = (
 			);
 			name = BusTime;
+			packageProductDependencies = (
+			);
 			productName = BusTime;
 			productReference = 9408C5A629A0A5EA005DE2EE /* BusTime.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +273,8 @@
 				Base,
 			);
 			mainGroup = 9408C59D29A0A5EA005DE2EE;
+			packageReferences = (
+			);
 			productRefGroup = 9408C5A729A0A5EA005DE2EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +317,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9408C5E029A0ADA2005DE2EE /* StopMonitoringView.swift in Sources */,
+				9408C5E729A18728005DE2EE /* RouteDetailViewModel.swift in Sources */,
 				9408C5AC29A0A5EA005DE2EE /* ContentView.swift in Sources */,
+				9408C5DD29A0A863005DE2EE /* ServiceDelivery.swift in Sources */,
+				9408C5E229A0ADB3005DE2EE /* StopMonitoringViewModel.swift in Sources */,
 				9408C5AA29A0A5EA005DE2EE /* BusTimeApp.swift in Sources */,
+				9408C5E529A18635005DE2EE /* RouteDetailView.swift in Sources */,
+				9408C5DB29A0A741005DE2EE /* BusTimeAPI.swift in Sources */,
+				9408C5D829A0A68D005DE2EE /* GetRequest.swift in Sources */,
+				9408C5EB29A1892A005DE2EE /* KeyValueCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
