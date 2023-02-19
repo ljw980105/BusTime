@@ -19,13 +19,19 @@ extension Siri {
     struct ServiceDelivery: Codable {
         let ResponseTimestamp: Date
         let StopMonitoringDelivery: [StopMonitoringDelivery]
+        let SituationExchangeDelivery: [SituationExchangeDelivery]?
         
         static var empty: ServiceDelivery {
-            .init(ResponseTimestamp: Date(), StopMonitoringDelivery: [])
+            .init(
+                ResponseTimestamp: Date(),
+                StopMonitoringDelivery: [],
+                SituationExchangeDelivery: []
+            )
         }
     }
 }
 
+// MARK: - Stop Monitoring
 extension Siri {
     struct StopMonitoringDelivery: Codable {
         let MonitoredStopVisit: [MonitoredStopVisit]
@@ -113,6 +119,91 @@ extension Siri {
     }
 }
 
+// MARK: Situations
+extension Siri {
+    struct SituationExchangeDelivery: Codable {
+        let Situations: Situations
+    }
+}
+
+extension Siri {
+    struct Situations: Codable {
+        let situationElement: [SituationElement]
+        
+        enum CodingKeys: String, CodingKey {
+            case situationElement = "PtSituationElement"
+        }
+    }
+}
+
+extension Siri {
+    struct SituationElement: Codable {
+        let publicationWindow: PublicationWindow?
+        let severity: String?
+        let summary: [String]?
+        let description: [String]?
+        let affects: Affects?
+        let creationTime: Date?
+        let situationNumber: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case publicationWindow = "PublicationWindow"
+            case severity = "Severity"
+            case summary = "Summary"
+            case description = "Description"
+            case affects = "Affects"
+            case creationTime = "CreationTime"
+            case situationNumber = "SituationNumber"
+        }
+    }
+}
+
+extension Siri {
+    struct PublicationWindow: Codable {
+        let startTime: Date
+        let endTime: Date
+        
+        enum CodingKeys: String, CodingKey {
+            case startTime = "StartTime"
+            case endTime = "EndTime"
+        }
+    }
+}
+
+extension Siri {
+    struct Affects: Codable {
+        let vehicleJourneys: VehicleJourneys
+        
+        enum CodingKeys: String, CodingKey {
+            case vehicleJourneys = "VehicleJourneys"
+        }
+    }
+}
+
+extension Siri {
+    struct VehicleJourneys: Codable {
+        let affectedVehicleJourney: [AffectedVehicleJourney]
+        
+        enum CodingKeys: String, CodingKey {
+            case affectedVehicleJourney = "AffectedVehicleJourney"
+        }
+    }
+}
+
+extension Siri {
+    struct AffectedVehicleJourney: Codable {
+        let lineRef: String
+        let directionRef: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case lineRef = "LineRef"
+            case directionRef = "DirectionRef"
+        }
+    }
+}
+
+// MARK: Helpers
+
 extension Siri.MonitoredCall {
     var timeToArrival: String {
         guard let arrivalTime = expectedArrivalTime else {
@@ -128,5 +219,15 @@ extension Siri.MonitoredCall {
             return "Now"
         }
         return "\(seconds) second(s)"
+    }
+}
+
+extension Siri.MonitoredVehicleJourney {
+    func hasSituations(serviceDelivery: Siri.ServiceDelivery) -> Bool {
+        guard let situationRef = situationRef?.first,
+              let situations = serviceDelivery.SituationExchangeDelivery?.first?.Situations.situationElement.compactMap(\.situationNumber) else {
+            return false
+        }
+        return situations.contains(situationRef.SituationSimpleRef)
     }
 }

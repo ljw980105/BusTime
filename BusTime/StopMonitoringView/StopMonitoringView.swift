@@ -13,11 +13,22 @@ struct StopMonitoringView: View {
     var body: some View {
         NavigationView {
             List(viewModel.stopJourneys, id: \.id) { stopJourney in
-                NavigationLink(destination: RouteDetailView(viewModel: .init(vehicleJourney: stopJourney))) {
+                NavigationLink(destination: RouteDetailView(
+                    viewModel: .init(
+                        vehicleJourney: stopJourney,
+                        situations: viewModel.serviceDelivery.SituationExchangeDelivery?.first
+                    )
+                )) {
                     HStack(alignment: .top) {
                         VStack(alignment: .leading) {
-                            Text(stopJourney.publishedLineName.first ?? "Unknown")
-                                .font(.title)
+                            HStack {
+                                if viewModel.hasSituations(vehicleJourney: stopJourney) {
+                                    Image(systemName: "info.circle").foregroundColor(.red)
+                                        .frame(width: 15, height: 15)
+                                }
+                                Text(stopJourney.publishedLineName.first ?? "Unknown")
+                                    .font(.title)
+                            }
                             Text(stopJourney.destinationName.first ?? "Unknown")
                                 .font(.caption)
                             Text(stopJourney.monitoredCall.arrivalProximityText ?? "Unknown")

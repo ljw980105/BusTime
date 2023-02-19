@@ -22,6 +22,18 @@ struct RouteDetailView: View {
         NavigationView {
             VStack {
                 List {
+                    if viewModel.hasSituations {
+                        HStack {
+                            Text("Alerts")
+                                .font(.caption)
+                                .fontWeight(.bold)
+                                .foregroundColor(.pink)
+                            Text(viewModel.situationsText)
+                                .font(.caption)
+                                .foregroundColor(.pink)
+                                .multilineTextAlignment(.leading)
+                        }.padding(5)
+                    }
                     KeyValueCell("Destination", viewModel.destination)
                     KeyValueCell("Aimed Arrival", viewModel.aimedArrival)
                     KeyValueCell("Expected Arrival", viewModel.expectedArrival)

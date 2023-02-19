@@ -19,8 +19,10 @@ class RouteDetailViewModel {
     let proxmity: String
     let stopsAway: String
     let mapRegion: MKCoordinateRegion
+    let hasSituations: Bool
+    let situationsText: String
     
-    init(vehicleJourney: Siri.MonitoredVehicleJourney) {
+    init(vehicleJourney: Siri.MonitoredVehicleJourney, situations: Siri.SituationExchangeDelivery?) {
         self.vehicleJourney = vehicleJourney
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm"
@@ -41,6 +43,21 @@ class RouteDetailViewModel {
             center: vehicleJourney.coordinate,
             span: .init(latitudeDelta: 0.03, longitudeDelta: 0.03)
         )
+        
+        if let situationElements = situations?.Situations.situationElement,
+           let journeySituations = vehicleJourney.situationRef?.first?.SituationSimpleRef,
+           situationElements.compactMap(\.situationNumber).contains(journeySituations) {
+            hasSituations = true
+            situationsText = situationElements
+                .compactMap(\.summary)
+                .flatMap { $0 }
+                .joined(separator: "\n\n")
+            
+        } else {
+            situationsText = ""
+            hasSituations = false
+        }
+        
     }
     
     func openInMaps() {

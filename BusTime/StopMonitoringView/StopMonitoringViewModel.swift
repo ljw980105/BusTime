@@ -9,6 +9,7 @@ import Combine
 
 class StopMonitoringViewModel: ObservableObject {
     @Published var stopJourneys: [Siri.MonitoredVehicleJourney] = []
+    var serviceDelivery: Siri.ServiceDelivery = .empty
     var cancellables: [AnyCancellable] = []
     let stopId: Int
     let title: String
@@ -19,22 +20,27 @@ class StopMonitoringViewModel: ObservableObject {
         refresh()
     }
     
+    func hasSituations(vehicleJourney: Siri.MonitoredVehicleJourney) -> Bool {
+        return vehicleJourney.hasSituations(serviceDelivery: serviceDelivery)
+    }
+    
     func refresh() {
         getData()
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     print(error)
                 }
-            }, receiveValue: { result in
-                self.stopJourneys = result
+            }, receiveValue: { [weak self] result in
+                self?.stopJourneys = result
+                    .StopMonitoringDelivery.first?.MonitoredStopVisit
+                    .map(\.MonitoredVehicleJourney) ?? []
+                self?.serviceDelivery = result
             })
             .store(in: &cancellables)
     }
     
-    func getData() -> AnyPublisher<[Siri.MonitoredVehicleJourney], Error> {
+    func getData() -> AnyPublisher<Siri.ServiceDelivery, Error> {
         BustimeAPI.getBusTime(stopId: stopId)
-            .map { $0.StopMonitoringDelivery.first?.MonitoredStopVisit ?? [] }
-            .map { (items: [Siri.MonitoredStopVisit]) in items.map(\.MonitoredVehicleJourney) }
             .eraseToAnyPublisher()
     }
     
