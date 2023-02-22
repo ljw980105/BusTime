@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import Combine
 
 struct StopMonitoringView: View {
     @ObservedObject var viewModel: StopMonitoringViewModel
+    @State var hasError: Bool = false
+    var cancellables: [AnyCancellable] = []
+    
+    init(viewModel: StopMonitoringViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
-        NavigationView {
+        viewModel.receivedError = { e in
+            hasError = e
+        }
+        
+        return NavigationView {
             List(viewModel.stopJourneys, id: \.id) { stopJourney in
                 NavigationLink(destination: RouteDetailView(
                     viewModel: .init(
@@ -42,6 +53,11 @@ struct StopMonitoringView: View {
                         }
                     }
                 }
+                .alert("Error", isPresented: $hasError, actions: {
+                    Button("OK") {}
+                }, message: {
+                    Text("Encountered error: \(viewModel.error.localizedDescription)")
+                })
             }
             .navigationTitle(viewModel.title)
             .refreshable {

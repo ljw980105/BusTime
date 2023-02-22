@@ -20,6 +20,10 @@ struct BusTimeApp: App {
                     .tabItem {
                         Label("Flushing", systemImage: "toilet")
                     }
+                MoreOptionsView()
+                    .tabItem {
+                        Label("More", systemImage: "ellipsis")
+                    }
             }
         }
     }

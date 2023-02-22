@@ -33,12 +33,7 @@ enum BustimeAPI {
     static func getBusTime(stopId: Int) -> AnyPublisher<Siri.ServiceDelivery, Error> {
         GetRequest(endpoint: "https://bustime.mta.info/api/siri/stop-monitoring.json")
             .setDecoder(decoder)
-            .addParameter(
-                .init(
-                    name: "key",
-                    value: ProcessInfo.processInfo.environment["api_key"] ?? ""
-                )
-            )
+            .addParameter(.init(name: "key", value: "5bfdcd1c-f5bd-4489-959d-2a4dbe5d48a4"))
             .addParameter(.init(name: "version", value: "2"))
             .addParameter(.init(name: "MonitoringRef", value: String(stopId)))
             .addParameter(.init(name: "StopMonitoringDetailLevel", value: "minimum"))
