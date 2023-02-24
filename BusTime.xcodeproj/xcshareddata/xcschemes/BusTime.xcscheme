@@ -72,13 +72,6 @@
             ReferencedContainer = "container:BusTime.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "api_key"
-            value = "5bfdcd1c-f5bd-4489-959d-2a4dbe5d48a4"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

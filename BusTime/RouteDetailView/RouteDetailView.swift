@@ -22,13 +22,13 @@ struct RouteDetailView: View {
         NavigationView {
             VStack {
                 List {
-                    if viewModel.hasSituations {
+                    if case .situations(let text) = viewModel.situations {
                         HStack {
                             Text("Alerts")
                                 .font(.caption)
                                 .fontWeight(.bold)
                                 .foregroundColor(.pink)
-                            Text(viewModel.situationsText)
+                            Text(text)
                                 .font(.caption)
                                 .foregroundColor(.pink)
                                 .multilineTextAlignment(.leading)
@@ -56,5 +56,6 @@ struct RouteDetailView: View {
             }
         }
         .navigationTitle(viewModel.title)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

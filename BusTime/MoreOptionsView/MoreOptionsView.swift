@@ -20,8 +20,10 @@ struct MoreOptionsView: View {
                     presentAlert = true
                 }
                 .alert("Enter StopId", isPresented: $presentAlert, actions: {
-                    // Any view other than Button would be ignored
                     TextField("StopId", text: $stopId)
+                        .keyboardType(.numberPad)
+                    Button("Cancel") {}
+                        .foregroundColor(.red)
                     Button("Done") {
                         popVc = true
                     }
@@ -30,7 +32,7 @@ struct MoreOptionsView: View {
                 })
                 .popover(isPresented: $popVc) {
                     let id = Int(stopId) ?? 0
-                    StopMonitoringView(viewModel: .init(stopId: id, title: stopId))
+                    StopMonitoringView(viewModel: .init(stopId: id, title: stopId, showStopName: true))
                 }
             }
             .navigationTitle("More")

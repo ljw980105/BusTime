@@ -59,9 +59,10 @@ struct StopMonitoringView: View {
                     Text("Encountered error: \(viewModel.error.localizedDescription)")
                 })
             }
-            .navigationTitle(viewModel.title)
+            .navigationTitle(viewModel.navBarTitle)
+            .navigationBarTitleDisplayMode(viewModel.showStopName ? .inline : .large)
             .refreshable {
-                viewModel.refresh()
+                await viewModel.refreshAsync()
             }
         }
     }

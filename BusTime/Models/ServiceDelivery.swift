@@ -106,6 +106,7 @@ extension Siri {
         let distanceFromStop: Int?
         let numberOfStopsAway: Int?
         let visitNumber: Int?
+        let stopPointName: [String]?
         
         enum CodingKeys: String, CodingKey {
             case aimedArrivalTime = "AimedArrivalTime"
@@ -115,6 +116,7 @@ extension Siri {
             case distanceFromStop = "DistanceFromStop"
             case numberOfStopsAway = "NumberOfStopsAway"
             case visitNumber = "VisitNumber"
+            case stopPointName = "StopPointName"
         }
     }
 }

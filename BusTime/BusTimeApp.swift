@@ -12,11 +12,11 @@ struct BusTimeApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                StopMonitoringView(viewModel: .init(stopId: 502434, title: "Whitestone"))
+                StopMonitoringView(viewModel: .init(stopId: 502434, title: "Whitestone", showStopName: false))
                     .tabItem {
                         Label("Whitestone", systemImage: "mountain.2")
                     }
-                StopMonitoringView(viewModel: .init(stopId: 502185, title: "Flushing"))
+                StopMonitoringView(viewModel: .init(stopId: 502185, title: "Flushing", showStopName: false))
                     .tabItem {
                         Label("Flushing", systemImage: "toilet")
                     }

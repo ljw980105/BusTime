@@ -19,8 +19,7 @@ class RouteDetailViewModel {
     let proxmity: String
     let stopsAway: String
     let mapRegion: MKCoordinateRegion
-    let hasSituations: Bool
-    let situationsText: String
+    let situations: Situations
     
     init(vehicleJourney: Siri.MonitoredVehicleJourney, situations: Siri.SituationExchangeDelivery?) {
         self.vehicleJourney = vehicleJourney
@@ -47,15 +46,13 @@ class RouteDetailViewModel {
         if let situationElements = situations?.Situations.situationElement,
            let journeySituations = vehicleJourney.situationRef?.first?.SituationSimpleRef,
            situationElements.compactMap(\.situationNumber).contains(journeySituations) {
-            hasSituations = true
-            situationsText = situationElements
+            self.situations = .situations(situationsText: situationElements
                 .compactMap(\.summary)
                 .flatMap { $0 }
                 .joined(separator: "\n\n")
-            
+            )
         } else {
-            situationsText = ""
-            hasSituations = false
+            self.situations = .none
         }
         
     }
@@ -68,6 +65,13 @@ class RouteDetailViewModel {
         let placemark = MKPlacemark(coordinate: mapRegion.center, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.openInMaps(launchOptions: options)
+    }
+}
+
+extension RouteDetailViewModel {
+    enum Situations {
+        case none
+        case situations(situationsText: String)
     }
 }
 
