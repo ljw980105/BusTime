@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// [Documentation](https://bustime.mta.info/wiki/Developers/SIRIStopMonitoring)
 struct SiriObject: Codable {
     let Siri: Siri
 }
