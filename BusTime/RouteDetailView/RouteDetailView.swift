@@ -9,50 +9,68 @@ import SwiftUI
 import MapKit
 
 struct RouteDetailView: View {
-    let viewModel: RouteDetailViewModel
-    @State var mapRegion: MKCoordinateRegion
-    
+    @ObservedObject var viewModel: RouteDetailViewModel
     
     init(viewModel: RouteDetailViewModel) {
         self.viewModel = viewModel
-        self.mapRegion = viewModel.mapRegion
     }
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    if case .situations(let text) = viewModel.situations {
-                        HStack {
-                            Text("Alerts")
-                                .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(.pink)
-                            Text(text)
-                                .font(.caption)
-                                .foregroundColor(.pink)
-                                .multilineTextAlignment(.leading)
-                        }.padding(5)
-                    }
-                    KeyValueCell("Destination", viewModel.destination)
-                    KeyValueCell("Aimed Arrival", viewModel.aimedArrival)
-                    KeyValueCell("Expected Arrival", viewModel.expectedArrival)
-                    KeyValueCell("Proxmity", viewModel.proxmity)
-                    KeyValueCell("Stops Away", viewModel.stopsAway)
-                    KeyValueCell("Expected Departure", viewModel.expectedDeparture)
-                    Map(
-                        coordinateRegion: $mapRegion,
-                        interactionModes: [],
-                        annotationItems: [viewModel]
-                    ) { place in
-                        MapMarker(coordinate: place.coordinate)
-                    }
-                        .edgesIgnoringSafeArea(.all)
-                        .frame(height: 200)
-                        .onTapGesture {
-                            viewModel.openInMaps()
+                    if case .situations(let situations) = viewModel.situations {
+                        Section(header: Text("Alerts (\(situations.count)):")) {
+                            TabView {
+                                ForEach(situations) { situation in
+                                    VStack(spacing: 0) {
+                                        Text(situation.summary)
+                                            .font(.caption)
+                                            .foregroundColor(.pink)
+                                            .multilineTextAlignment(.leading)
+                                            .padding(.top, 5)
+                                        Spacer()
+                                    }
+                                    .onTapGesture {
+                                        viewModel.showSituationDescription(situation.description)
+                                    }
+                                }
+                            }
+                            .tabViewStyle(PageTabViewStyle())
+                            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                            .frame(height: situations.count > 1 ? 100 : 50)
                         }
+                    }
+                    Section(header: Text("Info")) {
+                        KeyValueCell("Destination", viewModel.destination)
+                        KeyValueCell("Aimed Arrival", viewModel.aimedArrival)
+                        KeyValueCell("Expected Arrival", viewModel.expectedArrival)
+                        KeyValueCell("Proxmity", viewModel.proxmity)
+                        KeyValueCell("Stops Away", viewModel.stopsAway)
+                        KeyValueCell("Expected Departure", viewModel.expectedDeparture)
+                        if let passengerCount = viewModel.numberOfPassengers {
+                            KeyValueCell("Number of Passengers", "\(passengerCount)")
+                        }
+                    }
+                    Section(header: Text("Location")) {
+                        Map(
+                            coordinateRegion: Binding(get: {
+                                viewModel.mapRegion
+                            }, set: { _ in }),
+                            interactionModes: [],
+                            annotationItems: [viewModel]
+                        ) { place in
+                            MapMarker(coordinate: place.coordinate)
+                        }
+                            .edgesIgnoringSafeArea(.all)
+                            .frame(height: 200)
+                            .onTapGesture {
+                                viewModel.openInMaps()
+                            }
+                    }
                 }
+                    // removes the dropdown arrow in the section headers
+                    .listStyle(.insetGrouped)
             }
         }
         .navigationTitle(viewModel.title)

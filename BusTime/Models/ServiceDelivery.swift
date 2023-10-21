@@ -107,6 +107,7 @@ extension Siri {
         let numberOfStopsAway: Int?
         let visitNumber: Int?
         let stopPointName: [String]?
+        let extensions: Extensions?
         
         enum CodingKeys: String, CodingKey {
             case aimedArrivalTime = "AimedArrivalTime"
@@ -117,9 +118,34 @@ extension Siri {
             case numberOfStopsAway = "NumberOfStopsAway"
             case visitNumber = "VisitNumber"
             case stopPointName = "StopPointName"
+            case extensions = "Extensions"
         }
     }
 }
+
+extension Siri {
+    struct Extensions: Codable {
+        let capacities: Capacities?
+        
+        enum CodingKeys: String, CodingKey {
+            case capacities = "Capacities"
+        }
+    }
+}
+
+extension Siri {
+    struct Capacities: Codable {
+        let estimatedPassengerCount: Int?
+        let estimatedPassengerCapacity: Int?
+        
+        enum CodingKeys: String, CodingKey {
+            case estimatedPassengerCount = "EstimatedPassengerCount"
+            case estimatedPassengerCapacity = "EstimatedPassengerCapacity"
+        }
+    }
+}
+
+
 
 // MARK: Situations
 extension Siri {
