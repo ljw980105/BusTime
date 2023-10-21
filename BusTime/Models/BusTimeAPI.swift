@@ -42,4 +42,16 @@ enum BustimeAPI {
             .map(\.Siri.ServiceDelivery)
             .eraseToAnyPublisher()
     }
+    
+    static func getVehicleData(vehicleRef: String) -> AnyPublisher<[Siri.MonitoredVehicleJourney], Error> {
+        GetRequest(endpoint: "https://bustime.mta.info/api/siri/vehicle-monitoring.json?")
+            .setDecoder(decoder)
+            .addParameter(.init(name: "key", value: "5bfdcd1c-f5bd-4489-959d-2a4dbe5d48a4"))
+            .addParameter(.init(name: "version", value: "2"))
+            .addParameter(.init(name: "VehicleRef", value: vehicleRef))
+            .get(resultType: SiriObject.self)
+            .map(\.Siri.ServiceDelivery.VehicleMonitoringDelivery?.first?.vehicleActivity.first?.monitoredVehicleJourney)
+            .replaceNil(with: [])
+            .eraseToAnyPublisher()
+    }
 }

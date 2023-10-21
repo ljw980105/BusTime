@@ -40,6 +40,7 @@ struct RouteDetailView: View {
                     KeyValueCell("Proxmity", viewModel.proxmity)
                     KeyValueCell("Stops Away", viewModel.stopsAway)
                     KeyValueCell("Expected Departure", viewModel.expectedDeparture)
+                    KeyValueCell("Vehicle", viewModel.vehicleRef)
                     Map(
                         coordinateRegion: $mapRegion,
                         interactionModes: [],

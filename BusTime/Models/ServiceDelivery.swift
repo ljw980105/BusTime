@@ -19,14 +19,16 @@ struct Siri: Codable {
 extension Siri {
     struct ServiceDelivery: Codable {
         let ResponseTimestamp: Date
-        let StopMonitoringDelivery: [StopMonitoringDelivery]
+        let StopMonitoringDelivery: [StopMonitoringDelivery]?
         let SituationExchangeDelivery: [SituationExchangeDelivery]?
+        let VehicleMonitoringDelivery: [VehicleMonitoringDelivery]?
         
         static var empty: ServiceDelivery {
             .init(
                 ResponseTimestamp: Date(),
                 StopMonitoringDelivery: [],
-                SituationExchangeDelivery: []
+                SituationExchangeDelivery: [],
+                VehicleMonitoringDelivery: []
             )
         }
     }
@@ -205,6 +207,26 @@ extension Siri {
     }
 }
 
+// MARK: Vehicle Monitoring
+extension Siri {
+    struct VehicleMonitoringDelivery: Codable {
+        let vehicleActivity: [VehicleActivity]
+        
+        enum CodingKeys: String, CodingKey {
+            case vehicleActivity = "VehicleActivity"
+        }
+    }
+}
+
+extension Siri {
+    struct VehicleActivity: Codable {
+        let monitoredVehicleJourney: [MonitoredVehicleJourney]
+        
+        enum CodingKeys: String, CodingKey {
+            case monitoredVehicleJourney = "MonitoredVehicleJourney"
+        }
+    }
+}
 // MARK: Helpers
 
 extension Siri.MonitoredCall {

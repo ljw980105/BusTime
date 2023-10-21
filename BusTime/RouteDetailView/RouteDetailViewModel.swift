@@ -20,6 +20,7 @@ class RouteDetailViewModel {
     let stopsAway: String
     let mapRegion: MKCoordinateRegion
     let situations: Situations
+    let vehicleRef: String
     
     init(vehicleJourney: Siri.MonitoredVehicleJourney, situations: Siri.SituationExchangeDelivery?) {
         self.vehicleJourney = vehicleJourney
@@ -32,6 +33,7 @@ class RouteDetailViewModel {
         expectedArrival = dateFormatter.string(from: monitoredCall.expectedArrivalTime ?? Date())
         expectedDeparture = dateFormatter.string(from: monitoredCall.expectedDepartureTime ?? Date())
         proxmity = monitoredCall.arrivalProximityText ?? "Unknown"
+        vehicleRef = vehicleJourney.vehicleRef
         if let stopsAway = monitoredCall.numberOfStopsAway {
             self.stopsAway = String(stopsAway)
         } else {
