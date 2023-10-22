@@ -8,8 +8,9 @@
 import Foundation
 import MapKit
 import SwiftUI
+import UIKit
 
-class RouteDetailViewModel {
+class RouteDetailViewModel: ObservableObject {
     let vehicleJourney: Siri.MonitoredVehicleJourney
     let title: String
     let destination: String
@@ -18,7 +19,8 @@ class RouteDetailViewModel {
     let expectedDeparture: String
     let proxmity: String
     let stopsAway: String
-    let mapRegion: MKCoordinateRegion
+    let numberOfPassengers: Int?
+    @Published var mapRegion: MKCoordinateRegion
     let situations: Situations
     
     init(vehicleJourney: Siri.MonitoredVehicleJourney, situations: Siri.SituationExchangeDelivery?) {
@@ -37,6 +39,7 @@ class RouteDetailViewModel {
         } else {
             stopsAway = "Unknown"
         }
+        numberOfPassengers = monitoredCall.extensions?.capacities?.estimatedPassengerCount
         
         mapRegion = MKCoordinateRegion(
             center: vehicleJourney.coordinate,
@@ -46,11 +49,15 @@ class RouteDetailViewModel {
         if let situationElements = situations?.Situations.situationElement,
            let journeySituations = vehicleJourney.situationRef?.first?.SituationSimpleRef,
            situationElements.compactMap(\.situationNumber).contains(journeySituations) {
-            self.situations = .situations(situationsText: situationElements
+            let summarries = situationElements
                 .compactMap(\.summary)
                 .flatMap { $0 }
-                .joined(separator: "\n\n")
-            )
+            let descriptions = situationElements
+                .compactMap(\.description)
+                .flatMap { $0 }
+            let situations = zip(summarries, descriptions)
+                .map(Situation.init)
+            self.situations = .situations(situations: situations)
         } else {
             self.situations = .none
         }
@@ -66,12 +73,32 @@ class RouteDetailViewModel {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.openInMaps(launchOptions: options)
     }
+    
+    func showSituationDescription(_ description: String) {
+        let alert = UIAlertController(
+            title: "Alert Description",
+            message: description,
+            preferredStyle: .alert
+        )
+        alert.addAction(.init(title: "OK", style: .default))
+        guard let topVc = UIApplication.shared.keyWindow?.rootViewController else {
+            return
+        }
+        topVc.present(alert, animated: true)
+    }
 }
 
 extension RouteDetailViewModel {
     enum Situations {
         case none
-        case situations(situationsText: String)
+        case situations(situations: [Situation])
+    }
+    
+    struct Situation: Identifiable {
+        let id = UUID()
+        
+        let summary: String
+        let description: String
     }
 }
 

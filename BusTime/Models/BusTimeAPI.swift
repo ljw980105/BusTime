@@ -37,6 +37,7 @@ enum BustimeAPI {
             .addParameter(.init(name: "version", value: "2"))
             .addParameter(.init(name: "MonitoringRef", value: String(stopId)))
             .addParameter(.init(name: "StopMonitoringDetailLevel", value: "basic"))
+            .addParameter(.init(name: "MaximumStopVisits", value: "8"))
             .get(resultType: SiriObject.self)
             .map(\.Siri.ServiceDelivery)
             .eraseToAnyPublisher()
