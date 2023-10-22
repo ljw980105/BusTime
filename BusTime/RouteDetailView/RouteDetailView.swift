@@ -39,6 +39,7 @@ struct RouteDetailView: View {
                             .tabViewStyle(PageTabViewStyle())
                             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                             .frame(height: situations.count > 1 ? 100 : 50)
+                            .padding(.bottom, -15)
                         }
                     }
                     Section(header: Text("Info")) {
@@ -75,5 +76,6 @@ struct RouteDetailView: View {
         }
         .navigationTitle(viewModel.title)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.visible, for: .navigationBar)
     }
 }
