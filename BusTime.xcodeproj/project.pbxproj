@@ -62,6 +62,8 @@
 		9408C5E629A18728005DE2EE /* RouteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailViewModel.swift; sourceTree = "<group>"; };
 		9408C5EA29A1892A005DE2EE /* KeyValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueCell.swift; sourceTree = "<group>"; };
 		9408C5ED29A1BFD7005DE2EE /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsView.swift; sourceTree = "<group>"; };
+		94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configurations.xcconfig; sourceTree = "<group>"; };
+		94AC7DC22AF07F8C0080633B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		9408C5A829A0A5EA005DE2EE /* BusTime */ = {
 			isa = PBXGroup;
 			children = (
+				94AC7DC22AF07F8C0080633B /* Info.plist */,
 				9408C5EC29A1BFB9005DE2EE /* MoreOptionsView */,
 				9408C5E329A18617005DE2EE /* RouteDetailView */,
 				9408C5DE29A0AD87005DE2EE /* StopMonitoringView */,
@@ -121,6 +124,7 @@
 				9408C5AB29A0A5EA005DE2EE /* ContentView.swift */,
 				9408C5AD29A0A5EB005DE2EE /* Assets.xcassets */,
 				9408C5AF29A0A5EB005DE2EE /* Preview Content */,
+				94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */,
 			);
 			path = BusTime;
 			sourceTree = "<group>";
@@ -491,6 +495,7 @@
 		};
 		9408C5CB29A0A5EC005DE2EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -500,6 +505,7 @@
 				DEVELOPMENT_TEAM = NDBTK98VL3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTime/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -520,6 +526,7 @@
 		};
 		9408C5CC29A0A5EC005DE2EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -529,6 +536,7 @@
 				DEVELOPMENT_TEAM = NDBTK98VL3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTime/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -549,6 +557,7 @@
 		};
 		9408C5CE29A0A5EC005DE2EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -569,6 +578,7 @@
 		};
 		9408C5CF29A0A5EC005DE2EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -589,6 +599,7 @@
 		};
 		9408C5D129A0A5EC005DE2EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -607,6 +618,7 @@
 		};
 		9408C5D229A0A5EC005DE2EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
