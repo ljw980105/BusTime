@@ -39,7 +39,7 @@ struct RouteDetailView: View {
                             .tabViewStyle(PageTabViewStyle())
                             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                             .frame(height: situations.count > 1 ? 100 : 50)
-                            .padding(.bottom, -15)
+                            .padding(.bottom, situations.count > 1 ? -15 : -10 )
                         }
                     }
                     Section(header: Text("Info")) {

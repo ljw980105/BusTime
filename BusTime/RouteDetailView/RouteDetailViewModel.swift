@@ -49,13 +49,13 @@ class RouteDetailViewModel: ObservableObject {
         if let situationElements = situations?.Situations.situationElement,
            let journeySituations = vehicleJourney.situationRef?.first?.SituationSimpleRef,
            situationElements.compactMap(\.situationNumber).contains(journeySituations) {
-            let summarries = situationElements
+            let summaries = situationElements
                 .compactMap(\.summary)
                 .flatMap { $0 }
             let descriptions = situationElements
                 .compactMap(\.description)
                 .flatMap { $0 }
-            let situations = zip(summarries, descriptions)
+            let situations = zip(summaries, descriptions)
                 .map(Situation.init)
             self.situations = .situations(situations: situations)
         } else {
