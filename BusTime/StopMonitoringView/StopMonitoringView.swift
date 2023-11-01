@@ -10,7 +10,6 @@ import Combine
 
 struct StopMonitoringView: View {
     @ObservedObject var viewModel: StopMonitoringViewModel
-    @State var hasError: Bool = false
     var cancellables: [AnyCancellable] = []
     
     init(viewModel: StopMonitoringViewModel) {
@@ -27,7 +26,22 @@ struct StopMonitoringView: View {
         }
     }
     
+    @ViewBuilder
     var contentView: some View {
+        if case .error(let error) = viewModel.error {
+            VStack {
+                Spacer()
+                Text(error.localizedDescription)
+                    .foregroundColor(.red)
+                Spacer()
+            }
+            .padding(16)
+        } else {
+            listView
+        }
+    }
+    
+    var listView: some View {
         List(viewModel.stopJourneys, id: \.id) { stopJourney in
             NavigationLink(destination: RouteDetailView(
                 viewModel: .init(
@@ -59,21 +73,11 @@ struct StopMonitoringView: View {
                     }
                 }
             }
-            .alert("Error", isPresented: $hasError, actions: {
-                Button("OK") {}
-            }, message: {
-                Text("Encountered error: \(viewModel.error.localizedDescription)")
-            })
         }
         .navigationTitle(viewModel.navBarTitle)
         .navigationBarTitleDisplayMode(viewModel.showStopName ? .inline : .large)
         .refreshable {
             await viewModel.refreshAsync()
-        }
-        .onAppear {
-            viewModel.receivedError = { e in
-                hasError = e
-            }
         }
     }
 }

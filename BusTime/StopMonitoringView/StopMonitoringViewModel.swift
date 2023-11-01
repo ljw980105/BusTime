@@ -118,3 +118,5 @@ class StopMonitoringViewModel: ObservableObject {
     }
     
 }
+
+extension StopMonitoringViewModel: Identifiable {}
