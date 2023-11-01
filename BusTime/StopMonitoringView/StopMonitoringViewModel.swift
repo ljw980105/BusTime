@@ -33,15 +33,21 @@ class StopMonitoringViewModel: ObservableObject {
     let stopId: Int
     let title: String
     let showStopName: Bool
+    let hideNavigationView: Bool
     
     /// - Parameters:
     ///   - showStopName: If true, uses small nav bar and also adds stop names in parenthesis for the nav bar.
     ///   otherwise, uses large navbar
-    init(stopId: Int, title: String, showStopName: Bool) {
+    ///   - hideNavigationView: Set this to true if this view is used inside another NavigationView
+    init(stopId: Int,
+         title: String,
+         showStopName: Bool,
+         hideNavigationView: Bool = false) {
         self.stopId = stopId
         self.title = title
         self.showStopName = showStopName
         self.error = .none
+        self.hideNavigationView = hideNavigationView
         $error
             .map {
                 switch $0 {
@@ -51,6 +57,7 @@ class StopMonitoringViewModel: ObservableObject {
                     return true
                 }
             }
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] val in
                 self?.receivedError?(val)
             }
@@ -71,7 +78,9 @@ class StopMonitoringViewModel: ObservableObject {
                 self.stopJourneys = journeys
             }
         } catch let errors {
-            error = .error(error: errors)
+            DispatchQueue.main.async {
+                self.error = .error(error: errors)
+            }
         }
     }
     
@@ -106,7 +115,6 @@ class StopMonitoringViewModel: ObservableObject {
     
     func getData() -> AnyPublisher<Siri.ServiceDelivery, Error> {
         BustimeAPI.getBusTime(stopId: stopId)
-            .eraseToAnyPublisher()
     }
     
 }
