@@ -14,11 +14,19 @@ struct MoreOptionsView: View {
     
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section {
-                    Button("More Stops") {
-                        presentAlert = true
+                    HStack {
+                        Button("More Stops") {
+                            presentAlert = true
+                        }
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .frame(width: 7, height: 10)
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.gray)
                     }
                     .alert("Enter StopId", isPresented: $presentAlert, actions: {
                         TextField("StopId", text: $stopId)
@@ -31,29 +39,41 @@ struct MoreOptionsView: View {
                     }, message: {
                         Text("Enter the 6 digit stopId")
                     })
-                    .popover(isPresented: $popVc) {
-                        let id = Int(stopId) ?? 0
-                        StopMonitoringView(viewModel: .init(stopId: id, title: stopId, showStopName: true))
+                    .navigationDestination(isPresented: $popVc) {
+                        StopMonitoringView(viewModel: .init(
+                            stopId: Int(stopId) ?? 0,
+                            title: stopId,
+                            showStopName: true,
+                            hideNavigationView: true
+                        ))
                     }
                 }
                 Section("Other Stops") {
-                    NavigationLink(destination: StopMonitoringView(viewModel: .init(
-                        stopId: 502184,
-                        title: "Main St/Queens Library",
-                        showStopName: false,
-                        hideNavigationView: true))) {
-                        Text("Main St/Queens Library")
-                    }
-                    NavigationLink(destination: StopMonitoringView(viewModel: .init(
-                        stopId: 505060,
-                        title: "Q76 / Liola Restaurant",
-                        showStopName: false,
-                        hideNavigationView: true))) {
-                        Text("Q76 / Liola Restaurant")
+                    ForEach(additionalStops) { stop in
+                        NavigationLink(destination: StopMonitoringView(viewModel: stop)) {
+                            Text(stop.title)
+                        }
                     }
                 }
             }
             .navigationTitle("More")
         }
+    }
+    
+    var additionalStops: [StopMonitoringViewModel] {
+        [
+            .init(
+                stopId: 502184,
+                title: "Main St/Queens Library",
+                showStopName: false,
+                hideNavigationView: true
+            ),
+            .init(
+                stopId: 505060,
+                title: "Q76 / Liola Restaurant",
+                showStopName: false,
+                hideNavigationView: true
+            )
+        ]
     }
 }
