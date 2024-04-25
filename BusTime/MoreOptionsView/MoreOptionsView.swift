@@ -64,7 +64,7 @@ struct MoreOptionsView: View {
         [
             .init(
                 stopId: 502184,
-                title: "Main St/Queens Library",
+                title: "Main St / Queens Library",
                 showStopName: false,
                 hideNavigationView: true
             ),
