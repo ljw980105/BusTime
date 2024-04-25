@@ -16,63 +16,48 @@ struct RouteDetailView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                List {
+        VStack {
+            List {
+                Section(header: Text("Info")) {
                     if case .situations(let situations) = viewModel.situations {
-                        Section(header: Text("Alerts (\(situations.count)):")) {
-                            TabView {
-                                ForEach(situations) { situation in
-                                    VStack(spacing: 0) {
-                                        Text(situation.summary)
-                                            .font(.caption)
-                                            .foregroundColor(.pink)
-                                            .multilineTextAlignment(.leading)
-                                            .padding(.top, 5)
-                                        Spacer()
-                                    }
-                                    .onTapGesture {
-                                        viewModel.showSituationDescription(situation.description)
-                                    }
-                                }
-                            }
-                            .tabViewStyle(PageTabViewStyle())
-                            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-                            .frame(height: situations.count > 1 ? 100 : 50)
-                            .padding(.bottom, situations.count > 1 ? -15 : -10 )
+                        NavigationLink {
+                            AlertDescriptionView(alerts: situations)
+                        } label: {
+                            Text("Alerts (\(situations.count))")
+                                .foregroundColor(.pink)
+                                .font(.caption)
+                                .fontWeight(.bold)
                         }
                     }
-                    Section(header: Text("Info")) {
-                        KeyValueCell("Destination", viewModel.destination)
-                        KeyValueCell("Aimed Arrival", viewModel.aimedArrival)
-                        KeyValueCell("Expected Arrival", viewModel.expectedArrival)
-                        KeyValueCell("Proxmity", viewModel.proxmity)
-                        KeyValueCell("Stops Away", viewModel.stopsAway)
-                        KeyValueCell("Expected Departure", viewModel.expectedDeparture)
-                        if let passengerCount = viewModel.numberOfPassengers {
-                            KeyValueCell("Number of Passengers", "\(passengerCount)")
-                        }
-                    }
-                    Section(header: Text("Location")) {
-                        Map(
-                            coordinateRegion: Binding(get: {
-                                viewModel.mapRegion
-                            }, set: { _ in }),
-                            interactionModes: [],
-                            annotationItems: [viewModel]
-                        ) { place in
-                            MapMarker(coordinate: place.coordinate)
-                        }
-                            .edgesIgnoringSafeArea(.all)
-                            .frame(height: 200)
-                            .onTapGesture {
-                                viewModel.openInMaps()
-                            }
+                    KeyValueCell("Destination", viewModel.destination)
+                    KeyValueCell("Aimed Arrival", viewModel.aimedArrival)
+                    KeyValueCell("Expected Arrival", viewModel.expectedArrival)
+                    KeyValueCell("Proxmity", viewModel.proxmity)
+                    KeyValueCell("Stops Away", viewModel.stopsAway)
+                    KeyValueCell("Expected Departure", viewModel.expectedDeparture)
+                    if let passengerCount = viewModel.numberOfPassengers {
+                        KeyValueCell("Number of Passengers", "\(passengerCount)")
                     }
                 }
-                    // removes the dropdown arrow in the section headers
-                    .listStyle(.insetGrouped)
+                Section(header: Text("Location")) {
+                    Map(
+                        coordinateRegion: Binding(get: {
+                            viewModel.mapRegion
+                        }, set: { _ in }),
+                        interactionModes: [],
+                        annotationItems: [viewModel]
+                    ) { place in
+                        MapMarker(coordinate: place.coordinate)
+                    }
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(height: 200)
+                    .onTapGesture {
+                        viewModel.openInMaps()
+                    }
+                }
             }
+            // removes the dropdown arrow in the section headers
+            .listStyle(.insetGrouped)
         }
         .navigationTitle(viewModel.title)
         .navigationBarTitleDisplayMode(.inline)

@@ -24,6 +24,7 @@ public struct KeyValueCell: View {
             Spacer()
             Text(value)
                 .font(.caption)
+                .multilineTextAlignment(.trailing)
         }
         .padding(5)
         .cornerRadius(12)

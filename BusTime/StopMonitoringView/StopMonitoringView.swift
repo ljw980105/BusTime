@@ -29,10 +29,11 @@ struct StopMonitoringView: View {
     @ViewBuilder
     var contentView: some View {
         if case .error(let error) = viewModel.error {
-            VStack {
+            VStack(spacing: 20) {
                 Spacer()
                 Text(error.localizedDescription)
                     .foregroundColor(.red)
+                retryButton
                 Spacer()
             }
             .padding(16)
@@ -41,37 +42,64 @@ struct StopMonitoringView: View {
         }
     }
     
+    var retryButton: some View {
+        Button(action: {
+            Task {
+                await viewModel.refreshAsync()
+            }
+        }, label: {
+            ZStack {
+                Capsule()
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(Color(UIColor.secondarySystemBackground))
+                Text("Retry")
+            }
+            .frame(height: 40)
+        })
+    }
+    
     var listView: some View {
-        List(viewModel.stopJourneys, id: \.id) { stopJourney in
-            NavigationLink(destination: RouteDetailView(
-                viewModel: .init(
-                    vehicleJourney: stopJourney,
-                    situations: viewModel.serviceDelivery.SituationExchangeDelivery?.first
-                )
-            )) {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            if viewModel.hasSituations(vehicleJourney: stopJourney) {
-                                Image(systemName: "info.circle")
-                                    .foregroundColor(.red)
-                                    .frame(width: 15, height: 15)
+        List {
+            Section {
+                ForEach(viewModel.stopJourneys, id: \.id) { stopJourney in
+                    NavigationLink(destination: RouteDetailView(
+                        viewModel: .init(
+                            vehicleJourney: stopJourney,
+                            situations: viewModel.serviceDelivery.SituationExchangeDelivery?.first
+                        )
+                    )) {
+                        HStack(alignment: .top) {
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    if viewModel.hasSituations(vehicleJourney: stopJourney) {
+                                        Image(systemName: "info.circle")
+                                            .foregroundColor(.red)
+                                            .frame(width: 15, height: 15)
+                                    }
+                                    Text(stopJourney.publishedLineName.first ?? "Unknown")
+                                        .font(.title)
+                                }
+                                Text(stopJourney.destinationName.first ?? "Unknown")
+                                    .font(.caption)
+                                Text(stopJourney.monitoredCall.arrivalProximityText ?? "Unknown")
+                                    .font(.caption)
                             }
-                            Text(stopJourney.publishedLineName.first ?? "Unknown")
-                                .font(.title)
+                            Spacer()
+                            VStack(alignment: .trailing) {
+                                Text(stopJourney.monitoredCall.timeToArrival)
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                            }
                         }
-                        Text(stopJourney.destinationName.first ?? "Unknown")
-                            .font(.caption)
-                        Text(stopJourney.monitoredCall.arrivalProximityText ?? "Unknown")
-                            .font(.caption)
-                    }
-                    Spacer()
-                    VStack(alignment: .trailing) {
-                        Text(stopJourney.monitoredCall.timeToArrival)
-                            .font(.caption)
-                            .fontWeight(.bold)
                     }
                 }
+            } footer: {
+                HStack {
+                    Text("Last Updated: \(viewModel.lastUpdated)")
+                        .font(.caption)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
             }
         }
         .navigationTitle(viewModel.navBarTitle)

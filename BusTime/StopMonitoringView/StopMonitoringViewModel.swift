@@ -27,6 +27,7 @@ class StopMonitoringViewModel: ObservableObject {
     @Published var stopJourneys: [Siri.MonitoredVehicleJourney] = []
     @Published var error: BusTimeError
     @Published var navBarTitle: String = ""
+    @Published var lastUpdated: String = ""
     var serviceDelivery: Siri.ServiceDelivery = .empty
     var cancellables: [AnyCancellable] = []
     var receivedError: ((Bool) -> Void)?
@@ -34,6 +35,12 @@ class StopMonitoringViewModel: ObservableObject {
     let title: String
     let showStopName: Bool
     let hideNavigationView: Bool
+    
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, h:mm"
+        return formatter
+    }()
     
     /// - Parameters:
     ///   - showStopName: If true, uses small nav bar and also adds stop names in parenthesis for the nav bar.
@@ -75,7 +82,9 @@ class StopMonitoringViewModel: ObservableObject {
         do {
             let journeys = try await refresh()
             DispatchQueue.main.async {
+                self.error = .none
                 self.stopJourneys = journeys
+                self.lastUpdated = self.dateFormatter.string(from: Date())
             }
         } catch let errors {
             DispatchQueue.main.async {
