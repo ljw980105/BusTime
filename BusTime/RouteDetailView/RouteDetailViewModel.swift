@@ -46,18 +46,26 @@ class RouteDetailViewModel: ObservableObject {
             span: .init(latitudeDelta: 0.03, longitudeDelta: 0.03)
         )
         
+        let formatterForCreatedDate = DateFormatter()
+        formatterForCreatedDate.dateFormat = "MMM d YYYY, h:mm"
+        
         if let situationElements = situations?.Situations.situationElement,
            let journeySituations = vehicleJourney.situationRef?.first?.SituationSimpleRef,
            situationElements.compactMap(\.situationNumber).contains(journeySituations) {
-            let summaries = situationElements
-                .compactMap(\.summary)
-                .flatMap { $0 }
-            let descriptions = situationElements
-                .compactMap(\.description)
-                .flatMap { $0 }
-            let situations = zip(summaries, descriptions)
-                .map(Situation.init)
-            self.situations = .situations(situations: situations)
+            let situations = situationElements.compactMap { situation -> Situation? in
+                guard let summary = situation.summary?.first,
+                      let description = situation.description?.first,
+                      let creationTime = situation.creationTime else {
+                    return nil
+                }
+                return Situation(
+                    created: formatterForCreatedDate.string(from: creationTime),
+                    summary: summary,
+                    description: description
+                )
+                
+            }
+            self.situations = .situations(situations)
         } else {
             self.situations = .none
         }
@@ -73,30 +81,18 @@ class RouteDetailViewModel: ObservableObject {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.openInMaps(launchOptions: options)
     }
-    
-    func showSituationDescription(_ description: String) {
-        let alert = UIAlertController(
-            title: "Alert Description",
-            message: description,
-            preferredStyle: .alert
-        )
-        alert.addAction(.init(title: "OK", style: .default))
-        guard let topVc = UIApplication.shared.keyWindow?.rootViewController else {
-            return
-        }
-        topVc.present(alert, animated: true)
-    }
 }
 
 extension RouteDetailViewModel {
     enum Situations {
         case none
-        case situations(situations: [Situation])
+        case situations(_ situations: [Situation])
     }
     
     struct Situation: Identifiable {
         let id = UUID()
         
+        let created: String
         let summary: String
         let description: String
     }

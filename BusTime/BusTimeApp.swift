@@ -16,7 +16,7 @@ struct BusTimeApp: App {
                     .tabItem {
                         Label("Whitestone", systemImage: "mountain.2")
                     }
-                StopMonitoringView(viewModel: .init(stopId: 502185, title: "Flushing", showStopName: false))
+                StopMonitoringView(viewModel: .init(stopId: 403893, title: "Flushing", showStopName: false))
                     .tabItem {
                         Label("Flushing", systemImage: "toilet")
                     }
