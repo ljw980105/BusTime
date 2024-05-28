@@ -73,8 +73,11 @@ struct StopMonitoringView: View {
                                 HStack {
                                     if viewModel.hasSituations(vehicleJourney: stopJourney) {
                                         Image(systemName: "info.circle")
-                                            .foregroundColor(.red)
+                                            .foregroundStyle(.red)
                                             .frame(width: 15, height: 15)
+                                    }
+                                    if viewModel.isHighOccupancy(vehicleJourney: stopJourney) {
+                                        Tag(text: "BUSY")
                                     }
                                     Text(stopJourney.publishedLineName.first ?? "Unknown")
                                         .font(.title)
