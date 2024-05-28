@@ -235,7 +235,11 @@ extension Siri {
 
 extension Siri.MonitoredCall {
     var timeToArrival: String {
-        guard let arrivalTime = expectedArrivalTime else {
+        var arrivalTime: Date? = aimedArrivalTime
+        if let expectedArrivalTime, expectedArrivalTime >= Date() {
+            arrivalTime = expectedArrivalTime
+        }
+        guard let arrivalTime else {
             return "Unknown"
         }
         let dateDiff = arrivalTime.timeIntervalSince(Date())
