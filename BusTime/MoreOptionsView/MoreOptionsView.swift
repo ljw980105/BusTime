@@ -55,6 +55,12 @@ struct MoreOptionsView: View {
                         }
                     }
                 }
+                
+                Section("Extras") {
+                    NavigationLink(destination: ItineraryMapView(itineraries: Itinerary.londonTrip)) {
+                        Text("London Trip")
+                    }
+                }
             }
             .navigationTitle("More")
         }
