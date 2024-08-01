@@ -78,13 +78,38 @@ extension Itinerary {
         Itinerary(
             description: "London Day 2",
             region: MKCoordinateRegion(
-                center: CLLocationCoordinate2D(latitude: 51.50592, longitude: -0.07513),
+                center: CLLocationCoordinate2D(latitude: 51.50592, longitude: -0.08767),
                 latitudinalMeters: 2200,
                 longitudinalMeters: 3000
             ),
             stops: [
                 .init(location: .init(latitude: 51.50592, longitude: -0.07513), name: "Tower Bridge"),
-                .init(location: .init(latitude: 51.50792, longitude: -0.07609), name: "Tower of London (Castle)")
+                .init(location: .init(latitude: 51.50792, longitude: -0.07609), name: "Tower of London (Castle)"),
+                .init(location: .init(latitude: 51.50548, longitude: -0.09056), name: "Borough Market"),
+                .init(location: .init(latitude: 51.50755, longitude: -0.09861), name: "Tate Modern/Shakespeare's Globe"),
+                .init(location: .init(latitude: 51.50934, longitude: -0.09854), name: "Millennium Bridge"),
+                .init(location: .init(latitude: 51.51372, longitude: -0.09828), name: "St Paul's Cathedral"),
+            ],
+            path: [
+                .init(latitude: 51.50592, longitude: -0.07513),
+                .init(latitude: 51.50231, longitude: -0.07759),
+                .init(latitude: 51.50755, longitude: -0.09861),
+                .init(latitude: 51.51347, longitude: -0.09837)
+                
+            ]
+        ),
+        Itinerary(
+            description: "London Day 3",
+            region: MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 51.50524, longitude: -0.18905),
+                latitudinalMeters: 2200,
+                longitudinalMeters: 3000
+            ),
+            stops: [
+                .init(location: .init(latitude: 51.49657, longitude: -0.17639), name: "Natural History Museum"),
+                .init(location: .init(latitude: 51.50562, longitude: -0.18578), name: "Kensington Palace"),
+                .init(location: .init(latitude: 51.50617, longitude: -0.17763), name: "Hyde Park"),
+                .init(location: .init(latitude: 51.51354, longitude: -0.20304), name: "Notting Hill/Portobello Rd Mkt"),
             ]
         )
     ]
