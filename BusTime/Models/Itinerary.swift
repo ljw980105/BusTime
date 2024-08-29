@@ -30,6 +30,10 @@ struct Itinerary {
         self.stops = stops
         self.path = path
     }
+    
+    var id: String {
+        description
+    }
 }
 
 extension Itinerary: Hashable, Equatable {
@@ -61,7 +65,7 @@ extension Itinerary {
                 .init(location: .init(latitude: 51.51007, longitude: -0.13432), name: "Piccadilly Circus"),
                 .init(location: .init(latitude: 51.51033, longitude: -0.13029), name: "Leicester Square"),
                 .init(location: .init(latitude: 51.51305, longitude: -0.13626), name: "Soho"),
-                .init(location: .init(latitude: 51.51201, longitude: -0.12371), name: "Covent Garden, Transit Musuem"),
+                .init(location: .init(latitude: 51.51201, longitude: -0.12371), name: "Covent Garden, Transit Museum"),
             ],
             path: [
                 .init(latitude: 51.50103, longitude: -0.12622),
@@ -110,6 +114,8 @@ extension Itinerary {
                 .init(location: .init(latitude: 51.50562, longitude: -0.18578), name: "Kensington Palace"),
                 .init(location: .init(latitude: 51.50617, longitude: -0.17763), name: "Hyde Park"),
                 .init(location: .init(latitude: 51.51354, longitude: -0.20304), name: "Notting Hill/Portobello Rd Mkt"),
+                .init(location: .init(latitude: 51.50691, longitude: -0.19477), name: "Churchill Arms Pub"),
+                .init(location: .init(latitude: 51.54757, longitude: -0.26042), name: "Swaminarayan Temple")
             ]
         )
     ]

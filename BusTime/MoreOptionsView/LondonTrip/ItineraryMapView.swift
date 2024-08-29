@@ -9,25 +9,23 @@ import SwiftUI
 import MapKit
 
 struct ItineraryMapView: View {
-    let itineraries: [Itinerary]
-    @State var activeItinerary: Itinerary
+    @ObservedObject var viewModel: ItineraryMapViewModel
     
-    init(itineraries: [Itinerary]) {
-        self.itineraries = itineraries
-        _activeItinerary = State(initialValue: itineraries.first ?? .stub)
+    init(viewModel: ItineraryMapViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
         let binding = Binding<MapCameraPosition> {
-            .region(activeItinerary.region)
+            .region(viewModel.activeItinerary.region)
         } set: { _ in }
         NavigationStack {
             Map(position: binding) {
-                ForEach(activeItinerary.stops) { stop in
+                ForEach(viewModel.activeItinerary.stops) { stop in
                     Marker(stop.name, coordinate: stop.location)
                 }
                 
-                if let path = activeItinerary.path {
+                if let path = viewModel.activeItinerary.path {
                     MapPolyline(points: path.map { MKMapPoint($0) })
                         .stroke(.yellow, lineWidth: 2.0)
                 }
@@ -35,8 +33,8 @@ struct ItineraryMapView: View {
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Picker("Itineraries", selection: $activeItinerary) {
-                    ForEach(itineraries, id: \.self) { itinerary in
+                Picker("Itineraries", selection: $viewModel.activeItinerary) {
+                    ForEach(viewModel.itineraries, id: \.self) { itinerary in
                         Text(itinerary.description)
                     }
                 }
@@ -45,10 +43,19 @@ struct ItineraryMapView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
+        .onAppear {
+            viewModel.loadItinerary()
+        }
+        .onDisappear {
+            viewModel.saveItinerary()
+        }
     }
     
 }
 
 #Preview {
-    ItineraryMapView(itineraries: Itinerary.londonTrip)
+    ItineraryMapView(viewModel: .init(
+        itineraries: Itinerary.londonTrip,
+        key: .londonTrip
+    ))
 }
