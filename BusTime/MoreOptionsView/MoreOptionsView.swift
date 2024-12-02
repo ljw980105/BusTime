@@ -80,8 +80,14 @@ struct MoreOptionsView: View {
                 hideNavigationView: true
             ),
             .init(
-                stopId: 505060,
-                title: "Q76 / Liola Restaurant",
+                stopId: 505059,
+                title: "Cross Island Pkwy / 150th St",
+                showStopName: false,
+                hideNavigationView: true
+            ),
+            .init(
+                stopId: 501660,
+                title: "Alley Pond Park",
                 showStopName: false,
                 hideNavigationView: true
             )

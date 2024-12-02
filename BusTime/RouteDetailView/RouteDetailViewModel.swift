@@ -81,6 +81,10 @@ class RouteDetailViewModel: ObservableObject {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.openInMaps(launchOptions: options)
     }
+    
+    var mapCameraPosition: MapCameraPosition {
+        .region(mapRegion)
+    }
 }
 
 extension RouteDetailViewModel {

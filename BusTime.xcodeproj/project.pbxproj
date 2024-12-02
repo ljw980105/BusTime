@@ -206,19 +206,19 @@
 		9408C5EC29A1BFB9005DE2EE /* MoreOptionsView */ = {
 			isa = PBXGroup;
 			children = (
-				948365632C40CE66006FB730 /* LondonTrip */,
+				948365632C40CE66006FB730 /* ItineraryMap */,
 				9408C5ED29A1BFD7005DE2EE /* MoreOptionsView.swift */,
 			);
 			path = MoreOptionsView;
 			sourceTree = "<group>";
 		};
-		948365632C40CE66006FB730 /* LondonTrip */ = {
+		948365632C40CE66006FB730 /* ItineraryMap */ = {
 			isa = PBXGroup;
 			children = (
 				948365642C40CE74006FB730 /* ItineraryMapView.swift */,
 				944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */,
 			);
-			path = LondonTrip;
+			path = ItineraryMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -511,7 +511,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

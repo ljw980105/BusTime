@@ -40,20 +40,16 @@ struct RouteDetailView: View {
                     }
                 }
                 Section(header: Text("Location")) {
-                    Map(
-                        coordinateRegion: Binding(get: {
-                            viewModel.mapRegion
-                        }, set: { _ in }),
-                        interactionModes: [],
-                        annotationItems: [viewModel]
-                    ) { place in
-                        MapMarker(coordinate: place.coordinate)
+                    Map(position: Binding(get: {
+                        viewModel.mapCameraPosition
+                    }, set: { _ in })) {
+                        Marker("", coordinate: viewModel.coordinate)
                     }
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(height: 200)
-                    .onTapGesture {
-                        viewModel.openInMaps()
-                    }
+                        .frame(height: 200)
+                        .onTapGesture {
+                            viewModel.openInMaps()
+                        }
+                    
                 }
             }
             // removes the dropdown arrow in the section headers
