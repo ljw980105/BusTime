@@ -24,6 +24,9 @@
 		9408C5EB29A1892A005DE2EE /* KeyValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5EA29A1892A005DE2EE /* KeyValueCell.swift */; };
 		9408C5EE29A1BFD7005DE2EE /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5ED29A1BFD7005DE2EE /* MoreOptionsView.swift */; };
 		940950D42B902EB10097A88D /* AlertDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940950D32B902EB10097A88D /* AlertDescriptionView.swift */; };
+		944418F72C7E8C9D004EE75D /* ItineraryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */; };
+		948365652C40CE74006FB730 /* ItineraryMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948365642C40CE74006FB730 /* ItineraryMapView.swift */; };
+		948365672C40D0BD006FB730 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948365662C40D0BD006FB730 /* Itinerary.swift */; };
 		94B404122BF84746002006E9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B404112BF84746002006E9 /* Tag.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		9408C5EA29A1892A005DE2EE /* KeyValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueCell.swift; sourceTree = "<group>"; };
 		9408C5ED29A1BFD7005DE2EE /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsView.swift; sourceTree = "<group>"; };
 		940950D32B902EB10097A88D /* AlertDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDescriptionView.swift; sourceTree = "<group>"; };
+		944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapViewModel.swift; sourceTree = "<group>"; };
+		948365642C40CE74006FB730 /* ItineraryMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapView.swift; sourceTree = "<group>"; };
+		948365662C40D0BD006FB730 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configurations.xcconfig; sourceTree = "<group>"; };
 		94AC7DC22AF07F8C0080633B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		94B404112BF84746002006E9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			children = (
 				9408C5DA29A0A741005DE2EE /* BusTimeAPI.swift */,
 				9408C5DC29A0A863005DE2EE /* ServiceDelivery.swift */,
+				948365662C40D0BD006FB730 /* Itinerary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,9 +206,19 @@
 		9408C5EC29A1BFB9005DE2EE /* MoreOptionsView */ = {
 			isa = PBXGroup;
 			children = (
+				948365632C40CE66006FB730 /* LondonTrip */,
 				9408C5ED29A1BFD7005DE2EE /* MoreOptionsView.swift */,
 			);
 			path = MoreOptionsView;
+			sourceTree = "<group>";
+		};
+		948365632C40CE66006FB730 /* LondonTrip */ = {
+			isa = PBXGroup;
+			children = (
+				948365642C40CE74006FB730 /* ItineraryMapView.swift */,
+				944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */,
+			);
+			path = LondonTrip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,7 +359,10 @@
 				9408C5E729A18728005DE2EE /* RouteDetailViewModel.swift in Sources */,
 				9408C5AC29A0A5EA005DE2EE /* ContentView.swift in Sources */,
 				9408C5DD29A0A863005DE2EE /* ServiceDelivery.swift in Sources */,
+				948365672C40D0BD006FB730 /* Itinerary.swift in Sources */,
 				9408C5E229A0ADB3005DE2EE /* StopMonitoringViewModel.swift in Sources */,
+				948365652C40CE74006FB730 /* ItineraryMapView.swift in Sources */,
+				944418F72C7E8C9D004EE75D /* ItineraryMapViewModel.swift in Sources */,
 				9408C5AA29A0A5EA005DE2EE /* BusTimeApp.swift in Sources */,
 				9408C5EE29A1BFD7005DE2EE /* MoreOptionsView.swift in Sources */,
 				9408C5E529A18635005DE2EE /* RouteDetailView.swift in Sources */,
@@ -519,6 +539,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,6 +571,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
