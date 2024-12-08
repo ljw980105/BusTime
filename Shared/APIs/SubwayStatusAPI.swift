@@ -8,12 +8,12 @@
 import Foundation
 import Combine
 
-enum SubwayRoute: String, CaseIterable {
+public enum SubwayRoute: String, CaseIterable {
     case seven = "7"
 }
 
-enum SubwayStatusAPI {
-    static func getSubwayAlerts(routes: [SubwayRoute] = [.seven]) -> AnyPublisher<[GTFSRealTime.Entity], Error> {
+public enum SubwayStatusAPI {
+    public static func getSubwayAlerts(routes: [SubwayRoute] = [.seven]) -> AnyPublisher<[GTFSRealTime.Entity], Error> {
         guard let route = routes.first else {
             print("More than 1 route not supported")
             return Fail(error: NSError(domain: "More than 1 route not supported", code: 0))

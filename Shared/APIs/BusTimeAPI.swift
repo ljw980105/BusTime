@@ -8,14 +8,14 @@
 import Combine
 import Foundation
 
-enum BustimeAPI {
+public enum BustimeAPI {
     
     private enum Keys: String {
         case APIKEY = "API_KEY"
     }
     
     /// Setup a Configurations.xcconfig file including the API_KEY prop to setup this var.
-    static let apiKey: String = {
+    public static let apiKey: String = {
         guard let infoDict = Bundle.main.infoDictionary,
         let key = infoDict[Keys.APIKEY.rawValue] as? String else {
             fatalError("NO API KEY PROVIDED. SETUP XCCONFIG")
@@ -43,7 +43,7 @@ enum BustimeAPI {
         return decoder
     }()
     
-    static func getBusTime(stopId: Int) -> AnyPublisher<Siri.ServiceDelivery, Error> {
+    public static func getBusTime(stopId: Int) -> AnyPublisher<Siri.ServiceDelivery, Error> {
         GetRequest(endpoint: "https://bustime.mta.info/api/siri/stop-monitoring.json")
             .setDecoder(decoder)
             .addParameter(.init(name: "key", value: apiKey))

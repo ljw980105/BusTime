@@ -6,18 +6,18 @@
 //
 import Foundation
 
-struct GTFSRealTime: Codable {
-    let header: Header
-    let entity: [Entity]
+public struct GTFSRealTime: Codable {
+    public let header: Header
+    public let entity: [Entity]
 }
 
-extension GTFSRealTime {
+public extension GTFSRealTime {
     struct Header: Codable {
-        let gtfsRealtimeVersion: String
-        let incrementality: String
-        let timestamp: Int
+        public let gtfsRealtimeVersion: String
+        public let incrementality: String
+        public let timestamp: Int
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case gtfsRealtimeVersion = "gtfs_realtime_version"
             case incrementality = "incrementality"
             case timestamp = "timestamp"
@@ -30,13 +30,13 @@ extension GTFSRealTime {
     }
     
     struct EntityAlert: Codable {
-        let activePeriod: [ActivePeriod]
-        let informedEntity: [InformedEntity]
-        let headerText: HeaderText
-        let descriptionText: DescriptionText?
-        let realtimeMercuryAlert: RealtimeMercuryAlert
+        public let activePeriod: [ActivePeriod]
+        public let informedEntity: [InformedEntity]
+        public let headerText: HeaderText
+        public let descriptionText: DescriptionText?
+        public let realtimeMercuryAlert: RealtimeMercuryAlert
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case activePeriod = "active_period"
             case informedEntity = "informed_entity"
             case headerText = "header_text"
@@ -46,16 +46,16 @@ extension GTFSRealTime {
     }
     
     struct ActivePeriod: Codable {
-        let start: Int
-        let end: Int?
+        public let start: Int
+        public let end: Int?
     }
     
     struct InformedEntity: Codable {
-        let agencyId: String
-        let routeId: String?
-        let sortOrder: SortOrder?
+        public let agencyId: String
+        public let routeId: String?
+        public let sortOrder: SortOrder?
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case agencyId = "agency_id"
             case routeId = "route_id"
             case sortOrder = "transit_realtime.mercury_entity_selector"
@@ -63,20 +63,20 @@ extension GTFSRealTime {
     }
     
     struct SortOrder: Codable {
-        let sortOrder: String
+        public let sortOrder: String
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case sortOrder = "sort_order"
         }
     }
     
     struct HeaderText: Codable {
-        let translation: [Translation]
+        public let translation: [Translation]
     }
     
     struct Translation: Codable {
-        let text: String
-        let language: TranslationLanguage
+        public let text: String
+        public let language: TranslationLanguage
     }
     
     enum TranslationLanguage: String, Codable {
@@ -85,25 +85,25 @@ extension GTFSRealTime {
     }
     
     struct DescriptionText: Codable {
-        let translation: [Translation]
+        public let translation: [Translation]
     }
     
     struct RealtimeMercuryAlert: Codable {
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case createdAt = "created_at"
             case updatedAt = "updated_at"
             case alertType = "alert_type"
             case displayBeforeActive = "display_before_active"
         }
         
-        let createdAt: Int
-        let updatedAt: Int
-        let alertType: String
-        let displayBeforeActive: Int?
+        public let createdAt: Int
+        public let updatedAt: Int
+        public let alertType: String
+        public let displayBeforeActive: Int?
     }
 }
 
-extension GTFSRealTime.ActivePeriod {
+public extension GTFSRealTime.ActivePeriod {
     var startDate: Date {
         Date(timeIntervalSince1970: TimeInterval(start))
     }
@@ -115,13 +115,13 @@ extension GTFSRealTime.ActivePeriod {
 }
 
 
-extension GTFSRealTime.HeaderText {
+public extension GTFSRealTime.HeaderText {
     var firstEnTranslation: String? {
         translation.first(where: { $0.language == .en })?.text
     }
 }
 
-extension GTFSRealTime.DescriptionText {
+public extension GTFSRealTime.DescriptionText {
     var firstEnTranslation: String? {
         translation.first(where: { $0.language == .en })?.text
     }

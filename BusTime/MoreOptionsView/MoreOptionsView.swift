@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Shared
 
 struct MoreOptionsView: View {
     @State private var presentAlert = false
