@@ -20,6 +20,10 @@ struct BusTimeApp: App {
                     .tabItem {
                         Label("Flushing", systemImage: "toilet")
                     }
+                SubwayStatusView(viewModel: .init(subwayRoutes: [.seven]))
+                    .tabItem {
+                        Label("Subway Status", systemImage: "7.circle.fill")
+                    }
                 MoreOptionsView()
                     .tabItem {
                         Label("More", systemImage: "ellipsis")

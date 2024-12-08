@@ -28,6 +28,10 @@
 		948365652C40CE74006FB730 /* ItineraryMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948365642C40CE74006FB730 /* ItineraryMapView.swift */; };
 		948365672C40D0BD006FB730 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948365662C40D0BD006FB730 /* Itinerary.swift */; };
 		94B404122BF84746002006E9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B404112BF84746002006E9 /* Tag.swift */; };
+		94CFD3012CFD46B200E64052 /* GTFSRealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CFD3002CFD46AE00E64052 /* GTFSRealTime.swift */; };
+		94CFD3032CFD4B6300E64052 /* SubwayStatusAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CFD3022CFD4B5E00E64052 /* SubwayStatusAPI.swift */; };
+		94CFD3072CFD4D2E00E64052 /* SubwayStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CFD3062CFD4D2E00E64052 /* SubwayStatusView.swift */; };
+		94CFD3092CFD4D3A00E64052 /* SubwayStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CFD3082CFD4D3A00E64052 /* SubwayStatusViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,10 @@
 		94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configurations.xcconfig; sourceTree = "<group>"; };
 		94AC7DC22AF07F8C0080633B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		94B404112BF84746002006E9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		94CFD3002CFD46AE00E64052 /* GTFSRealTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTFSRealTime.swift; sourceTree = "<group>"; };
+		94CFD3022CFD4B5E00E64052 /* SubwayStatusAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayStatusAPI.swift; sourceTree = "<group>"; };
+		94CFD3062CFD4D2E00E64052 /* SubwayStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayStatusView.swift; sourceTree = "<group>"; };
+		94CFD3082CFD4D3A00E64052 /* SubwayStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayStatusViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 				9408C5EC29A1BFB9005DE2EE /* MoreOptionsView */,
 				9408C5E329A18617005DE2EE /* RouteDetailView */,
 				9408C5DE29A0AD87005DE2EE /* StopMonitoringView */,
+				94CFD3052CFD4D1600E64052 /* SubwayStatusView */,
 				9408C5D929A0A733005DE2EE /* Models */,
 				9408C5D629A0A675005DE2EE /* Networking */,
 				9408C5A929A0A5EA005DE2EE /* BusTimeApp.swift */,
@@ -175,7 +184,8 @@
 		9408C5D929A0A733005DE2EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9408C5DA29A0A741005DE2EE /* BusTimeAPI.swift */,
+				94CFD3042CFD4B6E00E64052 /* Contracts */,
+				94CFD3002CFD46AE00E64052 /* GTFSRealTime.swift */,
 				9408C5DC29A0A863005DE2EE /* ServiceDelivery.swift */,
 				948365662C40D0BD006FB730 /* Itinerary.swift */,
 			);
@@ -219,6 +229,24 @@
 				944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */,
 			);
 			path = ItineraryMap;
+			sourceTree = "<group>";
+		};
+		94CFD3042CFD4B6E00E64052 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				94CFD3022CFD4B5E00E64052 /* SubwayStatusAPI.swift */,
+				9408C5DA29A0A741005DE2EE /* BusTimeAPI.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		94CFD3052CFD4D1600E64052 /* SubwayStatusView */ = {
+			isa = PBXGroup;
+			children = (
+				94CFD3062CFD4D2E00E64052 /* SubwayStatusView.swift */,
+				94CFD3082CFD4D3A00E64052 /* SubwayStatusViewModel.swift */,
+			);
+			path = SubwayStatusView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,10 +388,14 @@
 				9408C5AC29A0A5EA005DE2EE /* ContentView.swift in Sources */,
 				9408C5DD29A0A863005DE2EE /* ServiceDelivery.swift in Sources */,
 				948365672C40D0BD006FB730 /* Itinerary.swift in Sources */,
+				94CFD3032CFD4B6300E64052 /* SubwayStatusAPI.swift in Sources */,
 				9408C5E229A0ADB3005DE2EE /* StopMonitoringViewModel.swift in Sources */,
+				94CFD3012CFD46B200E64052 /* GTFSRealTime.swift in Sources */,
 				948365652C40CE74006FB730 /* ItineraryMapView.swift in Sources */,
+				94CFD3092CFD4D3A00E64052 /* SubwayStatusViewModel.swift in Sources */,
 				944418F72C7E8C9D004EE75D /* ItineraryMapViewModel.swift in Sources */,
 				9408C5AA29A0A5EA005DE2EE /* BusTimeApp.swift in Sources */,
+				94CFD3072CFD4D2E00E64052 /* SubwayStatusView.swift in Sources */,
 				9408C5EE29A1BFD7005DE2EE /* MoreOptionsView.swift in Sources */,
 				9408C5E529A18635005DE2EE /* RouteDetailView.swift in Sources */,
 				940950D42B902EB10097A88D /* AlertDescriptionView.swift in Sources */,
