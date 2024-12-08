@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 71;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,14 @@
 		94CFD3492D05559C00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
 		94CFD3542D05559C00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
 		94CFD3552D05559C00E64052 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94CFD3D22D055F7C00E64052 /* BusTimeAppleWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		94CFD4052D05686B00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
+		94CFD4062D05686B00E64052 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94CFD4102D0607F100E64052 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD40F2D0607F100E64052 /* WidgetKit.framework */; };
+		94CFD4122D0607F100E64052 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD4112D0607F100E64052 /* SwiftUI.framework */; };
+		94CFD41D2D0607F200E64052 /* BusTimeAppleWatchWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		94CFD4252D0617C400E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
+		94CFD4262D0617C400E64052 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +73,34 @@
 			remoteGlobalIDString = 94CFD33E2D05559C00E64052;
 			remoteInfo = Shared;
 		};
+		94CFD3D02D055F7C00E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD3C42D055F7B00E64052;
+			remoteInfo = "BusTimeAppleWatch Watch App";
+		};
+		94CFD4072D05686B00E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD33E2D05559C00E64052;
+			remoteInfo = Shared;
+		};
+		94CFD41B2D0607F200E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD40D2D0607F100E64052;
+			remoteInfo = BusTimeAppleWatchWidgetsExtension;
+		};
+		94CFD4272D0617C400E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD33E2D05559C00E64052;
+			remoteInfo = Shared;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +111,50 @@
 			dstSubfolderSpec = 10;
 			files = (
 				94CFD3552D05559C00E64052 /* Shared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD3D32D055F7C00E64052 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				94CFD3D22D055F7C00E64052 /* BusTimeAppleWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD4092D05686B00E64052 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				94CFD4062D05686B00E64052 /* Shared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD4222D0607F200E64052 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				94CFD41D2D0607F200E64052 /* BusTimeAppleWatchWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD4292D0617C400E64052 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				94CFD4262D0617C400E64052 /* Shared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +186,10 @@
 		94B404112BF84746002006E9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		94CFD33F2D05559C00E64052 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CFD3482D05559C00E64052 /* SharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusTimeAppleWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BusTimeAppleWatchWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		94CFD40F2D0607F100E64052 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		94CFD4112D0607F100E64052 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -116,11 +200,20 @@
 			);
 			target = 94CFD33E2D05559C00E64052 /* Shared */;
 		};
+		94CFD41E2D0607F200E64052 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 94CFD40D2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		94CFD3402D05559C00E64052 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (94CFD3562D05559D00E64052 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 		94CFD34E2D05559C00E64052 /* SharedTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SharedTests; sourceTree = "<group>"; };
+		94CFD3C62D055F7B00E64052 /* BusTimeAppleWatch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "BusTimeAppleWatch Watch App"; sourceTree = "<group>"; };
+		94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (94CFD41E2D0607F200E64052 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = BusTimeAppleWatchWidgets; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +254,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94CFD3C22D055F7B00E64052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94CFD4052D05686B00E64052 /* Shared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD40B2D0607F100E64052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94CFD4122D0607F100E64052 /* SwiftUI.framework in Frameworks */,
+				94CFD4252D0617C400E64052 /* Shared.framework in Frameworks */,
+				94CFD4102D0607F100E64052 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -172,6 +283,9 @@
 				9408C5C329A0A5EC005DE2EE /* BusTimeUITests */,
 				94CFD3402D05559C00E64052 /* Shared */,
 				94CFD34E2D05559C00E64052 /* SharedTests */,
+				94CFD3C62D055F7B00E64052 /* BusTimeAppleWatch Watch App */,
+				94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */,
+				94CFD4042D05686B00E64052 /* Frameworks */,
 				9408C5A729A0A5EA005DE2EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -184,6 +298,8 @@
 				9408C5C029A0A5EC005DE2EE /* BusTimeUITests.xctest */,
 				94CFD33F2D05559C00E64052 /* Shared.framework */,
 				94CFD3482D05559C00E64052 /* SharedTests.xctest */,
+				94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */,
+				94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,6 +384,15 @@
 			path = ItineraryMap;
 			sourceTree = "<group>";
 		};
+		94CFD4042D05686B00E64052 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94CFD40F2D0607F100E64052 /* WidgetKit.framework */,
+				94CFD4112D0607F100E64052 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -289,11 +414,13 @@
 				9408C5A329A0A5EA005DE2EE /* Frameworks */,
 				9408C5A429A0A5EA005DE2EE /* Resources */,
 				94CFD3362D0554AC00E64052 /* Embed Frameworks */,
+				94CFD3D32D055F7C00E64052 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				94CFD3532D05559C00E64052 /* PBXTargetDependency */,
+				94CFD3D12D055F7C00E64052 /* PBXTargetDependency */,
 			);
 			name = BusTime;
 			packageProductDependencies = (
@@ -385,6 +512,56 @@
 			productReference = 94CFD3482D05559C00E64052 /* SharedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		94CFD3C42D055F7B00E64052 /* BusTimeAppleWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94CFD3D62D055F7C00E64052 /* Build configuration list for PBXNativeTarget "BusTimeAppleWatch Watch App" */;
+			buildPhases = (
+				94CFD3C12D055F7B00E64052 /* Sources */,
+				94CFD3C22D055F7B00E64052 /* Frameworks */,
+				94CFD3C32D055F7B00E64052 /* Resources */,
+				94CFD4092D05686B00E64052 /* Embed Frameworks */,
+				94CFD4222D0607F200E64052 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94CFD4082D05686B00E64052 /* PBXTargetDependency */,
+				94CFD41C2D0607F200E64052 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				94CFD3C62D055F7B00E64052 /* BusTimeAppleWatch Watch App */,
+			);
+			name = "BusTimeAppleWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "BusTimeAppleWatch Watch App";
+			productReference = 94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94CFD40D2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94CFD41F2D0607F200E64052 /* Build configuration list for PBXNativeTarget "BusTimeAppleWatchWidgetsExtension" */;
+			buildPhases = (
+				94CFD40A2D0607F100E64052 /* Sources */,
+				94CFD40B2D0607F100E64052 /* Frameworks */,
+				94CFD40C2D0607F100E64052 /* Resources */,
+				94CFD4292D0617C400E64052 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94CFD4282D0617C400E64052 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */,
+			);
+			name = BusTimeAppleWatchWidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = BusTimeAppleWatchWidgetsExtension;
+			productReference = 94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -413,6 +590,12 @@
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 9408C5A529A0A5EA005DE2EE;
 					};
+					94CFD3C42D055F7B00E64052 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					94CFD40D2D0607F100E64052 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 				};
 			};
 			buildConfigurationList = 9408C5A129A0A5EA005DE2EE /* Build configuration list for PBXProject "BusTime" */;
@@ -435,6 +618,8 @@
 				9408C5BF29A0A5EC005DE2EE /* BusTimeUITests */,
 				94CFD33E2D05559C00E64052 /* Shared */,
 				94CFD3472D05559C00E64052 /* SharedTests */,
+				94CFD3C42D055F7B00E64052 /* BusTimeAppleWatch Watch App */,
+				94CFD40D2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -471,6 +656,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		94CFD3462D05559C00E64052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD3C32D055F7B00E64052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD40C2D0607F100E64052 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -530,6 +729,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94CFD3C12D055F7B00E64052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD40A2D0607F100E64052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -557,6 +770,26 @@
 			isa = PBXTargetDependency;
 			target = 94CFD33E2D05559C00E64052 /* Shared */;
 			targetProxy = 94CFD3522D05559C00E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD3D12D055F7C00E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CFD3C42D055F7B00E64052 /* BusTimeAppleWatch Watch App */;
+			targetProxy = 94CFD3D02D055F7C00E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD4082D05686B00E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CFD33E2D05559C00E64052 /* Shared */;
+			targetProxy = 94CFD4072D05686B00E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD41C2D0607F200E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CFD40D2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension */;
+			targetProxy = 94CFD41B2D0607F200E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD4282D0617C400E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CFD33E2D05559C00E64052 /* Shared */;
+			targetProxy = 94CFD4272D0617C400E64052 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -852,12 +1085,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2,4,7";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				XROS_DEPLOYMENT_TARGET = 2.0;
@@ -901,11 +1135,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2,4,7";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				XROS_DEPLOYMENT_TARGET = 2.0;
@@ -967,6 +1202,152 @@
 			};
 			name = Release;
 		};
+		94CFD3D42D055F7C00E64052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */;
+			baseConfigurationReferenceRelativePath = Configurations.xcconfig;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BusTimeAppleWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BusTimeAppleWatch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = BusTimeAppleWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jingweili.BusTime;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Debug;
+		};
+		94CFD3D52D055F7C00E64052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */;
+			baseConfigurationReferenceRelativePath = Configurations.xcconfig;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BusTimeAppleWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BusTimeAppleWatch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = BusTimeAppleWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jingweili.BusTime;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Release;
+		};
+		94CFD4202D0607F200E64052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTimeAppleWatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BusTimeAppleWatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.watchkitapp.BusTimeAppleWatchWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Debug;
+		};
+		94CFD4212D0607F200E64052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTimeAppleWatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BusTimeAppleWatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.watchkitapp.BusTimeAppleWatchWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1020,6 +1401,24 @@
 			buildConfigurations = (
 				94CFD35B2D05559D00E64052 /* Debug */,
 				94CFD35C2D05559D00E64052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94CFD3D62D055F7C00E64052 /* Build configuration list for PBXNativeTarget "BusTimeAppleWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94CFD3D42D055F7C00E64052 /* Debug */,
+				94CFD3D52D055F7C00E64052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94CFD41F2D0607F200E64052 /* Build configuration list for PBXNativeTarget "BusTimeAppleWatchWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94CFD4202D0607F200E64052 /* Debug */,
+				94CFD4212D0607F200E64052 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

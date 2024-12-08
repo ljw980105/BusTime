@@ -10,6 +10,8 @@ import Foundation
 
 public enum BustimeAPI {
     
+    private static let busTimeEndpoint =  "https://bustime.mta.info/api/siri/stop-monitoring.json"
+    
     private enum Keys: String {
         case APIKEY = "API_KEY"
     }
@@ -43,16 +45,34 @@ public enum BustimeAPI {
         return decoder
     }()
     
-    public static func getBusTime(stopId: Int) -> AnyPublisher<Siri.ServiceDelivery, Error> {
-        GetRequest(endpoint: "https://bustime.mta.info/api/siri/stop-monitoring.json")
+    public static func getBusTime(
+        stopId: Int,
+        maximumStopVisits: Int = 8
+    ) -> AnyPublisher<Siri.ServiceDelivery, Error> {
+        GetRequest(endpoint: busTimeEndpoint)
             .setDecoder(decoder)
             .addParameter(.init(name: "key", value: apiKey))
             .addParameter(.init(name: "version", value: "2"))
             .addParameter(.init(name: "MonitoringRef", value: String(stopId)))
             .addParameter(.init(name: "StopMonitoringDetailLevel", value: "basic"))
-            .addParameter(.init(name: "MaximumStopVisits", value: "8"))
+            .addParameter(.init(name: "MaximumStopVisits", value: "\(maximumStopVisits)"))
             .get(resultType: SiriObject.self)
             .map(\.Siri.ServiceDelivery)
             .eraseToAnyPublisher()
+    }
+    
+    public static func getBusTimeAsync(
+        stopId: Int,
+        maximumStopVisits: Int = 8
+    ) async throws -> Siri.ServiceDelivery {
+        try await GetRequest(endpoint: busTimeEndpoint)
+            .setDecoder(decoder)
+            .addParameter(.init(name: "key", value: apiKey))
+            .addParameter(.init(name: "version", value: "2"))
+            .addParameter(.init(name: "MonitoringRef", value: String(stopId)))
+            .addParameter(.init(name: "StopMonitoringDetailLevel", value: "basic"))
+            .addParameter(.init(name: "MaximumStopVisits", value: "\(maximumStopVisits)"))
+            .get(resultType: SiriObject.self)
+            .Siri.ServiceDelivery
     }
 }

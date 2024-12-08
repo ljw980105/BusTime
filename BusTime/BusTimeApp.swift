@@ -6,19 +6,20 @@
 //
 
 import SwiftUI
+import Shared
 
 @main
 struct BusTimeApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                StopMonitoringView(viewModel: .init(stopId: 502434, title: "Whitestone", showStopName: false))
+                StopMonitoringView(viewModel: .init(busStop: .whitestone, showStopName: false))
                     .tabItem {
-                        Label("Whitestone", systemImage: "mountain.2")
+                        Label(BusStop.whitestone.title, systemImage: "mountain.2")
                     }
-                StopMonitoringView(viewModel: .init(stopId: 502185, title: "Flushing", showStopName: false))
+                StopMonitoringView(viewModel: .init(busStop: .flushing, showStopName: false))
                     .tabItem {
-                        Label("Flushing", systemImage: "toilet")
+                        Label(BusStop.flushing.title, systemImage: "toilet")
                     }
                 MoreOptionsView()
                     .tabItem {

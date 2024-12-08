@@ -42,8 +42,7 @@ struct MoreOptionsView: View {
                     })
                     .navigationDestination(isPresented: $popVc) {
                         StopMonitoringView(viewModel: .init(
-                            stopId: Int(stopId) ?? 0,
-                            title: stopId,
+                            busStop: .custom(stopId: Int(stopId) ?? 0, title: nil),
                             showStopName: true,
                             hideNavigationView: true
                         ))
@@ -51,7 +50,12 @@ struct MoreOptionsView: View {
                 }
                 Section("Other Stops") {
                     ForEach(additionalStops) { stop in
-                        NavigationLink(destination: StopMonitoringView(viewModel: stop)) {
+                        let viewModel = StopMonitoringViewModel(
+                            busStop: stop,
+                            showStopName: false,
+                            hideNavigationView: true
+                        )
+                        NavigationLink(destination: StopMonitoringView(viewModel: viewModel)) {
                             Text(stop.title)
                         }
                     }
@@ -72,26 +76,11 @@ struct MoreOptionsView: View {
         }
     }
     
-    var additionalStops: [StopMonitoringViewModel] {
+    var additionalStops: [BusStop] {
         [
-            .init(
-                stopId: 502184,
-                title: "Main St / Queens Library",
-                showStopName: false,
-                hideNavigationView: true
-            ),
-            .init(
-                stopId: 505059,
-                title: "Cross Island Pkwy / 150th St",
-                showStopName: false,
-                hideNavigationView: true
-            ),
-            .init(
-                stopId: 501660,
-                title: "Alley Pond Park",
-                showStopName: false,
-                hideNavigationView: true
-            )
+            .mainStQueensLibrary,
+            .crossIslandPkwy150St,
+            .alleyPondPark
         ]
     }
 }
