@@ -37,7 +37,7 @@ struct Provider: AppIntentTimelineProvider {
             let entryResult = try await getEntryResult()
             entries.append(entryResult)
         } catch {
-            return Timeline(entries: entries, policy: .atEnd)
+            entries.append(.init(date: .distantFuture, firstDataSet: .errorStub, secondDataSet: .errorStub))
         }
 
         return Timeline(entries: entries, policy: .atEnd)
@@ -96,19 +96,35 @@ struct SimpleEntry: TimelineEntry {
                 arrivalTime: ["20 seconds", "1 min"].randomElement() ?? ""
             )
         }
+        
+        static var errorStub: DataSet {
+            .init(
+                location: "Error",
+                busName: "Error",
+                arrivalTime: "Error"
+            )
+        }
     }
 
     let title: String
-    var date: Date
+    let date: Date
     let firstDataSet: DataSet
     let secondDataSet: DataSet
+    let dateString: String
     
     init(title: String = "Arrival Times", date: Date, firstDataSet: DataSet, secondDataSet: DataSet) {
         self.title = title
         self.date = date
         self.firstDataSet = firstDataSet
         self.secondDataSet = secondDataSet
+        self.dateString = Self.dateFormatter.string(from: date)
     }
+    
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, h:mm"
+        return formatter
+    }()
 }
 
 struct BustimeTimeToArrivalView : View {
@@ -116,8 +132,14 @@ struct BustimeTimeToArrivalView : View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(entry.title)
-                .font(.subheadline)
+            HStack {
+                Image(systemName: "bus.fill")
+                    .resizable()
+                    .frame(width: 14, height: 14)
+                Text(entry.title)
+                    .font(.callout)
+                    .bold()
+            }
             HStack(alignment: .top) {
                 Text(entry.firstDataSet.location)
                     .font(.caption)
@@ -136,6 +158,9 @@ struct BustimeTimeToArrivalView : View {
                 Text(entry.secondDataSet.arrivalTime)
                     .font(.caption)
             }
+            Text("Last updated: \(entry.dateString)")
+                .font(.caption)
+                .foregroundStyle(.gray)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

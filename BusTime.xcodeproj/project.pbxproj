@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 71;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,8 +33,8 @@
 		94CFD4102D0607F100E64052 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD40F2D0607F100E64052 /* WidgetKit.framework */; };
 		94CFD4122D0607F100E64052 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD4112D0607F100E64052 /* SwiftUI.framework */; };
 		94CFD41D2D0607F200E64052 /* BusTimeAppleWatchWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		94CFD4252D0617C400E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
-		94CFD4262D0617C400E64052 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94CFD4252D0617C400E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; platformFilters = (ios, watchos, ); };
+		94CFD4262D0617C400E64052 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; platformFilters = (ios, watchos, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -788,6 +788,10 @@
 		};
 		94CFD4282D0617C400E64052 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				watchos,
+			);
 			target = 94CFD33E2D05559C00E64052 /* Shared */;
 			targetProxy = 94CFD4272D0617C400E64052 /* PBXContainerItemProxy */;
 		};
@@ -1050,6 +1054,7 @@
 		};
 		94CFD3582D05559D00E64052 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1100,6 +1105,7 @@
 		};
 		94CFD3592D05559D00E64052 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1204,8 +1210,7 @@
 		};
 		94CFD3D42D055F7C00E64052 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */;
-			baseConfigurationReferenceRelativePath = Configurations.xcconfig;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1242,8 +1247,7 @@
 		};
 		94CFD3D52D055F7C00E64052 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */;
-			baseConfigurationReferenceRelativePath = Configurations.xcconfig;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1305,6 +1309,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1341,6 +1347,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
