@@ -73,7 +73,7 @@ struct Provider: AppIntentTimelineProvider {
 
     func recommendations() -> [AppIntentRecommendation<ConfigurationAppIntent>] {
         // Create an array with all the preconfigured widgets to show.
-        [AppIntentRecommendation(intent: ConfigurationAppIntent(), description: "Example Widget")]
+        [AppIntentRecommendation(intent: ConfigurationAppIntent(), description: "Bus Arrival Times")]
     }
 }
 
@@ -91,7 +91,7 @@ struct SimpleEntry: TimelineEntry {
         
         static var stub: DataSet {
             .init(
-                location: "Whitestone",
+                location: ["WHITESTONE", "FLUSHING"].randomElement() ?? "",
                 busName: "Q44-SBS",
                 arrivalTime: ["20 seconds", "1 min"].randomElement() ?? ""
             )
@@ -122,7 +122,7 @@ struct SimpleEntry: TimelineEntry {
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, h:mm"
+        formatter.dateFormat = "h:mm"
         return formatter
     }()
 }
@@ -131,7 +131,7 @@ struct BustimeTimeToArrivalView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack {
             HStack {
                 Image(systemName: "bus.fill")
                     .resizable()
@@ -139,30 +139,44 @@ struct BustimeTimeToArrivalView : View {
                 Text(entry.title)
                     .font(.callout)
                     .bold()
+                    .fixedSize(horizontal: true, vertical: false)
+                Text(entry.dateString)
+                    .font(.callout)
+                    .bold()
+                    .foregroundStyle(.gray)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            HStack(alignment: .top) {
-                Text(entry.firstDataSet.location)
-                    .font(.caption)
-                Text(entry.firstDataSet.busName)
-                    .font(.caption)
-                    .foregroundStyle(Color.blue)
-                Text(entry.firstDataSet.arrivalTime)
-                    .font(.caption)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(entry.firstDataSet.location)
+                        .customFont()
+                    Text(entry.firstDataSet.busName)
+                        .customFont()
+                        .foregroundStyle(Color.blue)
+                    Text(entry.firstDataSet.arrivalTime)
+                        .customFont()
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                Divider()
+                VStack(alignment: .trailing) {
+                    Text(entry.secondDataSet.location)
+                        .customFont()
+                    Text(entry.secondDataSet.busName)
+                        .customFont()
+                        .foregroundStyle(Color.blue)
+                    Text(entry.secondDataSet.arrivalTime)
+                        .customFont()
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            HStack(alignment: .top) {
-                Text(entry.secondDataSet.location)
-                    .font(.caption)
-                Text(entry.secondDataSet.busName)
-                    .font(.caption)
-                    .foregroundStyle(Color.blue)
-                Text(entry.secondDataSet.arrivalTime)
-                    .font(.caption)
-            }
-            Text("Last updated: \(entry.dateString)")
-                .font(.caption)
-                .foregroundStyle(.gray)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+fileprivate extension View {
+    func customFont() -> some View {
+        font(.system(size: 12, weight: .medium))
     }
 }
 
@@ -180,20 +194,6 @@ struct BusTimeAppleWatchWidgets: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .supportedFamilies(supportedFamilies)
-    }
-}
-
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
     }
 }
 
