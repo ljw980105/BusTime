@@ -46,6 +46,23 @@ public enum BusStop {
             title ?? String(stopId)
         }
     }
+    
+    public var shortTitle: String {
+        switch self {
+        case .whitestone:
+            "WHI"
+        case .flushing:
+            "FLU"
+        case .mainStQueensLibrary:
+            "LIB"
+        case .crossIslandPkwy150St:
+            "CRO"
+        case .alleyPondPark:
+            "ALY"
+        default:
+            "--"
+        }
+    }
 }
 
 extension BusStop: Identifiable {

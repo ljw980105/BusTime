@@ -234,24 +234,24 @@ public extension Siri {
 // MARK: Helpers
 
 public extension Siri.MonitoredCall {
-    var timeToArrival: String {
+    func timeToArrival(isMinimal: Bool = false) -> String {
         var arrivalTime: Date? = aimedArrivalTime
         if let expectedArrivalTime, expectedArrivalTime >= Date() {
             arrivalTime = expectedArrivalTime
         }
         guard let arrivalTime else {
-            return "Unknown"
+            return isMinimal ? "--" : "Unknown"
         }
         let dateDiff = arrivalTime.timeIntervalSince(Date())
         let minutes = Int(dateDiff / 60)
         let seconds = Int(dateDiff) % 60
         if minutes > 0 {
-            return "\(minutes) minute(s)"
+            return isMinimal ? "\(minutes)M" : "\(minutes) minute(s)"
         }
         if seconds <= 0 {
             return "Now"
         }
-        return "\(seconds) second(s)"
+        return isMinimal ? "\(seconds)S" : "\(seconds) second(s)"
     }
 }
 
