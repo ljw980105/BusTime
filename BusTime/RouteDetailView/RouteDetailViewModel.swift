@@ -9,6 +9,7 @@ import Foundation
 import MapKit
 import SwiftUI
 import UIKit
+import Shared
 
 class RouteDetailViewModel: ObservableObject {
     let vehicleJourney: Siri.MonitoredVehicleJourney
@@ -80,6 +81,10 @@ class RouteDetailViewModel: ObservableObject {
         let placemark = MKPlacemark(coordinate: mapRegion.center, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.openInMaps(launchOptions: options)
+    }
+    
+    var mapCameraPosition: MapCameraPosition {
+        .region(mapRegion)
     }
 }
 
