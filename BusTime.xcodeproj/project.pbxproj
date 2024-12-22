@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,6 @@
 		9408C5BB29A0A5EC005DE2EE /* BusTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5BA29A0A5EC005DE2EE /* BusTimeTests.swift */; };
 		9408C5C529A0A5EC005DE2EE /* BusTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5C429A0A5EC005DE2EE /* BusTimeUITests.swift */; };
 		9408C5C729A0A5EC005DE2EE /* BusTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5C629A0A5EC005DE2EE /* BusTimeUITestsLaunchTests.swift */; };
-		9408C5D829A0A68D005DE2EE /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5D729A0A68D005DE2EE /* GetRequest.swift */; };
-		9408C5DB29A0A741005DE2EE /* BusTimeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5DA29A0A741005DE2EE /* BusTimeAPI.swift */; };
-		9408C5DD29A0A863005DE2EE /* ServiceDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5DC29A0A863005DE2EE /* ServiceDelivery.swift */; };
 		9408C5E029A0ADA2005DE2EE /* StopMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5DF29A0ADA2005DE2EE /* StopMonitoringView.swift */; };
 		9408C5E229A0ADB3005DE2EE /* StopMonitoringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5E129A0ADB3005DE2EE /* StopMonitoringViewModel.swift */; };
 		9408C5E529A18635005DE2EE /* RouteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5E429A18635005DE2EE /* RouteDetailView.swift */; };
@@ -25,13 +22,21 @@
 		9408C5EE29A1BFD7005DE2EE /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408C5ED29A1BFD7005DE2EE /* MoreOptionsView.swift */; };
 		940950D42B902EB10097A88D /* AlertDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940950D32B902EB10097A88D /* AlertDescriptionView.swift */; };
 		944418F72C7E8C9D004EE75D /* ItineraryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */; };
+		9460B9E92D17BD3A00AA8C42 /* SubwayStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460B9E62D17BD3A00AA8C42 /* SubwayStatusView.swift */; };
+		9460B9EA2D17BD3A00AA8C42 /* SubwayStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460B9E72D17BD3A00AA8C42 /* SubwayStatusViewModel.swift */; };
 		948365652C40CE74006FB730 /* ItineraryMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948365642C40CE74006FB730 /* ItineraryMapView.swift */; };
-		948365672C40D0BD006FB730 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948365662C40D0BD006FB730 /* Itinerary.swift */; };
 		94B404122BF84746002006E9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B404112BF84746002006E9 /* Tag.swift */; };
-		94CFD3012CFD46B200E64052 /* GTFSRealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CFD3002CFD46AE00E64052 /* GTFSRealTime.swift */; };
-		94CFD3032CFD4B6300E64052 /* SubwayStatusAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CFD3022CFD4B5E00E64052 /* SubwayStatusAPI.swift */; };
-		94CFD3072CFD4D2E00E64052 /* SubwayStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CFD3062CFD4D2E00E64052 /* SubwayStatusView.swift */; };
-		94CFD3092CFD4D3A00E64052 /* SubwayStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CFD3082CFD4D3A00E64052 /* SubwayStatusViewModel.swift */; };
+		94CFD3492D05559C00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
+		94CFD3542D05559C00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
+		94CFD3552D05559C00E64052 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94CFD3D22D055F7C00E64052 /* BusTimeAppleWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		94CFD4052D05686B00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
+		94CFD4062D05686B00E64052 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94CFD4102D0607F100E64052 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD40F2D0607F100E64052 /* WidgetKit.framework */; };
+		94CFD4122D0607F100E64052 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD4112D0607F100E64052 /* SwiftUI.framework */; };
+		94CFD41D2D0607F200E64052 /* BusTimeAppleWatchWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		94CFD4252D0617C400E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; platformFilters = (ios, watchos, ); };
+		94CFD4262D0617C400E64052 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; platformFilters = (ios, watchos, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +54,114 @@
 			remoteGlobalIDString = 9408C5A529A0A5EA005DE2EE;
 			remoteInfo = BusTime;
 		};
+		94CFD34A2D05559C00E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD33E2D05559C00E64052;
+			remoteInfo = Shared;
+		};
+		94CFD34C2D05559C00E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9408C5A529A0A5EA005DE2EE;
+			remoteInfo = BusTime;
+		};
+		94CFD3522D05559C00E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD33E2D05559C00E64052;
+			remoteInfo = Shared;
+		};
+		94CFD3D02D055F7C00E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD3C42D055F7B00E64052;
+			remoteInfo = "BusTimeAppleWatch Watch App";
+		};
+		94CFD4072D05686B00E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD33E2D05559C00E64052;
+			remoteInfo = Shared;
+		};
+		94CFD41B2D0607F200E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD40D2D0607F100E64052;
+			remoteInfo = BusTimeAppleWatchWidgetsExtension;
+		};
+		94CFD4272D0617C400E64052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CFD33E2D05559C00E64052;
+			remoteInfo = Shared;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		94CFD3362D0554AC00E64052 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				94CFD3552D05559C00E64052 /* Shared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD3D32D055F7C00E64052 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				94CFD3D22D055F7C00E64052 /* BusTimeAppleWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD4092D05686B00E64052 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				94CFD4062D05686B00E64052 /* Shared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD4222D0607F200E64052 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				94CFD41D2D0607F200E64052 /* BusTimeAppleWatchWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD4292D0617C400E64052 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				94CFD4262D0617C400E64052 /* Shared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9408C5A629A0A5EA005DE2EE /* BusTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,9 +174,6 @@
 		9408C5C029A0A5EC005DE2EE /* BusTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9408C5C429A0A5EC005DE2EE /* BusTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeUITests.swift; sourceTree = "<group>"; };
 		9408C5C629A0A5EC005DE2EE /* BusTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9408C5D729A0A68D005DE2EE /* GetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequest.swift; sourceTree = "<group>"; };
-		9408C5DA29A0A741005DE2EE /* BusTimeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeAPI.swift; sourceTree = "<group>"; };
-		9408C5DC29A0A863005DE2EE /* ServiceDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDelivery.swift; sourceTree = "<group>"; };
 		9408C5DF29A0ADA2005DE2EE /* StopMonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopMonitoringView.swift; sourceTree = "<group>"; };
 		9408C5E129A0ADB3005DE2EE /* StopMonitoringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopMonitoringViewModel.swift; sourceTree = "<group>"; };
 		9408C5E429A18635005DE2EE /* RouteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailView.swift; sourceTree = "<group>"; };
@@ -73,22 +182,43 @@
 		9408C5ED29A1BFD7005DE2EE /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsView.swift; sourceTree = "<group>"; };
 		940950D32B902EB10097A88D /* AlertDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDescriptionView.swift; sourceTree = "<group>"; };
 		944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapViewModel.swift; sourceTree = "<group>"; };
+		9460B9E62D17BD3A00AA8C42 /* SubwayStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayStatusView.swift; sourceTree = "<group>"; };
+		9460B9E72D17BD3A00AA8C42 /* SubwayStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayStatusViewModel.swift; sourceTree = "<group>"; };
 		948365642C40CE74006FB730 /* ItineraryMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapView.swift; sourceTree = "<group>"; };
-		948365662C40D0BD006FB730 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configurations.xcconfig; sourceTree = "<group>"; };
 		94AC7DC22AF07F8C0080633B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		94B404112BF84746002006E9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		94CFD3002CFD46AE00E64052 /* GTFSRealTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTFSRealTime.swift; sourceTree = "<group>"; };
-		94CFD3022CFD4B5E00E64052 /* SubwayStatusAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayStatusAPI.swift; sourceTree = "<group>"; };
-		94CFD3062CFD4D2E00E64052 /* SubwayStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayStatusView.swift; sourceTree = "<group>"; };
-		94CFD3082CFD4D3A00E64052 /* SubwayStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayStatusViewModel.swift; sourceTree = "<group>"; };
+		94CFD33F2D05559C00E64052 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94CFD3482D05559C00E64052 /* SharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusTimeAppleWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BusTimeAppleWatchWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		94CFD40F2D0607F100E64052 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		94CFD4112D0607F100E64052 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9460B9EB2D17BED000AA8C42 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 94CFD40D2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		94CFD3402D05559C00E64052 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
+		94CFD34E2D05559C00E64052 /* SharedTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SharedTests; sourceTree = "<group>"; };
+		94CFD3C62D055F7B00E64052 /* BusTimeAppleWatch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "BusTimeAppleWatch Watch App"; sourceTree = "<group>"; };
+		94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9460B9EB2D17BED000AA8C42 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = BusTimeAppleWatchWidgets; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9408C5A329A0A5EA005DE2EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CFD3542D05559C00E64052 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +236,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94CFD33C2D05559C00E64052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD3452D05559C00E64052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94CFD3492D05559C00E64052 /* Shared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD3C22D055F7B00E64052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94CFD4052D05686B00E64052 /* Shared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD40B2D0607F100E64052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94CFD4122D0607F100E64052 /* SwiftUI.framework in Frameworks */,
+				94CFD4252D0617C400E64052 /* Shared.framework in Frameworks */,
+				94CFD4102D0607F100E64052 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,6 +278,11 @@
 				9408C5A829A0A5EA005DE2EE /* BusTime */,
 				9408C5B929A0A5EC005DE2EE /* BusTimeTests */,
 				9408C5C329A0A5EC005DE2EE /* BusTimeUITests */,
+				94CFD3402D05559C00E64052 /* Shared */,
+				94CFD34E2D05559C00E64052 /* SharedTests */,
+				94CFD3C62D055F7B00E64052 /* BusTimeAppleWatch Watch App */,
+				94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */,
+				94CFD4042D05686B00E64052 /* Frameworks */,
 				9408C5A729A0A5EA005DE2EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +293,10 @@
 				9408C5A629A0A5EA005DE2EE /* BusTime.app */,
 				9408C5B629A0A5EC005DE2EE /* BusTimeTests.xctest */,
 				9408C5C029A0A5EC005DE2EE /* BusTimeUITests.xctest */,
+				94CFD33F2D05559C00E64052 /* Shared.framework */,
+				94CFD3482D05559C00E64052 /* SharedTests.xctest */,
+				94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */,
+				94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,13 +304,11 @@
 		9408C5A829A0A5EA005DE2EE /* BusTime */ = {
 			isa = PBXGroup;
 			children = (
+				9460B9E82D17BD3A00AA8C42 /* SubwayStatusView */,
 				94AC7DC22AF07F8C0080633B /* Info.plist */,
 				9408C5EC29A1BFB9005DE2EE /* MoreOptionsView */,
 				9408C5E329A18617005DE2EE /* RouteDetailView */,
 				9408C5DE29A0AD87005DE2EE /* StopMonitoringView */,
-				94CFD3052CFD4D1600E64052 /* SubwayStatusView */,
-				9408C5D929A0A733005DE2EE /* Models */,
-				9408C5D629A0A675005DE2EE /* Networking */,
 				9408C5A929A0A5EA005DE2EE /* BusTimeApp.swift */,
 				9408C5AB29A0A5EA005DE2EE /* ContentView.swift */,
 				9408C5AD29A0A5EB005DE2EE /* Assets.xcassets */,
@@ -173,25 +343,6 @@
 			path = BusTimeUITests;
 			sourceTree = "<group>";
 		};
-		9408C5D629A0A675005DE2EE /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				9408C5D729A0A68D005DE2EE /* GetRequest.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		9408C5D929A0A733005DE2EE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				94CFD3042CFD4B6E00E64052 /* Contracts */,
-				94CFD3002CFD46AE00E64052 /* GTFSRealTime.swift */,
-				9408C5DC29A0A863005DE2EE /* ServiceDelivery.swift */,
-				948365662C40D0BD006FB730 /* Itinerary.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		9408C5DE29A0AD87005DE2EE /* StopMonitoringView */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +373,15 @@
 			path = MoreOptionsView;
 			sourceTree = "<group>";
 		};
+		9460B9E82D17BD3A00AA8C42 /* SubwayStatusView */ = {
+			isa = PBXGroup;
+			children = (
+				9460B9E62D17BD3A00AA8C42 /* SubwayStatusView.swift */,
+				9460B9E72D17BD3A00AA8C42 /* SubwayStatusViewModel.swift */,
+			);
+			path = SubwayStatusView;
+			sourceTree = "<group>";
+		};
 		948365632C40CE66006FB730 /* ItineraryMap */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,25 +391,26 @@
 			path = ItineraryMap;
 			sourceTree = "<group>";
 		};
-		94CFD3042CFD4B6E00E64052 /* Contracts */ = {
+		94CFD4042D05686B00E64052 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94CFD3022CFD4B5E00E64052 /* SubwayStatusAPI.swift */,
-				9408C5DA29A0A741005DE2EE /* BusTimeAPI.swift */,
+				94CFD40F2D0607F100E64052 /* WidgetKit.framework */,
+				94CFD4112D0607F100E64052 /* SwiftUI.framework */,
 			);
-			path = Contracts;
-			sourceTree = "<group>";
-		};
-		94CFD3052CFD4D1600E64052 /* SubwayStatusView */ = {
-			isa = PBXGroup;
-			children = (
-				94CFD3062CFD4D2E00E64052 /* SubwayStatusView.swift */,
-				94CFD3082CFD4D3A00E64052 /* SubwayStatusViewModel.swift */,
-			);
-			path = SubwayStatusView;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		94CFD33A2D05559C00E64052 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		9408C5A529A0A5EA005DE2EE /* BusTime */ = {
@@ -259,10 +420,14 @@
 				9408C5A229A0A5EA005DE2EE /* Sources */,
 				9408C5A329A0A5EA005DE2EE /* Frameworks */,
 				9408C5A429A0A5EA005DE2EE /* Resources */,
+				94CFD3362D0554AC00E64052 /* Embed Frameworks */,
+				94CFD3D32D055F7C00E64052 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				94CFD3532D05559C00E64052 /* PBXTargetDependency */,
+				94CFD3D12D055F7C00E64052 /* PBXTargetDependency */,
 			);
 			name = BusTime;
 			packageProductDependencies = (
@@ -307,6 +472,103 @@
 			productReference = 9408C5C029A0A5EC005DE2EE /* BusTimeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		94CFD33E2D05559C00E64052 /* Shared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94CFD3572D05559D00E64052 /* Build configuration list for PBXNativeTarget "Shared" */;
+			buildPhases = (
+				94CFD33A2D05559C00E64052 /* Headers */,
+				94CFD33B2D05559C00E64052 /* Sources */,
+				94CFD33C2D05559C00E64052 /* Frameworks */,
+				94CFD33D2D05559C00E64052 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				94CFD3402D05559C00E64052 /* Shared */,
+			);
+			name = Shared;
+			packageProductDependencies = (
+			);
+			productName = Shared;
+			productReference = 94CFD33F2D05559C00E64052 /* Shared.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		94CFD3472D05559C00E64052 /* SharedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94CFD35A2D05559D00E64052 /* Build configuration list for PBXNativeTarget "SharedTests" */;
+			buildPhases = (
+				94CFD3442D05559C00E64052 /* Sources */,
+				94CFD3452D05559C00E64052 /* Frameworks */,
+				94CFD3462D05559C00E64052 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94CFD34B2D05559C00E64052 /* PBXTargetDependency */,
+				94CFD34D2D05559C00E64052 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				94CFD34E2D05559C00E64052 /* SharedTests */,
+			);
+			name = SharedTests;
+			packageProductDependencies = (
+			);
+			productName = SharedTests;
+			productReference = 94CFD3482D05559C00E64052 /* SharedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		94CFD3C42D055F7B00E64052 /* BusTimeAppleWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94CFD3D62D055F7C00E64052 /* Build configuration list for PBXNativeTarget "BusTimeAppleWatch Watch App" */;
+			buildPhases = (
+				94CFD3C12D055F7B00E64052 /* Sources */,
+				94CFD3C22D055F7B00E64052 /* Frameworks */,
+				94CFD3C32D055F7B00E64052 /* Resources */,
+				94CFD4092D05686B00E64052 /* Embed Frameworks */,
+				94CFD4222D0607F200E64052 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94CFD4082D05686B00E64052 /* PBXTargetDependency */,
+				94CFD41C2D0607F200E64052 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				94CFD3C62D055F7B00E64052 /* BusTimeAppleWatch Watch App */,
+			);
+			name = "BusTimeAppleWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "BusTimeAppleWatch Watch App";
+			productReference = 94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94CFD40D2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94CFD41F2D0607F200E64052 /* Build configuration list for PBXNativeTarget "BusTimeAppleWatchWidgetsExtension" */;
+			buildPhases = (
+				94CFD40A2D0607F100E64052 /* Sources */,
+				94CFD40B2D0607F100E64052 /* Frameworks */,
+				94CFD40C2D0607F100E64052 /* Resources */,
+				94CFD4292D0617C400E64052 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94CFD4282D0617C400E64052 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */,
+			);
+			name = BusTimeAppleWatchWidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = BusTimeAppleWatchWidgetsExtension;
+			productReference = 94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -314,7 +576,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					9408C5A529A0A5EA005DE2EE = {
@@ -327,6 +589,19 @@
 					9408C5BF29A0A5EC005DE2EE = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 9408C5A529A0A5EA005DE2EE;
+					};
+					94CFD33E2D05559C00E64052 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					94CFD3472D05559C00E64052 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 9408C5A529A0A5EA005DE2EE;
+					};
+					94CFD3C42D055F7B00E64052 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					94CFD40D2D0607F100E64052 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -348,6 +623,10 @@
 				9408C5A529A0A5EA005DE2EE /* BusTime */,
 				9408C5B529A0A5EC005DE2EE /* BusTimeTests */,
 				9408C5BF29A0A5EC005DE2EE /* BusTimeUITests */,
+				94CFD33E2D05559C00E64052 /* Shared */,
+				94CFD3472D05559C00E64052 /* SharedTests */,
+				94CFD3C42D055F7B00E64052 /* BusTimeAppleWatch Watch App */,
+				94CFD40D2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -376,6 +655,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94CFD33D2D05559C00E64052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD3462D05559C00E64052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD3C32D055F7B00E64052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD40C2D0607F100E64052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -384,23 +691,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9408C5E029A0ADA2005DE2EE /* StopMonitoringView.swift in Sources */,
+				9460B9E92D17BD3A00AA8C42 /* SubwayStatusView.swift in Sources */,
+				9460B9EA2D17BD3A00AA8C42 /* SubwayStatusViewModel.swift in Sources */,
 				9408C5E729A18728005DE2EE /* RouteDetailViewModel.swift in Sources */,
 				9408C5AC29A0A5EA005DE2EE /* ContentView.swift in Sources */,
-				9408C5DD29A0A863005DE2EE /* ServiceDelivery.swift in Sources */,
-				948365672C40D0BD006FB730 /* Itinerary.swift in Sources */,
-				94CFD3032CFD4B6300E64052 /* SubwayStatusAPI.swift in Sources */,
 				9408C5E229A0ADB3005DE2EE /* StopMonitoringViewModel.swift in Sources */,
-				94CFD3012CFD46B200E64052 /* GTFSRealTime.swift in Sources */,
 				948365652C40CE74006FB730 /* ItineraryMapView.swift in Sources */,
-				94CFD3092CFD4D3A00E64052 /* SubwayStatusViewModel.swift in Sources */,
 				944418F72C7E8C9D004EE75D /* ItineraryMapViewModel.swift in Sources */,
 				9408C5AA29A0A5EA005DE2EE /* BusTimeApp.swift in Sources */,
-				94CFD3072CFD4D2E00E64052 /* SubwayStatusView.swift in Sources */,
 				9408C5EE29A1BFD7005DE2EE /* MoreOptionsView.swift in Sources */,
 				9408C5E529A18635005DE2EE /* RouteDetailView.swift in Sources */,
 				940950D42B902EB10097A88D /* AlertDescriptionView.swift in Sources */,
-				9408C5DB29A0A741005DE2EE /* BusTimeAPI.swift in Sources */,
-				9408C5D829A0A68D005DE2EE /* GetRequest.swift in Sources */,
 				9408C5EB29A1892A005DE2EE /* KeyValueCell.swift in Sources */,
 				94B404122BF84746002006E9 /* Tag.swift in Sources */,
 			);
@@ -423,6 +724,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94CFD33B2D05559C00E64052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD3442D05559C00E64052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD3C12D055F7B00E64052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94CFD40A2D0607F100E64052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -435,6 +764,45 @@
 			isa = PBXTargetDependency;
 			target = 9408C5A529A0A5EA005DE2EE /* BusTime */;
 			targetProxy = 9408C5C129A0A5EC005DE2EE /* PBXContainerItemProxy */;
+		};
+		94CFD34B2D05559C00E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CFD33E2D05559C00E64052 /* Shared */;
+			targetProxy = 94CFD34A2D05559C00E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD34D2D05559C00E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9408C5A529A0A5EA005DE2EE /* BusTime */;
+			targetProxy = 94CFD34C2D05559C00E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD3532D05559C00E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CFD33E2D05559C00E64052 /* Shared */;
+			targetProxy = 94CFD3522D05559C00E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD3D12D055F7C00E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CFD3C42D055F7B00E64052 /* BusTimeAppleWatch Watch App */;
+			targetProxy = 94CFD3D02D055F7C00E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD4082D05686B00E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CFD33E2D05559C00E64052 /* Shared */;
+			targetProxy = 94CFD4072D05686B00E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD41C2D0607F200E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CFD40D2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension */;
+			targetProxy = 94CFD41B2D0607F200E64052 /* PBXContainerItemProxy */;
+		};
+		94CFD4282D0617C400E64052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				watchos,
+			);
+			target = 94CFD33E2D05559C00E64052 /* Shared */;
+			targetProxy = 94CFD4272D0617C400E64052 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -621,7 +989,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -642,7 +1009,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -663,7 +1029,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NDBTK98VL3;
@@ -682,7 +1047,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NDBTK98VL3;
@@ -694,6 +1058,310 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = BusTime;
+			};
+			name = Release;
+		};
+		94CFD3582D05559D00E64052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.andersonli.Shared;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		94CFD3592D05559D00E64052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.andersonli.Shared;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		94CFD35B2D05559D00E64052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andersonli.SharedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusTime.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BusTime";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		94CFD35C2D05559D00E64052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andersonli.SharedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusTime.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BusTime";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		94CFD3D42D055F7C00E64052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BusTimeAppleWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BusTimeAppleWatch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = BusTimeAppleWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jingweili.BusTime;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Debug;
+		};
+		94CFD3D52D055F7C00E64052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BusTimeAppleWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BusTimeAppleWatch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = BusTimeAppleWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jingweili.BusTime;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Release;
+		};
+		94CFD4202D0607F200E64052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTimeAppleWatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BusTimeAppleWatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.watchkitapp.BusTimeAppleWatchWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Debug;
+		};
+		94CFD4212D0607F200E64052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTimeAppleWatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BusTimeAppleWatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.watchkitapp.BusTimeAppleWatchWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
 			};
 			name = Release;
 		};
@@ -732,6 +1400,42 @@
 			buildConfigurations = (
 				9408C5D129A0A5EC005DE2EE /* Debug */,
 				9408C5D229A0A5EC005DE2EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94CFD3572D05559D00E64052 /* Build configuration list for PBXNativeTarget "Shared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94CFD3582D05559D00E64052 /* Debug */,
+				94CFD3592D05559D00E64052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94CFD35A2D05559D00E64052 /* Build configuration list for PBXNativeTarget "SharedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94CFD35B2D05559D00E64052 /* Debug */,
+				94CFD35C2D05559D00E64052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94CFD3D62D055F7C00E64052 /* Build configuration list for PBXNativeTarget "BusTimeAppleWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94CFD3D42D055F7C00E64052 /* Debug */,
+				94CFD3D52D055F7C00E64052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94CFD41F2D0607F200E64052 /* Build configuration list for PBXNativeTarget "BusTimeAppleWatchWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94CFD4202D0607F200E64052 /* Debug */,
+				94CFD4212D0607F200E64052 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

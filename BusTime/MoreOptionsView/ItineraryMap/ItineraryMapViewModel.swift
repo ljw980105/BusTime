@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Shared
 
 enum ItineraryKey: String {
     case londonTrip = "London_trip"

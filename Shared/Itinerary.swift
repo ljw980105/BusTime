@@ -8,20 +8,20 @@
 import Foundation
 import MapKit
 
-struct Itinerary {
-    struct Stop: Identifiable {
-        let id = UUID()
+public struct Itinerary {
+    public  struct Stop: Identifiable {
+        public let id = UUID()
         
-        let location: CLLocationCoordinate2D
-        let name: String
+        public let location: CLLocationCoordinate2D
+        public let name: String
     }
     
-    let description: String
-    let region: MKCoordinateRegion
-    let stops: [Stop]
-    let path: [CLLocationCoordinate2D]?
+    public let description: String
+    public let region: MKCoordinateRegion
+    public let stops: [Stop]
+    public let path: [CLLocationCoordinate2D]?
     
-    init(description: String, 
+    public init(description: String,
          region: MKCoordinateRegion,
          stops: [Stop],
          path: [CLLocationCoordinate2D]? = nil) {
@@ -31,22 +31,22 @@ struct Itinerary {
         self.path = path
     }
     
-    var id: String {
+    public var id: String {
         description
     }
 }
 
 extension Itinerary: Hashable, Equatable {
-    static func == (lhs: Itinerary, rhs: Itinerary) -> Bool {
+    public static func == (lhs: Itinerary, rhs: Itinerary) -> Bool {
         return lhs.description == rhs.description
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(description)
     }
 }
 
-extension Itinerary {
+public extension Itinerary {
     static let londonTrip: [Itinerary] = [
         Itinerary(
             description: "London Day 1",

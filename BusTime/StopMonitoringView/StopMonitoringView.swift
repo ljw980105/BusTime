@@ -89,7 +89,7 @@ struct StopMonitoringView: View {
                             }
                             Spacer()
                             VStack(alignment: .trailing) {
-                                Text(stopJourney.monitoredCall.timeToArrival)
+                                Text(stopJourney.monitoredCall.timeToArrival())
                                     .font(.caption)
                                     .fontWeight(.bold)
                             }

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import Shared
 
 enum BusTimeError: Error {
     case none
@@ -31,8 +32,7 @@ class StopMonitoringViewModel: ObservableObject {
     var serviceDelivery: Siri.ServiceDelivery = .empty
     var cancellables: [AnyCancellable] = []
     var receivedError: ((Bool) -> Void)?
-    let stopId: Int
-    let title: String
+    let busStop: BusStop
     let showStopName: Bool
     let hideNavigationView: Bool
     
@@ -46,15 +46,13 @@ class StopMonitoringViewModel: ObservableObject {
     ///   - showStopName: If true, uses small nav bar and also adds stop names in parenthesis for the nav bar.
     ///   otherwise, uses large navbar
     ///   - hideNavigationView: Set this to true if this view is used inside another NavigationView
-    init(stopId: Int,
-         title: String,
+    init(busStop: BusStop,
          showStopName: Bool,
          hideNavigationView: Bool = false) {
-        self.stopId = stopId
-        self.title = title
-        self.showStopName = showStopName
+        self.busStop = busStop
         self.error = .none
         self.hideNavigationView = hideNavigationView
+        self.showStopName = showStopName
         $error
             .map {
                 switch $0 {
@@ -116,9 +114,9 @@ class StopMonitoringViewModel: ObservableObject {
                         continuation.resume(with: .success(journeys))
                         if let stopName = journeys.map(\.monitoredCall).first?.stopPointName?.first,
                            self.showStopName {
-                            self.navBarTitle = "\(self.title) (\(stopName))"
+                            self.navBarTitle = "\(self.busStop.title) (\(stopName))"
                         } else {
-                            self.navBarTitle = self.title
+                            self.navBarTitle = self.busStop.title
                         }
                     } else {
                         continuation.resume(with: .failure(NSError(domain: "Received no data", code: 0)))
@@ -130,7 +128,7 @@ class StopMonitoringViewModel: ObservableObject {
     }
     
     func getData() -> AnyPublisher<Siri.ServiceDelivery, Error> {
-        BustimeAPI.getBusTime(stopId: stopId)
+        BustimeAPI.getBusTime(stopId: busStop.stopId)
     }
     
 }

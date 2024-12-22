@@ -8,21 +8,21 @@
 import Foundation
 
 /// [Documentation](https://bustime.mta.info/wiki/Developers/SIRIStopMonitoring)
-struct SiriObject: Codable {
-    let Siri: Siri
+public struct SiriObject: Codable {
+    public let Siri: Siri
 }
 
-struct Siri: Codable {
-    let ServiceDelivery: ServiceDelivery
+public struct Siri: Codable {
+    public let ServiceDelivery: ServiceDelivery
 }
 
-extension Siri {
+public extension Siri {
     struct ServiceDelivery: Codable {
-        let ResponseTimestamp: Date
-        let StopMonitoringDelivery: [StopMonitoringDelivery]
-        let SituationExchangeDelivery: [SituationExchangeDelivery]?
+        public let ResponseTimestamp: Date
+        public let StopMonitoringDelivery: [StopMonitoringDelivery]
+        public let SituationExchangeDelivery: [SituationExchangeDelivery]?
         
-        static var empty: ServiceDelivery {
+        public static var empty: ServiceDelivery {
             .init(
                 ResponseTimestamp: Date(),
                 StopMonitoringDelivery: [],
@@ -33,23 +33,23 @@ extension Siri {
 }
 
 // MARK: - Stop Monitoring
-extension Siri {
+public extension Siri {
     struct StopMonitoringDelivery: Codable {
-        let MonitoredStopVisit: [MonitoredStopVisit]
-        let ResponseTimestamp: Date?
-        let ValidUntil: Date?
+        public let MonitoredStopVisit: [MonitoredStopVisit]
+        public let ResponseTimestamp: Date?
+        public let ValidUntil: Date?
     }
 }
 
-extension Siri {
+public extension Siri {
     struct MonitoredStopVisit: Codable {
-        let MonitoredVehicleJourney: MonitoredVehicleJourney
+        public let MonitoredVehicleJourney: MonitoredVehicleJourney
     }
 }
 
-extension Siri {
+public extension Siri {
     struct MonitoredVehicleJourney: Codable {
-        var id: Int {
+        public var id: Int {
             var hasher = Hasher()
             hasher.combine(publishedLineName.first ?? "")
             hasher.combine(vehicleRef)
@@ -57,17 +57,17 @@ extension Siri {
             return hasher.finalize()
         }
         
-        let publishedLineName: [String]
-        let destinationName: [String]
-        let situationRef: [SituationRef]?
-        let monitored: Bool
-        let vehicleLocation: VehicleLocation
-        let bearing: Double
-        let vehicleRef: String
-        let monitoredCall: MonitoredCall
+        public let publishedLineName: [String]
+        public let destinationName: [String]
+        public let situationRef: [SituationRef]?
+        public let monitored: Bool
+        public let vehicleLocation: VehicleLocation
+        public let bearing: Double
+        public let vehicleRef: String
+        public let monitoredCall: MonitoredCall
         
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case publishedLineName = "PublishedLineName"
             case destinationName = "DestinationName"
             case situationRef = "SituationRef"
@@ -80,37 +80,37 @@ extension Siri {
     }
 }
 
-extension Siri {
+public extension Siri {
     struct SituationRef: Codable {
-        let SituationSimpleRef: String
+        public let SituationSimpleRef: String
     }
 }
 
-extension Siri {
+public extension Siri {
     struct VehicleLocation: Codable {
-        let longitude: Double
-        let latitude: Double
+        public let longitude: Double
+        public let latitude: Double
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case longitude = "Longitude"
             case latitude = "Latitude"
         }
     }
 }
 
-extension Siri {
+public extension Siri {
     struct MonitoredCall: Codable {
-        let aimedArrivalTime: Date?
-        let expectedArrivalTime: Date?
-        let arrivalProximityText: String?
-        let expectedDepartureTime: Date?
-        let distanceFromStop: Int?
-        let numberOfStopsAway: Int?
-        let visitNumber: Int?
-        let stopPointName: [String]?
-        let extensions: Extensions?
+        public let aimedArrivalTime: Date?
+        public let expectedArrivalTime: Date?
+        public let arrivalProximityText: String?
+        public let expectedDepartureTime: Date?
+        public let distanceFromStop: Int?
+        public let numberOfStopsAway: Int?
+        public let visitNumber: Int?
+        public let stopPointName: [String]?
+        public let extensions: Extensions?
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case aimedArrivalTime = "AimedArrivalTime"
             case expectedArrivalTime = "ExpectedArrivalTime"
             case arrivalProximityText = "ArrivalProximityText"
@@ -124,22 +124,22 @@ extension Siri {
     }
 }
 
-extension Siri {
+public extension Siri {
     struct Extensions: Codable {
-        let capacities: Capacities?
+        public let capacities: Capacities?
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case capacities = "Capacities"
         }
     }
 }
 
-extension Siri {
+public extension Siri {
     struct Capacities: Codable {
-        let estimatedPassengerCount: Int?
-        let estimatedPassengerCapacity: Int?
+        public let estimatedPassengerCount: Int?
+        public let estimatedPassengerCapacity: Int?
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case estimatedPassengerCount = "EstimatedPassengerCount"
             case estimatedPassengerCapacity = "EstimatedPassengerCapacity"
         }
@@ -149,33 +149,33 @@ extension Siri {
 
 
 // MARK: Situations
-extension Siri {
+public extension Siri {
     struct SituationExchangeDelivery: Codable {
-        let Situations: Situations
+        public let Situations: Situations
     }
 }
 
-extension Siri {
+public extension Siri {
     struct Situations: Codable {
-        let situationElement: [SituationElement]
+        public let situationElement: [SituationElement]
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case situationElement = "PtSituationElement"
         }
     }
 }
 
-extension Siri {
+public extension Siri {
     struct SituationElement: Codable {
-        let publicationWindow: PublicationWindow?
-        let severity: String?
-        let summary: [String]?
-        let description: [String]?
-        let affects: Affects?
-        let creationTime: Date?
-        let situationNumber: String?
+        public let publicationWindow: PublicationWindow?
+        public let severity: String?
+        public let summary: [String]?
+        public let description: [String]?
+        public let affects: Affects?
+        public let creationTime: Date?
+        public let situationNumber: String?
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case publicationWindow = "PublicationWindow"
             case severity = "Severity"
             case summary = "Summary"
@@ -187,44 +187,44 @@ extension Siri {
     }
 }
 
-extension Siri {
+public extension Siri {
     struct PublicationWindow: Codable {
-        let startTime: Date
-        let endTime: Date
+        public let startTime: Date
+        public let endTime: Date
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case startTime = "StartTime"
             case endTime = "EndTime"
         }
     }
 }
 
-extension Siri {
+public extension Siri {
     struct Affects: Codable {
-        let vehicleJourneys: VehicleJourneys
+        public let vehicleJourneys: VehicleJourneys
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case vehicleJourneys = "VehicleJourneys"
         }
     }
 }
 
-extension Siri {
+public extension Siri {
     struct VehicleJourneys: Codable {
-        let affectedVehicleJourney: [AffectedVehicleJourney]
+        public let affectedVehicleJourney: [AffectedVehicleJourney]
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case affectedVehicleJourney = "AffectedVehicleJourney"
         }
     }
 }
 
-extension Siri {
+public extension Siri {
     struct AffectedVehicleJourney: Codable {
-        let lineRef: String
-        let directionRef: String?
+        public let lineRef: String
+        public let directionRef: String?
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case lineRef = "LineRef"
             case directionRef = "DirectionRef"
         }
@@ -233,29 +233,29 @@ extension Siri {
 
 // MARK: Helpers
 
-extension Siri.MonitoredCall {
-    var timeToArrival: String {
+public extension Siri.MonitoredCall {
+    func timeToArrival(isMinimal: Bool = false) -> String {
         var arrivalTime: Date? = aimedArrivalTime
         if let expectedArrivalTime, expectedArrivalTime >= Date() {
             arrivalTime = expectedArrivalTime
         }
         guard let arrivalTime else {
-            return "Unknown"
+            return isMinimal ? "--" : "Unknown"
         }
         let dateDiff = arrivalTime.timeIntervalSince(Date())
         let minutes = Int(dateDiff / 60)
         let seconds = Int(dateDiff) % 60
         if minutes > 0 {
-            return "\(minutes) minute(s)"
+            return isMinimal ? "\(minutes)M" : "\(minutes) minute(s)"
         }
         if seconds <= 0 {
             return "Now"
         }
-        return "\(seconds) second(s)"
+        return isMinimal ? "\(seconds)S" : "\(seconds) second(s)"
     }
 }
 
-extension Siri.MonitoredVehicleJourney {
+public extension Siri.MonitoredVehicleJourney {
     func hasSituations(serviceDelivery: Siri.ServiceDelivery) -> Bool {
         guard let situationRef = situationRef?.first,
               let situations = serviceDelivery.SituationExchangeDelivery?.first?.Situations.situationElement.compactMap(\.situationNumber) else {

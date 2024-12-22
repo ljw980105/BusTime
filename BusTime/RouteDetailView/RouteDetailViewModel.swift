@@ -9,6 +9,7 @@ import Foundation
 import MapKit
 import SwiftUI
 import UIKit
+import Shared
 
 class RouteDetailViewModel: ObservableObject {
     let vehicleJourney: Siri.MonitoredVehicleJourney

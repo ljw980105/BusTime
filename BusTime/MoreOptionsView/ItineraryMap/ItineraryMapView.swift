@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Shared
 import MapKit
 
 struct ItineraryMapView: View {

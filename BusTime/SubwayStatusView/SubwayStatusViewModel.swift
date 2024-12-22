@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import SwiftUI
+import Shared
 
 class SubwayStatusViewModel: ObservableObject {
     @Published var subwayAlerts: [GTFSRealTime.Entity] = []
