@@ -39,6 +39,7 @@ struct WidgetRectangularView: View {
                     Text(entry.firstDataSet.busName)
                         .customFont()
                         .foregroundStyle(Color.blue)
+                        .widgetAccentable()
                     Text(entry.firstDataSet.arrivalTime)
                         .customFont()
                 }
@@ -50,6 +51,7 @@ struct WidgetRectangularView: View {
                     Text(entry.secondDataSet.busName)
                         .customFont()
                         .foregroundStyle(Color.blue)
+                        .widgetAccentable()
                     Text(entry.secondDataSet.arrivalTime)
                         .customFont()
                 }

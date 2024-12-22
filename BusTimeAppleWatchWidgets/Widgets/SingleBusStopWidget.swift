@@ -84,6 +84,8 @@ struct SingleBusStopWidgetView : View {
         switch family {
         case .accessoryCircular:
             WidgetCircularView(entry: entry)
+        case .accessoryCorner:
+            WidgetCornerView(entry: entry)
         default:
             EmptyView()
         }
@@ -94,7 +96,8 @@ struct SingleBusStopWidget: Widget {
     let kind: String = "BusTimeAppleWatchWidgets-Single"
     
     let supportedFamilies: [WidgetFamily] = [
-        .accessoryCircular
+        .accessoryCircular,
+        .accessoryCorner
     ]
 
     var body: some WidgetConfiguration {

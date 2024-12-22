@@ -9,9 +9,9 @@ import SwiftUI
 import WidgetKit
 
 struct WidgetCircularView: View {
-    let entry: DualBusStopProvider.Entry
+    let entry: SingleBusStopProvider.Entry
     
-    init(entry: DualBusStopProvider.Entry) {
+    init(entry: SingleBusStopProvider.Entry) {
         self.entry = entry
     }
     
