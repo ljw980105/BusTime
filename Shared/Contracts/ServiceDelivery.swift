@@ -263,4 +263,11 @@ public extension Siri.MonitoredVehicleJourney {
         }
         return situations.contains(situationRef.SituationSimpleRef)
     }
+    
+    var isHighOccupancy: Bool {
+        guard let passengerCount = monitoredCall.extensions?.capacities?.estimatedPassengerCount else {
+            return false
+        }
+        return passengerCount > 50
+    }
 }

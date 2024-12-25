@@ -76,7 +76,7 @@ struct StopMonitoringView: View {
                                             .foregroundStyle(.red)
                                             .frame(width: 15, height: 15)
                                     }
-                                    if viewModel.isHighOccupancy(vehicleJourney: stopJourney) {
+                                    if stopJourney.isHighOccupancy {
                                         Tag(text: "BUSY")
                                     }
                                     Text(stopJourney.publishedLineName.first ?? "Unknown")

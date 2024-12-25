@@ -6,12 +6,27 @@
 //
 
 import SwiftUI
+import Shared
 
 @main
-struct BusTimeAppleWatch_Watch_AppApp: App {
+struct BusTimeAppleWatch_Watch_App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                NavigationView {
+                    StopMonitoringViewWatch(viewModel: .init(busStop: .whitestone))
+                }
+                .navigationTitle {
+                    Text(BusStop.whitestone.title)
+                }
+                NavigationView {
+                    StopMonitoringViewWatch(viewModel: .init(busStop: .flushing))
+                }
+                .navigationTitle {
+                    Text(BusStop.flushing.title)
+                }
+            }
+            .tabViewStyle(.verticalPage)
         }
     }
 }
