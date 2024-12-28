@@ -40,10 +40,12 @@ struct StopMonitoringViewWatch: View {
                     .padding(.vertical, 12)
                 }
             } footer: {
-                HStack {
+                VStack(spacing: 8) {
                     Text("Last Updated: \(viewModel.lastUpdated)")
                         .font(.system(size: 10))
+                    refreshButtonView
                 }
+                .padding(.top, 16)
                 .frame(maxWidth: .infinity)
             }
         }
@@ -53,6 +55,22 @@ struct StopMonitoringViewWatch: View {
             Task {
                 await viewModel.refresh()
             }
+        }
+    }
+    
+    @ViewBuilder
+    var refreshButtonView: some View {
+        let button = Button {
+            Task {
+                await viewModel.refresh()
+            }
+        } label: {
+            Text("Refresh")
+        }
+        if #available(watchOS 11.0, *) {
+            button.handGestureShortcut(.primaryAction)
+        } else {
+            button
         }
     }
 }

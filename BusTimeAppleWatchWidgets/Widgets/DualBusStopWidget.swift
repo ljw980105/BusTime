@@ -13,16 +13,16 @@ struct DualBusStopProvider: AppIntentTimelineProvider {
     /// Providing dummy data to the system to render a placeholder UI while waiting for the widget to get ready.
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: .now, dataSets: [
-            .init(location: "Whitestone", busName: "Q44", arrivalTime: "1 Min"),
-            .init(location: "Flushing", busName: "Q20B", arrivalTime: "1 Min")
+            .init(busStop: .whitestone, busName: "Q44", arrivalTime: "1 Min"),
+            .init(busStop: .flushing, busName: "Q20B", arrivalTime: "1 Min")
         ])
     }
 
     /// This function mainly provides the data required by the system to render the widget in the widget gallery. Following is the implementation:
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
         SimpleEntry(date: .now, dataSets: [
-            .init(location: "Whitestone", busName: "Q44", arrivalTime: "1 Min"),
-            .init(location: "Flushing", busName: "Q20B", arrivalTime: "1 Min")
+            .init(busStop: .whitestone, busName: "Q44", arrivalTime: "1 Min"),
+            .init(busStop: .flushing, busName: "Q20B", arrivalTime: "1 Min")
         ])
     }
     
@@ -41,30 +41,32 @@ struct DualBusStopProvider: AppIntentTimelineProvider {
     }
     
     func getEntryResult() async throws -> SimpleEntry {
-        var whitestoneResult: Siri.ServiceDelivery?
-        var flushingResult: Siri.ServiceDelivery?
-        whitestoneResult = try await BustimeAPI.getBusTimeAsync(stopId: BusStop.whitestone.stopId, maximumStopVisits: 1)
-        flushingResult = try await BustimeAPI.getBusTimeAsync(stopId: BusStop.flushing.stopId, maximumStopVisits: 1)
+        let firstBusStop: BusStop = .whitestone
+        let secondBusStop: BusStop = .flushing
+        var firstResult: Siri.ServiceDelivery?
+        var secondResult: Siri.ServiceDelivery?
+        firstResult = try await BustimeAPI.getBusTimeAsync(stopId: firstBusStop.stopId, maximumStopVisits: 1)
+        secondResult = try await BustimeAPI.getBusTimeAsync(stopId: secondBusStop.stopId, maximumStopVisits: 1)
         
-        guard let whitestoneResult, let flushingResult else {
+        guard let firstResult, let secondResult else {
             throw NSError(domain: "No Results found", code: 0)
         }
         
-        let whitestoneMonitoredJourney = whitestoneResult.StopMonitoringDelivery.first?.MonitoredStopVisit.first?.MonitoredVehicleJourney
-        let flushingMinotoredJourney = flushingResult.StopMonitoringDelivery.first?.MonitoredStopVisit.first?.MonitoredVehicleJourney
+        let firstMonitoredJourney = firstResult.StopMonitoringDelivery.first?.MonitoredStopVisit.first?.MonitoredVehicleJourney
+        let secondMonitoredJourney = secondResult.StopMonitoringDelivery.first?.MonitoredStopVisit.first?.MonitoredVehicleJourney
         
         return SimpleEntry(
             date: Date(),
             dataSets: [
                 .init(
-                    location: BusStop.whitestone.title,
-                    busName: whitestoneMonitoredJourney?.publishedLineName.first ?? "",
-                    arrivalTime: whitestoneMonitoredJourney?.monitoredCall.timeToArrival() ?? ""
+                    busStop: firstBusStop,
+                    busName: firstMonitoredJourney?.publishedLineName.first ?? "",
+                    arrivalTime: firstMonitoredJourney?.monitoredCall.timeToArrival() ?? ""
                 ),
                 .init(
-                    location: BusStop.flushing.title,
-                    busName: flushingMinotoredJourney?.publishedLineName.first ?? "",
-                    arrivalTime: flushingMinotoredJourney?.monitoredCall.timeToArrival() ?? ""
+                    busStop: secondBusStop,
+                    busName: secondMonitoredJourney?.publishedLineName.first ?? "",
+                    arrivalTime: secondMonitoredJourney?.monitoredCall.timeToArrival() ?? ""
                 )
             ]
         )

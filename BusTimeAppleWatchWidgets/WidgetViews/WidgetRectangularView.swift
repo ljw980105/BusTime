@@ -34,7 +34,7 @@ struct WidgetRectangularView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
                 VStack(alignment: .leading) {
-                    Text(entry.firstDataSet.location)
+                    Text(entry.firstDataSet.busStop.title)
                         .customFont()
                     Text(entry.firstDataSet.busName)
                         .customFont()
@@ -46,7 +46,7 @@ struct WidgetRectangularView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 Divider()
                 VStack(alignment: .trailing) {
-                    Text(entry.secondDataSet.location)
+                    Text(entry.secondDataSet.busStop.title)
                         .customFont()
                     Text(entry.secondDataSet.busName)
                         .customFont()

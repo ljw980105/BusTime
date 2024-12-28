@@ -63,8 +63,31 @@ public enum BusStop {
             "--"
         }
     }
+    
+    public init(stopId: Int) {
+        switch stopId {
+        case BusStop.whitestone.stopId:
+            self = .whitestone
+        case BusStop.flushing.stopId:
+            self = .flushing
+        case BusStop.mainStQueensLibrary.stopId:
+            self = .mainStQueensLibrary
+        case BusStop.crossIslandPkwy150St.stopId:
+            self = .crossIslandPkwy150St
+        case BusStop.alleyPondPark.stopId:
+            self = .alleyPondPark
+        default:
+            self = .custom(stopId: stopId, title: nil)
+        }
+    }
 }
 
 extension BusStop: Identifiable {
     public var id: Int { stopId }
+}
+
+extension BusStop: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(stopId)
+    }
 }

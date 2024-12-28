@@ -11,19 +11,24 @@ import Shared
 
 struct SimpleEntry: TimelineEntry {
     struct DataSet {
-        let location: String
+        let busStop: BusStop
         let busName: String
         let arrivalTime: String
         
-        init(location: String, busName: String, arrivalTime: String) {
-            self.location = location
+        init(busStop: BusStop, busName: String, arrivalTime: String) {
+            self.busStop = busStop
             self.busName = busName
             self.arrivalTime = arrivalTime
         }
         
+        var location: String {
+            busStop.title.uppercased()
+        }
+        
         static var stub: DataSet {
-            .init(
-                location: ["WHITESTONE", "FLUSHING"].randomElement() ?? "",
+            let busStop: BusStop = [.whitestone, .flushing].randomElement() ?? .whitestone
+            return .init(
+                busStop: busStop,
                 busName: "Q44-SBS",
                 arrivalTime: ["20 seconds", "1 min"].randomElement() ?? ""
             )
@@ -31,7 +36,7 @@ struct SimpleEntry: TimelineEntry {
         
         static var shortStub: DataSet {
             .init(
-                location: "FLU",
+                busStop: .flushing,
                 busName: "Q44",
                 arrivalTime: "1m"
             )
@@ -39,7 +44,7 @@ struct SimpleEntry: TimelineEntry {
         
         static var errorStub: DataSet {
             .init(
-                location: "Error",
+                busStop: .custom(stopId: 0, title: "Error"),
                 busName: "Error",
                 arrivalTime: "Error"
             )

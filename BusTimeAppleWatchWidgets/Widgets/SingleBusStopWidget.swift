@@ -38,7 +38,7 @@ struct SingleBusStopProvider: AppIntentTimelineProvider {
             entryResult = try await getEntryMinimal(stop: busStop)
             entries.append(entryResult)
         } catch {
-            entries.append(.init(date: .distantFuture, dataSets: [.shortStub]))
+            entries.append(.init(date: .distantFuture, dataSets: [.errorStub]))
         }
 
         return Timeline(entries: entries, policy: .atEnd)
@@ -51,7 +51,7 @@ struct SingleBusStopProvider: AppIntentTimelineProvider {
             date: Date(),
             dataSets: [
                 .init(
-                    location: stop.shortTitle,
+                    busStop: stop,
                     busName: monitoredJourney?.publishedLineName.first?.shortBusName ?? "",
                     arrivalTime: monitoredJourney?.monitoredCall.timeToArrival(isMinimal: true) ?? ""
                 )
@@ -84,11 +84,18 @@ struct SingleBusStopWidgetView : View {
         switch family {
         case .accessoryCircular:
             WidgetCircularView(entry: entry)
+                .widgetURL(widgetURL)
         case .accessoryCorner:
             WidgetCornerView(entry: entry)
+                .widgetURL(widgetURL)
         default:
             EmptyView()
         }
+    }
+    
+    private var widgetURL: URL? {
+        let busStopId = entry.dataSets.first?.busStop.stopId ?? 0
+        return URL(string: "bustime://single/\(busStopId)")
     }
 }
 

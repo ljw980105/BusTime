@@ -26,7 +26,7 @@ struct WidgetCircularView: View {
                 Text(entry.firstDataSet.arrivalTime)
                     .font(.system(size: 18, weight: .medium))
                     .bold()
-                Text(entry.firstDataSet.location)
+                Text(entry.firstDataSet.busStop.shortTitle)
                     .font(.system(size: 10, weight: .medium))
             }
         }
