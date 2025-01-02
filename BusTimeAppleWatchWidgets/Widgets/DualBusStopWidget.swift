@@ -34,7 +34,7 @@ struct DualBusStopProvider: AppIntentTimelineProvider {
             let entryResult = try await getEntryResult()
             entries.append(entryResult)
         } catch {
-            entries.append(.init(date: .distantFuture, dataSets: [.stub, .stub]))
+            entries.append(.init(date: .distantFuture, dataSets: [.loadingStub, .loadingStub]))
         }
 
         return Timeline(entries: entries, policy: .atEnd)

@@ -49,6 +49,14 @@ struct SimpleEntry: TimelineEntry {
                 arrivalTime: "Error"
             )
         }
+        
+        static var loadingStub: DataSet {
+            .init(
+                busStop: .custom(stopId: 0, title: "--"),
+                busName: "--",
+                arrivalTime: "--"
+            )
+        }
     }
 
     let title: String
