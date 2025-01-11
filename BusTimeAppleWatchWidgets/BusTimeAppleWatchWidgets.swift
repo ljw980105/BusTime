@@ -90,5 +90,6 @@ struct BusTimeAppleWatchWidgets: WidgetBundle {
     var body: some Widget {
         SingleBusStopWidget()
         DualBusStopWidget()
+        SingleStopMultiEntryWidget()
     }
 }
