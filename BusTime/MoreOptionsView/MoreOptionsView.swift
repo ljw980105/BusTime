@@ -89,7 +89,8 @@ struct MoreOptionsView: View {
         [
             .mainStQueensLibrary,
             .crossIslandPkwy150St,
-            .alleyPondPark
+            .alleyPondPark,
+            .baysideHmart
         ]
     }
 }
