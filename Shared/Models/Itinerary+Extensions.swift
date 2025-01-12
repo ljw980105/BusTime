@@ -1,50 +1,11 @@
 //
-//  Itinerary.swift
+//  Itinerary+Extensions.swift
 //  BusTime
 //
-//  Created by Anderson Li on 7/11/24.
+//  Created by Anderson Li on 12/28/24.
 //
 
-import Foundation
 import MapKit
-
-public struct Itinerary {
-    public  struct Stop: Identifiable {
-        public let id = UUID()
-        
-        public let location: CLLocationCoordinate2D
-        public let name: String
-    }
-    
-    public let description: String
-    public let region: MKCoordinateRegion
-    public let stops: [Stop]
-    public let path: [CLLocationCoordinate2D]?
-    
-    public init(description: String,
-         region: MKCoordinateRegion,
-         stops: [Stop],
-         path: [CLLocationCoordinate2D]? = nil) {
-        self.description = description
-        self.region = region
-        self.stops = stops
-        self.path = path
-    }
-    
-    public var id: String {
-        description
-    }
-}
-
-extension Itinerary: Hashable, Equatable {
-    public static func == (lhs: Itinerary, rhs: Itinerary) -> Bool {
-        return lhs.description == rhs.description
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
-    }
-}
 
 public extension Itinerary {
     static let londonTrip: [Itinerary] = [
@@ -120,14 +81,34 @@ public extension Itinerary {
         )
     ]
     
-    static var stub: Itinerary {
+    static let philliyTrip: [Itinerary] = [
         Itinerary(
-            description: "Test",
+            description: "Philadelphia Day 1",
             region: .init(
-                center: .init(latitude: 0, longitude: 0), 
-                span: .init(latitudeDelta: 10, longitudeDelta: 10)
+                center: .init(latitude: 39.95179, longitude: -75.15180),
+                latitudinalMeters: 2200,
+                longitudinalMeters: 3300
             ),
-            stops: []
+            stops: [
+                .init(location: .init(latitude: 39.94918, longitude: -75.15045), name: "Liberty Bell/Independence Hall"),
+                .init(location: .init(latitude: 39.95382, longitude: -75.15843), name: "Reading Terminal Market"),
+                .init(location: .init(latitude: 39.95282, longitude: -75.14276), name: "Elfreth's Alley"),
+                .init(location: .init(latitude: 39.94857, longitude: -75.14568), name: "Museum of American Revolution"),
+            ]
+        ),
+        Itinerary(
+            description: "Philadelphia Day 2",
+            region: .init(
+                center: .init(latitude: 39.96, longitude: -75.173),
+                latitudinalMeters: 2200,
+                longitudinalMeters: 3300
+            ),
+            stops: [
+                .init(location: .init(latitude: 39.96537, longitude: -75.1808), name: "Philadelphia Museum of Art"),
+                .init(location: .init(latitude: 39.96817, longitude: -75.17271), name: "Eastern State Penitentiary"),
+                .init(location: .init(latitude: 39.94929, longitude: -75.17192), name: "Rittenhouse Square"),
+                .init(location: .init(latitude: 39.95363, longitude: -75.16512), name: "Love Pk/City Hall")
+            ]
         )
-    }
+    ]
 }

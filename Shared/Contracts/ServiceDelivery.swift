@@ -65,6 +65,7 @@ public extension Siri {
         public let bearing: Double
         public let vehicleRef: String
         public let monitoredCall: MonitoredCall
+        public let lineRef: String?
         
         
         public enum CodingKeys: String, CodingKey {
@@ -76,6 +77,7 @@ public extension Siri {
             case bearing = "Bearing"
             case vehicleRef = "VehicleRef"
             case monitoredCall = "MonitoredCall"
+            case lineRef = "LineRef"
         }
     }
 }
@@ -262,5 +264,17 @@ public extension Siri.MonitoredVehicleJourney {
             return false
         }
         return situations.contains(situationRef.SituationSimpleRef)
+    }
+    
+    var isHighOccupancy: Bool {
+        guard let passengerCount = monitoredCall.extensions?.capacities?.estimatedPassengerCount else {
+            return false
+        }
+        return passengerCount > 50
+    }
+    
+    var knownLineRef: LineRef? {
+        guard let lineRef else { return nil }
+        return LineRef(lineRef: lineRef)
     }
 }

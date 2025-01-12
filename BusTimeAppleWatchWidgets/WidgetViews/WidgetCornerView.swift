@@ -31,7 +31,7 @@ struct WidgetCornerView: View {
     
     var mainLabel: AttributedString {
         let busName = entry.firstDataSet.busName
-        var label = AttributedString("\(busName) · \(entry.firstDataSet.arrivalTime) · \(entry.firstDataSet.location)")
+        var label = AttributedString("\(busName) · \(entry.firstDataSet.arrivalTime) · \(entry.firstDataSet.busStop.shortTitle)")
         guard let range = label.range(of: busName) else {
             return label
         }

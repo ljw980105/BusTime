@@ -9,7 +9,10 @@ import Foundation
 import Shared
 
 enum ItineraryKey: String {
+    /// Aug-Sep 2024
     case londonTrip = "London_trip"
+    /// Dec 2024
+    case philadelphiaTrip = "Philadelphia_trip"
 }
 
 class ItineraryMapViewModel: ObservableObject {
@@ -35,11 +38,8 @@ class ItineraryMapViewModel: ObservableObject {
         guard let itineraryId = userDefaults.string(forKey: itineraryKey.rawValue) else {
             return
         }
-        for itinerary in itineraries {
-            if itinerary.id == itineraryId {
-                activeItinerary = itinerary
-                return
-            }
+        if let itinerary = itineraries.first(where: { $0.id == itineraryId }) {
+            activeItinerary = itinerary
         }
     }
     

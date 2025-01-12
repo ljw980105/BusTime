@@ -72,13 +72,6 @@ class StopMonitoringViewModel: ObservableObject {
         }
     }
     
-    func isHighOccupancy(vehicleJourney: Siri.MonitoredVehicleJourney) -> Bool {
-        guard let passengerCount = vehicleJourney.monitoredCall.extensions?.capacities?.estimatedPassengerCount else {
-            return false
-        }
-        return passengerCount > 50
-    }
-    
     func hasSituations(vehicleJourney: Siri.MonitoredVehicleJourney) -> Bool {
         return vehicleJourney.hasSituations(serviceDelivery: serviceDelivery)
     }

@@ -70,6 +70,15 @@ struct MoreOptionsView: View {
                     ) {
                         Text("London Trip")
                     }
+                    
+                    NavigationLink(
+                        destination: ItineraryMapView(viewModel: .init(
+                            itineraries: Itinerary.philliyTrip,
+                            key: .philadelphiaTrip
+                        ))
+                    ) {
+                        Text("Philadelphia Trip")
+                    }
                 }
             }
             .navigationTitle("More")
@@ -80,7 +89,8 @@ struct MoreOptionsView: View {
         [
             .mainStQueensLibrary,
             .crossIslandPkwy150St,
-            .alleyPondPark
+            .alleyPondPark,
+            .baysideHmart
         ]
     }
 }
