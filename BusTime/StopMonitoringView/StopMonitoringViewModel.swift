@@ -25,7 +25,13 @@ enum BusTimeError: Error {
 }
 
 class StopMonitoringViewModel: ObservableObject {
-    @Published var stopJourneys: [Siri.MonitoredVehicleJourney] = []
+    @Published var stopJourneys: [Siri.MonitoredVehicleJourney] = [] {
+        didSet {
+            shouldShowArrivalTimesCard = stopJourneys.shouldShowArrivalTimesCard
+            journeysForHighestPriorityLine = stopJourneys.journeysForHighestPriorityLine
+        }
+    }
+    
     @Published var error: BusTimeError
     @Published var navBarTitle: String = ""
     @Published var lastUpdated: String = ""
@@ -123,6 +129,11 @@ class StopMonitoringViewModel: ObservableObject {
     func getData() -> AnyPublisher<Siri.ServiceDelivery, Error> {
         BustimeAPI.getBusTime(stopId: busStop.stopId)
     }
+    
+    // MARK: Computed Vars
+    var shouldShowArrivalTimesCard: Bool = false
+    
+    var journeysForHighestPriorityLine: [Siri.MonitoredVehicleJourney] = []
     
 }
 
