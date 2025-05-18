@@ -45,7 +45,6 @@ struct RouteDetailView: View {
                     }, set: { _ in })) {
                         Marker("", coordinate: viewModel.coordinate)
                     }
-                        .allowsHitTesting(false)
                         .frame(height: 200)
                         .onTapGesture {
                             viewModel.openInMaps()
