@@ -130,7 +130,6 @@ class StopMonitoringViewModel: ObservableObject {
         BustimeAPI.getBusTime(stopId: busStop.stopId)
     }
     
-    // MARK: Computed Vars
     var shouldShowArrivalTimesCard: Bool = false
     
     var journeysForHighestPriorityLine: [Siri.MonitoredVehicleJourney] = []

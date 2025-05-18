@@ -39,7 +39,6 @@ struct StopMonitoringView: View {
             .padding(16)
         } else {
             listView
-//            .background(Color(UIColor.systemBackground))
         }
     }
     
