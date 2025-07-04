@@ -9,15 +9,15 @@ import Foundation
 
 public enum LineRef {
     case q44
-    case q20b
+    case q20
     case other(lineRef: String)
     
     public init (lineRef: String) {
         switch lineRef {
         case Self.q44.lineRef:
             self = .q44
-        case Self.q20b.lineRef:
-            self = .q20b
+        case Self.q20.lineRef:
+            self = .q20
         default:
             self = .other(lineRef: lineRef)
         }
@@ -27,8 +27,8 @@ public enum LineRef {
         switch self {
         case .q44:
             "MTA NYCT_Q44+"
-        case .q20b:
-            "MTA NYCT_Q20B"
+        case .q20:
+            "MTA NYCT_Q20"
         case .other(let lineRef):
             lineRef
         }
@@ -38,7 +38,7 @@ public enum LineRef {
         switch self {
         case .q44:
             2
-        case .q20b:
+        case .q20:
             1
         default:
             0

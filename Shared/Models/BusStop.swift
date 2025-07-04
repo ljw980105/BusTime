@@ -8,7 +8,7 @@
 public enum BusStop {
     /// Parsons Blvd / 14Av
     case whitestone
-    /// Main St / 39 Av
+    /// Main St / 38 Av
     case flushing
     /// Main St / Kissena Blvd
     case mainStQueensLibrary
@@ -27,7 +27,7 @@ public enum BusStop {
         case .whitestone:
             502434
         case .flushing:
-            502185
+            501090
         case .mainStQueensLibrary:
             502184
         case .crossIslandPkwy150St:
