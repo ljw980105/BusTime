@@ -48,7 +48,29 @@ public extension Siri {
 }
 
 public extension Siri {
-    struct MonitoredVehicleJourney: Codable {
+    struct MonitoredVehicleJourney: Codable, Identifiable {
+        public init(
+            publishedLineName: [String] = [],
+            destinationName: [String] = [],
+            situationRef: [SituationRef]? = nil,
+            monitored: Bool = true,
+            vehicleLocation: VehicleLocation = .init(),
+            bearing: Double = 0,
+            vehicleRef: String = "",
+            monitoredCall: MonitoredCall = .init(),
+            lineRef: String? = nil
+        ) {
+            self.publishedLineName = publishedLineName
+            self.destinationName = destinationName
+            self.situationRef = situationRef
+            self.monitored = monitored
+            self.vehicleLocation = vehicleLocation
+            self.bearing = bearing
+            self.vehicleRef = vehicleRef
+            self.monitoredCall = monitoredCall
+            self.lineRef = lineRef
+        }
+        
         public var id: Int {
             var hasher = Hasher()
             hasher.combine(publishedLineName.first ?? "")
@@ -93,6 +115,11 @@ public extension Siri {
         public let longitude: Double
         public let latitude: Double
         
+        public init(longitude: Double = -73.935242, latitude: Double = 40.730610) {
+            self.longitude = longitude
+            self.latitude = latitude
+        }
+        
         public enum CodingKeys: String, CodingKey {
             case longitude = "Longitude"
             case latitude = "Latitude"
@@ -111,6 +138,28 @@ public extension Siri {
         public let visitNumber: Int?
         public let stopPointName: [String]?
         public let extensions: Extensions?
+        
+        public init(
+            aimedArrivalTime: Date? = .now,
+            expectedArrivalTime: Date? = .now,
+            arrivalProximityText: String? = "",
+            expectedDepartureTime: Date? = nil,
+            distanceFromStop: Int? = 0,
+            numberOfStopsAway: Int? = 0,
+            visitNumber: Int? = 0,
+            stopPointName: [String]? = nil,
+            extensions: Extensions? = nil
+        ) {
+            self.aimedArrivalTime = aimedArrivalTime
+            self.expectedArrivalTime = expectedArrivalTime
+            self.arrivalProximityText = arrivalProximityText
+            self.expectedDepartureTime = expectedDepartureTime
+            self.distanceFromStop = distanceFromStop
+            self.numberOfStopsAway = numberOfStopsAway
+            self.visitNumber = visitNumber
+            self.stopPointName = stopPointName
+            self.extensions = extensions
+        }
         
         public enum CodingKeys: String, CodingKey {
             case aimedArrivalTime = "AimedArrivalTime"
@@ -276,5 +325,24 @@ public extension Siri.MonitoredVehicleJourney {
     var knownLineRef: LineRef? {
         guard let lineRef else { return nil }
         return LineRef(lineRef: lineRef)
+    }
+}
+
+public extension Array where Element == Siri.MonitoredVehicleJourney {
+    var shouldShowArrivalTimesCard: Bool {
+        compactMap(\.knownLineRef)
+            .first(where: { $0.priority > 0 }) != nil
+    }
+    
+    var journeysForHighestPriorityLine: [Siri.MonitoredVehicleJourney] {
+        guard !isEmpty else {
+            return []
+        }
+        
+        let highestPriority = compactMap(\.knownLineRef)
+            .map(\.priority)
+            .sorted(by: >)
+            .first ?? 0
+        return filter { $0.knownLineRef?.priority == highestPriority }
     }
 }

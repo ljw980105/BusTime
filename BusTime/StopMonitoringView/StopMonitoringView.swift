@@ -60,6 +60,13 @@ struct StopMonitoringView: View {
     
     var listView: some View {
         List {
+            if viewModel.shouldShowArrivalTimesCard {
+                Section {
+                    ArrivalTimesCardView(stopJourneys: viewModel.journeysForHighestPriorityLine)
+                        .frame(height: 80)
+                        .listRowInsets(EdgeInsets())
+                }
+            }
             Section {
                 ForEach(viewModel.stopJourneys, id: \.id) { stopJourney in
                     NavigationLink(destination: RouteDetailView(
@@ -105,6 +112,7 @@ struct StopMonitoringView: View {
                 .padding(.vertical, 8)
             }
         }
+        .listSectionSpacing(8)
         .navigationTitle(viewModel.navBarTitle)
         .navigationBarTitleDisplayMode(viewModel.showStopName ? .inline : .large)
         .refreshable {

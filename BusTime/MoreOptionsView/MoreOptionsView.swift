@@ -85,12 +85,13 @@ struct MoreOptionsView: View {
         }
     }
     
-    var additionalStops: [BusStop] {
+    let additionalStops: [BusStop] = {
         [
             .mainStQueensLibrary,
             .crossIslandPkwy150St,
             .alleyPondPark,
-            .baysideHmart
+            .baysideHmart,
+            .macysFlushing
         ]
-    }
+    }()
 }

@@ -8,7 +8,7 @@
 public enum BusStop {
     /// Parsons Blvd / 14Av
     case whitestone
-    /// Main St / 39 Av
+    /// Main St / 38 Av
     case flushing
     /// Main St / Kissena Blvd
     case mainStQueensLibrary
@@ -18,6 +18,8 @@ public enum BusStop {
     case alleyPondPark
     /// Francis Lewis Blvd / 47 Av
     case baysideHmart
+    /// Roosevelt Av / Main St (Q15)
+    case macysFlushing
     case custom(stopId: Int, title: String?)
     
     public var stopId: Int {
@@ -25,7 +27,7 @@ public enum BusStop {
         case .whitestone:
             502434
         case .flushing:
-            502185
+            501090
         case .mainStQueensLibrary:
             502184
         case .crossIslandPkwy150St:
@@ -34,6 +36,8 @@ public enum BusStop {
             501660
         case .baysideHmart:
             502697
+        case .macysFlushing:
+            503096
         case .custom(let stopId, _):
             stopId
         }
@@ -53,6 +57,8 @@ public enum BusStop {
             "Alley Pond Park"
         case .baysideHmart:
             "Q76 - Hmart"
+        case .macysFlushing:
+            "Q15 - Macy's"
         case .custom(_, let title):
             title ?? String(stopId)
         }
@@ -89,6 +95,8 @@ public enum BusStop {
             self = .alleyPondPark
         case BusStop.baysideHmart.stopId:
             self = .baysideHmart
+        case BusStop.macysFlushing.stopId:
+            self = .macysFlushing
         default:
             self = .custom(stopId: stopId, title: nil)
         }
