@@ -111,4 +111,42 @@ public extension Itinerary {
             ]
         )
     ]
+    
+    static let edinburghTrip: [Itinerary] = [
+        Itinerary(
+            description: "Edinburgh Day 1",
+            region: .init(
+                center: .init(latitude: 55.9504, longitude: -3.1877),
+                latitudinalMeters: 1500,
+                longitudinalMeters: 2250
+            ),
+            stops: [
+                .init(location: .init(latitude: 55.9418, longitude: -3.1786), name: "Old Woods Cafe"),
+                .init(location: .init(latitude: 55.952532, longitude: -3.193462), name: "Scott Monument"),
+                .init(location: .init(latitude: 55.949730, longitude: -3.19096), name: "St Giles' Cathedral"),
+                .init(location: .init(latitude: 55.947193, longitude: -3.190666), name: "National Museum of Scotland"),
+                .init(location: .init(latitude: 55.946775, longitude: -3.192640), name: "Greyfriars Kirkyard"),
+                .init(location: .init(latitude: 55.947624, longitude: -3.195255), name: "Grassmarket"),
+                .init(location: .init(latitude: 55.950615, longitude: -3.189727), name: "Cockburn St"),
+                .init(location: .init(latitude: 55.948709, longitude: -3.193348), name: "Victoria St"),
+                .init(location: .init(latitude: 55.955014, longitude: -3.183245), name: "Calton Hill")
+            ]
+        ),
+        Itinerary(
+            description: "Edinburgh Day 2",
+            region: .init(
+                center: .init(latitude: 55.955071, longitude: -3.211619),
+                latitudinalMeters: 2000,
+                longitudinalMeters: 3000
+            ),
+            stops: [
+                .init(location: .init(latitude: 55.950251, longitude: -3.227694), name: "National Galleries of Scotland"),
+                .init(location: .init(latitude: 55.951905, longitude: -3.218042), name: "Dean Village/Water of Leith"),
+                .init(location: .init(latitude: 55.958073, longitude: -3.205241), name: "Circus Lane"),
+                .init(location: .init(latitude: 55.964430, longitude: -3.209231), name: "Royal Botanic Gardens"),
+                .init(location: .init(latitude: 55.948477, longitude: -3.200852), name: "Edinburgh Castle"),
+                
+            ]
+        ),
+    ]
 }

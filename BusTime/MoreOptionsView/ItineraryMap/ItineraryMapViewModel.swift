@@ -13,6 +13,8 @@ enum ItineraryKey: String {
     case londonTrip = "London_trip"
     /// Dec 2024
     case philadelphiaTrip = "Philadelphia_trip"
+    /// Aug 2025
+    case edinburghTrip = "Edinburgh_trip"
 }
 
 class ItineraryMapViewModel: ObservableObject {
