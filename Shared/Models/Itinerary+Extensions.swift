@@ -135,16 +135,32 @@ public extension Itinerary {
         Itinerary(
             description: "Edinburgh Day 2",
             region: .init(
-                center: .init(latitude: 55.955071, longitude: -3.211619),
-                latitudinalMeters: 2000,
-                longitudinalMeters: 3000
+                center: .init(latitude: 55.967275, longitude: -3.195839),
+                latitudinalMeters: 3000,
+                longitudinalMeters: 4500
             ),
             stops: [
                 .init(location: .init(latitude: 55.950251, longitude: -3.227694), name: "National Galleries of Scotland"),
                 .init(location: .init(latitude: 55.951905, longitude: -3.218042), name: "Dean Village/Water of Leith"),
                 .init(location: .init(latitude: 55.958073, longitude: -3.205241), name: "Circus Lane"),
                 .init(location: .init(latitude: 55.964430, longitude: -3.209231), name: "Royal Botanic Gardens"),
+                .init(location: .init(latitude: 55.975641, longitude: -3.167120), name: "Leith"),
+                
+            ]
+        ),
+        Itinerary(
+            description: "Edinburgh Day 3",
+            region: .init(
+                center: .init(latitude: 55.949076, longitude: -3.184629),
+                latitudinalMeters: 2000,
+                longitudinalMeters: 3000
+            ),
+            stops: [
+                .init(location: .init(latitude: 55.943021, longitude: -3.177721), name: "Holyrood Distillery Tour"),
+                .init(location: .init(latitude: 55.944173, longitude: -3.162068), name: "Arthur's Seat"),
+                .init(location: .init(latitude: 55.952133, longitude: -3.163282), name: "St Margaret's Loch"),
                 .init(location: .init(latitude: 55.948477, longitude: -3.200852), name: "Edinburgh Castle"),
+                .init(location: .init(latitude: 55.951469, longitude: -3.179488), name: "Musem of Edinburgh"),
                 
             ]
         ),
