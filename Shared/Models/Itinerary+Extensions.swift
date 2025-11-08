@@ -111,4 +111,58 @@ public extension Itinerary {
             ]
         )
     ]
+    
+    static let edinburghTrip: [Itinerary] = [
+        Itinerary(
+            description: "Edinburgh Day 1",
+            region: .init(
+                center: .init(latitude: 55.9504, longitude: -3.1877),
+                latitudinalMeters: 1500,
+                longitudinalMeters: 2250
+            ),
+            stops: [
+                .init(location: .init(latitude: 55.9418, longitude: -3.1786), name: "Old Woods Cafe"),
+                .init(location: .init(latitude: 55.952532, longitude: -3.193462), name: "Scott Monument"),
+                .init(location: .init(latitude: 55.949730, longitude: -3.19096), name: "St Giles' Cathedral"),
+                .init(location: .init(latitude: 55.947193, longitude: -3.190666), name: "National Museum of Scotland"),
+                .init(location: .init(latitude: 55.946775, longitude: -3.192640), name: "Greyfriars Kirkyard"),
+                .init(location: .init(latitude: 55.947624, longitude: -3.195255), name: "Grassmarket"),
+                .init(location: .init(latitude: 55.950615, longitude: -3.189727), name: "Cockburn St"),
+                .init(location: .init(latitude: 55.948709, longitude: -3.193348), name: "Victoria St"),
+                .init(location: .init(latitude: 55.955014, longitude: -3.183245), name: "Calton Hill")
+            ]
+        ),
+        Itinerary(
+            description: "Edinburgh Day 2",
+            region: .init(
+                center: .init(latitude: 55.967275, longitude: -3.195839),
+                latitudinalMeters: 3000,
+                longitudinalMeters: 4500
+            ),
+            stops: [
+                .init(location: .init(latitude: 55.950251, longitude: -3.227694), name: "National Galleries of Scotland"),
+                .init(location: .init(latitude: 55.951905, longitude: -3.218042), name: "Dean Village/Water of Leith"),
+                .init(location: .init(latitude: 55.958073, longitude: -3.205241), name: "Circus Lane"),
+                .init(location: .init(latitude: 55.964430, longitude: -3.209231), name: "Royal Botanic Gardens"),
+                .init(location: .init(latitude: 55.975641, longitude: -3.167120), name: "Leith"),
+                
+            ]
+        ),
+        Itinerary(
+            description: "Edinburgh Day 3",
+            region: .init(
+                center: .init(latitude: 55.949076, longitude: -3.184629),
+                latitudinalMeters: 2000,
+                longitudinalMeters: 3000
+            ),
+            stops: [
+                .init(location: .init(latitude: 55.943021, longitude: -3.177721), name: "Holyrood Distillery Tour"),
+                .init(location: .init(latitude: 55.944173, longitude: -3.162068), name: "Arthur's Seat"),
+                .init(location: .init(latitude: 55.952133, longitude: -3.163282), name: "St Margaret's Loch"),
+                .init(location: .init(latitude: 55.948477, longitude: -3.200852), name: "Edinburgh Castle"),
+                .init(location: .init(latitude: 55.951469, longitude: -3.179488), name: "Musem of Edinburgh"),
+                
+            ]
+        ),
+    ]
 }

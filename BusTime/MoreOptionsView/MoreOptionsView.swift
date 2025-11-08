@@ -64,6 +64,16 @@ struct MoreOptionsView: View {
                 Section("Extras") {
                     NavigationLink(
                         destination: ItineraryMapView(viewModel: .init(
+                            itineraries: Itinerary.edinburghTrip,
+                            key: .edinburghTrip
+                        ))
+                    ) {
+                        Text("Edinburgh Trip")
+                    }
+                    
+                    
+                    NavigationLink(
+                        destination: ItineraryMapView(viewModel: .init(
                             itineraries: Itinerary.londonTrip,
                             key: .londonTrip
                         ))
