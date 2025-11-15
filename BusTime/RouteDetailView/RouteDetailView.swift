@@ -38,6 +38,16 @@ struct RouteDetailView: View {
                     if let passengerCount = viewModel.numberOfPassengers {
                         KeyValueCell("Number of Passengers", "\(passengerCount)")
                     }
+                    Text("Track as Live Acitivity")
+                        .font(.caption)
+                        .bold()
+                        .padding(5)
+                        .cornerRadius(12)
+                        .foregroundStyle(.blue)
+                        .onTapGesture {
+                            viewModel.trackAsLiveAcitivty()
+                        }
+                        
                 }
                 Section(header: Text("Location")) {
                     Map(position: Binding(get: {

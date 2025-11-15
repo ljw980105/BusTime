@@ -10,6 +10,8 @@ import MapKit
 import SwiftUI
 import UIKit
 import Shared
+import ActivityKit
+import SharedIOS
 
 class RouteDetailViewModel: ObservableObject {
     let vehicleJourney: Siri.MonitoredVehicleJourney
@@ -85,6 +87,18 @@ class RouteDetailViewModel: ObservableObject {
     
     var mapCameraPosition: MapCameraPosition {
         .region(mapRegion)
+    }
+    
+    func trackAsLiveAcitivty() {
+        do {
+            let activity = try Activity<LiveActivityAttributes>.request(
+                attributes: .init(name: "Hello"),
+                content: .init(state: .init(emoji: "Hello"), staleDate: nil),
+            )
+            print("Live activity started: \(activity.id)")
+        } catch {
+            print("Failed to start live activity: \(error)")
+        }
     }
 }
 

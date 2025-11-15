@@ -24,9 +24,14 @@
 		9433A5442DD968EE009A0800 /* ArrivalTimesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433A5432DD968EE009A0800 /* ArrivalTimesCardView.swift */; };
 		944418F72C7E8C9D004EE75D /* ItineraryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */; };
 		948365652C40CE74006FB730 /* ItineraryMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948365642C40CE74006FB730 /* ItineraryMapView.swift */; };
+		949EC4102EC820020031F6EC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD40F2D0607F100E64052 /* WidgetKit.framework */; };
+		949EC4112EC820020031F6EC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD4112D0607F100E64052 /* SwiftUI.framework */; };
+		949EC4202EC820030031F6EC /* LiveActivityWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 949EC40F2EC820020031F6EC /* LiveActivityWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		949EC4272EC820D50031F6EC /* ActivityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EC4262EC820D50031F6EC /* ActivityKit.framework */; platformFilter = ios; };
+		949EC4372EC8242C0031F6EC /* SharedIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EC42F2EC8242C0031F6EC /* SharedIOS.framework */; };
+		949EC4382EC8242C0031F6EC /* SharedIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 949EC42F2EC8242C0031F6EC /* SharedIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		94B404122BF84746002006E9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B404112BF84746002006E9 /* Tag.swift */; };
 		94CFD3492D05559C00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
-		94CFD3542D05559C00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
 		94CFD3552D05559C00E64052 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		94CFD3D22D055F7C00E64052 /* BusTimeAppleWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		94CFD4052D05686B00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
@@ -52,6 +57,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9408C5A529A0A5EA005DE2EE;
 			remoteInfo = BusTime;
+		};
+		949EC41E2EC820030031F6EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 949EC40E2EC820020031F6EC;
+			remoteInfo = LiveActivityWidgetExtension;
+		};
+		949EC4352EC8242C0031F6EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9408C59E29A0A5EA005DE2EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 949EC42E2EC8242C0031F6EC;
+			remoteInfo = SharedIOS;
 		};
 		94CFD34A2D05559C00E64052 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -105,12 +124,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		949EC4212EC820030031F6EC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				949EC4202EC820030031F6EC /* LiveActivityWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94CFD3362D0554AC00E64052 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				949EC4382EC8242C0031F6EC /* SharedIOS.framework in Embed Frameworks */,
 				94CFD3552D05559C00E64052 /* Shared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -183,6 +214,9 @@
 		9433A5432DD968EE009A0800 /* ArrivalTimesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalTimesCardView.swift; sourceTree = "<group>"; };
 		944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapViewModel.swift; sourceTree = "<group>"; };
 		948365642C40CE74006FB730 /* ItineraryMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapView.swift; sourceTree = "<group>"; };
+		949EC40F2EC820020031F6EC /* LiveActivityWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		949EC4262EC820D50031F6EC /* ActivityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActivityKit.framework; path = System/Library/Frameworks/ActivityKit.framework; sourceTree = SDKROOT; };
+		949EC42F2EC8242C0031F6EC /* SharedIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configurations.xcconfig; sourceTree = "<group>"; };
 		94AC7DC22AF07F8C0080633B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		94B404112BF84746002006E9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -195,6 +229,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		949EC4242EC820030031F6EC /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 949EC40E2EC820020031F6EC /* LiveActivityWidgetExtension */;
+		};
 		94CFD3562D05559D00E64052 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			publicHeaders = (
@@ -212,6 +253,8 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		949EC4122EC820020031F6EC /* LiveActivityWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (949EC4242EC820030031F6EC /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = LiveActivityWidget; sourceTree = "<group>"; };
+		949EC4302EC8242C0031F6EC /* SharedIOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SharedIOS; sourceTree = "<group>"; };
 		94CFD3402D05559C00E64052 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (94CFD3562D05559D00E64052 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 		94CFD34E2D05559C00E64052 /* SharedTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SharedTests; sourceTree = "<group>"; };
 		94CFD3C62D055F7B00E64052 /* BusTimeAppleWatch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "BusTimeAppleWatch Watch App"; sourceTree = "<group>"; };
@@ -223,7 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94CFD3542D05559C00E64052 /* Shared.framework in Frameworks */,
+				949EC4372EC8242C0031F6EC /* SharedIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,10 +284,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		949EC40C2EC820020031F6EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				949EC4112EC820020031F6EC /* SwiftUI.framework in Frameworks */,
+				949EC4102EC820020031F6EC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		949EC42C2EC8242C0031F6EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94CFD33C2D05559C00E64052 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949EC4272EC820D50031F6EC /* ActivityKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +347,8 @@
 				94CFD34E2D05559C00E64052 /* SharedTests */,
 				94CFD3C62D055F7B00E64052 /* BusTimeAppleWatch Watch App */,
 				94CFD4132D0607F100E64052 /* BusTimeAppleWatchWidgets */,
+				949EC4122EC820020031F6EC /* LiveActivityWidget */,
+				949EC4302EC8242C0031F6EC /* SharedIOS */,
 				94CFD4042D05686B00E64052 /* Frameworks */,
 				9408C5A729A0A5EA005DE2EE /* Products */,
 			);
@@ -302,6 +364,8 @@
 				94CFD3482D05559C00E64052 /* SharedTests.xctest */,
 				94CFD3C52D055F7B00E64052 /* BusTimeAppleWatch Watch App.app */,
 				94CFD40E2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension.appex */,
+				949EC40F2EC820020031F6EC /* LiveActivityWidgetExtension.appex */,
+				949EC42F2EC8242C0031F6EC /* SharedIOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -390,6 +454,7 @@
 		94CFD4042D05686B00E64052 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				949EC4262EC820D50031F6EC /* ActivityKit.framework */,
 				94CFD40F2D0607F100E64052 /* WidgetKit.framework */,
 				94CFD4112D0607F100E64052 /* SwiftUI.framework */,
 			);
@@ -399,6 +464,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		949EC42A2EC8242C0031F6EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94CFD33A2D05559C00E64052 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,12 +490,15 @@
 				9408C5A429A0A5EA005DE2EE /* Resources */,
 				94CFD3362D0554AC00E64052 /* Embed Frameworks */,
 				94CFD3D32D055F7C00E64052 /* Embed Watch Content */,
+				949EC4212EC820030031F6EC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				94CFD3532D05559C00E64052 /* PBXTargetDependency */,
 				94CFD3D12D055F7C00E64052 /* PBXTargetDependency */,
+				949EC41F2EC820030031F6EC /* PBXTargetDependency */,
+				949EC4362EC8242C0031F6EC /* PBXTargetDependency */,
 			);
 			name = BusTime;
 			packageProductDependencies = (
@@ -467,6 +542,51 @@
 			productName = BusTimeUITests;
 			productReference = 9408C5C029A0A5EC005DE2EE /* BusTimeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		949EC40E2EC820020031F6EC /* LiveActivityWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 949EC4252EC820030031F6EC /* Build configuration list for PBXNativeTarget "LiveActivityWidgetExtension" */;
+			buildPhases = (
+				949EC40B2EC820020031F6EC /* Sources */,
+				949EC40C2EC820020031F6EC /* Frameworks */,
+				949EC40D2EC820020031F6EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				949EC4122EC820020031F6EC /* LiveActivityWidget */,
+			);
+			name = LiveActivityWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = LiveActivityWidgetExtension;
+			productReference = 949EC40F2EC820020031F6EC /* LiveActivityWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		949EC42E2EC8242C0031F6EC /* SharedIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 949EC4392EC8242C0031F6EC /* Build configuration list for PBXNativeTarget "SharedIOS" */;
+			buildPhases = (
+				949EC42A2EC8242C0031F6EC /* Headers */,
+				949EC42B2EC8242C0031F6EC /* Sources */,
+				949EC42C2EC8242C0031F6EC /* Frameworks */,
+				949EC42D2EC8242C0031F6EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				949EC4302EC8242C0031F6EC /* SharedIOS */,
+			);
+			name = SharedIOS;
+			packageProductDependencies = (
+			);
+			productName = SharedIOS;
+			productReference = 949EC42F2EC8242C0031F6EC /* SharedIOS.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		94CFD33E2D05559C00E64052 /* Shared */ = {
 			isa = PBXNativeTarget;
@@ -572,7 +692,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					9408C5A529A0A5EA005DE2EE = {
@@ -585,6 +705,12 @@
 					9408C5BF29A0A5EC005DE2EE = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 9408C5A529A0A5EA005DE2EE;
+					};
+					949EC40E2EC820020031F6EC = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					949EC42E2EC8242C0031F6EC = {
+						CreatedOnToolsVersion = 26.0.1;
 					};
 					94CFD33E2D05559C00E64052 = {
 						CreatedOnToolsVersion = 16.0;
@@ -623,6 +749,8 @@
 				94CFD3472D05559C00E64052 /* SharedTests */,
 				94CFD3C42D055F7B00E64052 /* BusTimeAppleWatch Watch App */,
 				94CFD40D2D0607F100E64052 /* BusTimeAppleWatchWidgetsExtension */,
+				949EC40E2EC820020031F6EC /* LiveActivityWidgetExtension */,
+				949EC42E2EC8242C0031F6EC /* SharedIOS */,
 			);
 		};
 /* End PBXProject section */
@@ -645,6 +773,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9408C5BE29A0A5EC005DE2EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		949EC40D2EC820020031F6EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		949EC42D2EC8242C0031F6EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -719,6 +861,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		949EC40B2EC820020031F6EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		949EC42B2EC8242C0031F6EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94CFD33B2D05559C00E64052 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -759,6 +915,16 @@
 			isa = PBXTargetDependency;
 			target = 9408C5A529A0A5EA005DE2EE /* BusTime */;
 			targetProxy = 9408C5C129A0A5EC005DE2EE /* PBXContainerItemProxy */;
+		};
+		949EC41F2EC820030031F6EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 949EC40E2EC820020031F6EC /* LiveActivityWidgetExtension */;
+			targetProxy = 949EC41E2EC820030031F6EC /* PBXContainerItemProxy */;
+		};
+		949EC4362EC8242C0031F6EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 949EC42E2EC8242C0031F6EC /* SharedIOS */;
+			targetProxy = 949EC4352EC8242C0031F6EC /* PBXContainerItemProxy */;
 		};
 		94CFD34B2D05559C00E64052 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1056,6 +1222,180 @@
 			};
 			name = Release;
 		};
+		949EC4222EC820030031F6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveActivityWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivityWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.LiveActivityWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		949EC4232EC820030031F6EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveActivityWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivityWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.LiveActivityWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		949EC43A2EC8242C0031F6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.SharedIOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		949EC43B2EC8242C0031F6EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDBTK98VL3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingweili.BusTime.SharedIOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		94CFD3582D05559D00E64052 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */;
@@ -1094,13 +1434,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,4,7";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				XROS_DEPLOYMENT_TARGET = 2.0;
@@ -1145,12 +1485,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,4,7";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				XROS_DEPLOYMENT_TARGET = 2.0;
@@ -1395,6 +1735,24 @@
 			buildConfigurations = (
 				9408C5D129A0A5EC005DE2EE /* Debug */,
 				9408C5D229A0A5EC005DE2EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		949EC4252EC820030031F6EC /* Build configuration list for PBXNativeTarget "LiveActivityWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				949EC4222EC820030031F6EC /* Debug */,
+				949EC4232EC820030031F6EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		949EC4392EC8242C0031F6EC /* Build configuration list for PBXNativeTarget "SharedIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				949EC43A2EC8242C0031F6EC /* Debug */,
+				949EC43B2EC8242C0031F6EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
