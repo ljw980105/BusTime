@@ -24,6 +24,8 @@
 		9433A5442DD968EE009A0800 /* ArrivalTimesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433A5432DD968EE009A0800 /* ArrivalTimesCardView.swift */; };
 		944418F72C7E8C9D004EE75D /* ItineraryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */; };
 		948365652C40CE74006FB730 /* ItineraryMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948365642C40CE74006FB730 /* ItineraryMapView.swift */; };
+		94902EE02ED54CD900B3C5F6 /* MultiStopMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94902EDF2ED54CD900B3C5F6 /* MultiStopMonitoringView.swift */; };
+		94902EE22ED54CF700B3C5F6 /* MultiStopMonitoringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94902EE12ED54CF700B3C5F6 /* MultiStopMonitoringViewModel.swift */; };
 		94B404122BF84746002006E9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B404112BF84746002006E9 /* Tag.swift */; };
 		94CFD3492D05559C00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
 		94CFD3542D05559C00E64052 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CFD33F2D05559C00E64052 /* Shared.framework */; };
@@ -183,6 +185,8 @@
 		9433A5432DD968EE009A0800 /* ArrivalTimesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalTimesCardView.swift; sourceTree = "<group>"; };
 		944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapViewModel.swift; sourceTree = "<group>"; };
 		948365642C40CE74006FB730 /* ItineraryMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapView.swift; sourceTree = "<group>"; };
+		94902EDF2ED54CD900B3C5F6 /* MultiStopMonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiStopMonitoringView.swift; sourceTree = "<group>"; };
+		94902EE12ED54CF700B3C5F6 /* MultiStopMonitoringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiStopMonitoringViewModel.swift; sourceTree = "<group>"; };
 		94AC7DC12AF07E3C0080633B /* Configurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configurations.xcconfig; sourceTree = "<group>"; };
 		94AC7DC22AF07F8C0080633B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		94B404112BF84746002006E9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 				9408C5EC29A1BFB9005DE2EE /* MoreOptionsView */,
 				9408C5E329A18617005DE2EE /* RouteDetailView */,
 				9408C5DE29A0AD87005DE2EE /* StopMonitoringView */,
+				94902EDE2ED54CB600B3C5F6 /* MultiStopMonitoringVIew */,
 				9408C5A929A0A5EA005DE2EE /* BusTimeApp.swift */,
 				9408C5AB29A0A5EA005DE2EE /* ContentView.swift */,
 				9408C5AD29A0A5EB005DE2EE /* Assets.xcassets */,
@@ -385,6 +390,15 @@
 				944418F62C7E8C9D004EE75D /* ItineraryMapViewModel.swift */,
 			);
 			path = ItineraryMap;
+			sourceTree = "<group>";
+		};
+		94902EDE2ED54CB600B3C5F6 /* MultiStopMonitoringVIew */ = {
+			isa = PBXGroup;
+			children = (
+				94902EDF2ED54CD900B3C5F6 /* MultiStopMonitoringView.swift */,
+				94902EE12ED54CF700B3C5F6 /* MultiStopMonitoringViewModel.swift */,
+			);
+			path = MultiStopMonitoringVIew;
 			sourceTree = "<group>";
 		};
 		94CFD4042D05686B00E64052 /* Frameworks */ = {
@@ -696,6 +710,8 @@
 				9408C5AA29A0A5EA005DE2EE /* BusTimeApp.swift in Sources */,
 				9408C5EE29A1BFD7005DE2EE /* MoreOptionsView.swift in Sources */,
 				9408C5E529A18635005DE2EE /* RouteDetailView.swift in Sources */,
+				94902EE22ED54CF700B3C5F6 /* MultiStopMonitoringViewModel.swift in Sources */,
+				94902EE02ED54CD900B3C5F6 /* MultiStopMonitoringView.swift in Sources */,
 				940950D42B902EB10097A88D /* AlertDescriptionView.swift in Sources */,
 				9408C5EB29A1892A005DE2EE /* KeyValueCell.swift in Sources */,
 				94B404122BF84746002006E9 /* Tag.swift in Sources */,

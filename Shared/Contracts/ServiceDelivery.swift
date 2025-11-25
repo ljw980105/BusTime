@@ -345,4 +345,16 @@ public extension Array where Element == Siri.MonitoredVehicleJourney {
             .first ?? 0
         return filter { $0.knownLineRef?.priority == highestPriority }
     }
+    
+    var stopNamesByLineRef: [String: String] {
+        var result: [String: String] = [:]
+        for value in self {
+            guard let lineRef = value.lineRef,
+                  let stopName = value.monitoredCall.stopPointName?.first else {
+                continue
+            }
+            result[lineRef] = stopName
+        }
+        return result
+    }
 }
