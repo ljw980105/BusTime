@@ -11,10 +11,10 @@ import ActivityKit
 public struct LiveActivityAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
-        public var emoji: String
+        public var countdown: TimeInterval
         
-        public init(emoji: String) {
-            self.emoji = emoji
+        public init(countdown: TimeInterval) {
+            self.countdown = countdown
         }
     }
 

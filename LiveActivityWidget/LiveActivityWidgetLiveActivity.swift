@@ -15,34 +15,44 @@ struct LiveActivityWidgetLiveActivity: Widget {
         ActivityConfiguration(for: LiveActivityAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
-                Text("Hello \(context.state.emoji)")
+                Text("Testing")
             }
-            .activityBackgroundTint(Color.cyan)
+            .activityBackgroundTint(Color.black)
             .activitySystemActionForegroundColor(Color.black)
 
         } dynamicIsland: { context in
             DynamicIsland {
-                // Expanded UI goes here.  Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    Image(systemName: "bus.fill")
+                        .resizable()
+                        .symbolRenderingMode(.monochrome)
+                        .foregroundStyle(Color.cyan)
+                        .frame(width: 60, height: 60)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    Text(context.attributes.name)
+                        .font(.system(size: 10))
+                        .foregroundStyle(Color.cyan)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
-                    // more content
                 }
             } compactLeading: {
-                Text("L")
+                Image(systemName: "bus.fill")
+                    .resizable()
+                    .symbolRenderingMode(.monochrome)
+                    .foregroundStyle(Color.cyan)
+                    .frame(width: 18, height: 18)
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+//                Text("\(context.state.emoji)")
+                CountDownDialView(
+                    totalTimeInterval: context.state.countdown,
+                    size: 20
+                )
             } minimal: {
-                Text(context.state.emoji)
+//                Text(context.state.emoji)
             }
-            .widgetURL(URL(string: "http://www.apple.com"))
-            .keylineTint(Color.red)
+//            .widgetURL(URL(string: "http://www.apple.com"))
+            .keylineTint(Color.cyan)
         }
     }
 }
@@ -53,9 +63,8 @@ extension LiveActivityAttributes {
     }
 }
 
-//#Preview("Notification", as: .content, using: LiveActivityAttributes.preview) {
-//   LiveActivityWidgetLiveActivity()
-//} contentStates: {
-////    LiveActivityAttributes.ContentState.smiley
-////    LiveActivityAttributes.ContentState.starEyes
-//}
+#Preview("Notification", as: .content, using: LiveActivityAttributes.preview) {
+   LiveActivityWidgetLiveActivity()
+} contentStates: {
+    LiveActivityAttributes.ContentState(countdown: 50)
+}

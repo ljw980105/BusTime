@@ -19,6 +19,7 @@ class RouteDetailViewModel: ObservableObject {
     let destination: String
     let aimedArrival: String
     let expectedArrival: String
+    let expectedArrivalTime: Date
     let expectedDeparture: String
     let proxmity: String
     let stopsAway: String
@@ -35,6 +36,7 @@ class RouteDetailViewModel: ObservableObject {
         let monitoredCall = vehicleJourney.monitoredCall
         aimedArrival = dateFormatter.string(from: monitoredCall.aimedArrivalTime ?? Date())
         expectedArrival = dateFormatter.string(from: monitoredCall.expectedArrivalTime ?? Date())
+        expectedArrivalTime = monitoredCall.expectedArrivalTime ?? .distantFuture
         expectedDeparture = dateFormatter.string(from: monitoredCall.expectedDepartureTime ?? Date())
         proxmity = monitoredCall.arrivalProximityText ?? "Unknown"
         if let stopsAway = monitoredCall.numberOfStopsAway {
@@ -91,9 +93,13 @@ class RouteDetailViewModel: ObservableObject {
     
     func trackAsLiveAcitivty() {
         do {
+            let dateDiff = expectedArrivalTime.timeIntervalSince(.now)
             let activity = try Activity<LiveActivityAttributes>.request(
-                attributes: .init(name: "Hello"),
-                content: .init(state: .init(emoji: "Hello"), staleDate: nil),
+                attributes: .init(name: title),
+                content: .init(
+                    state: .init(countdown: dateDiff),
+                    staleDate: nil
+                ),
             )
             print("Live activity started: \(activity.id)")
         } catch {
