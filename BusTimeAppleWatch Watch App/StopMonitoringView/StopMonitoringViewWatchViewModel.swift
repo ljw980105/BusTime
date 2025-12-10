@@ -36,7 +36,7 @@ class StopMonitoringViewWatchViewModel: ObservableObject {
     func refresh() async {
         let results = try? await getData()
         lastUpdated = dateFormatter.string(from: Date())
-        if let journeys = results?.StopMonitoringDelivery.first?.MonitoredStopVisit
+        if let journeys = results?.StopMonitoringDelivery.first?.MonitoredStopVisit?
             .map(\.MonitoredVehicleJourney), !journeys.isEmpty {
             stopJourneys = journeys
         } else {

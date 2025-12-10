@@ -26,7 +26,7 @@ struct MultiStopMonitoringView: View {
                         ToolbarItem(placement: .topBarTrailing) {
                             Picker("Routes", selection: $viewModel.selectedFilterOption) {
                                 ForEach(viewModel.filterOptions, id: \.self) { filterOption in
-                                    Text(filterOption.name)
+                                    Text(filterOption.name.capitalized)
                                 }
                             }
                             .pickerStyle(.menu)
@@ -82,7 +82,7 @@ struct MultiStopMonitoringView: View {
                     NavigationLink(destination: RouteDetailView(
                         viewModel: .init(
                             vehicleJourney: stopJourney,
-                            situations: nil
+                            situations: viewModel.combinedSituationDelivery
                         )
                     )) {
                         HStack(alignment: .top) {

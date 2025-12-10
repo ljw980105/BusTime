@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Shared
+@preconcurrency import Shared
 import Combine
 
 class MultiStopMonitoringViewModel: ObservableObject {
@@ -136,11 +136,23 @@ class MultiStopMonitoringViewModel: ObservableObject {
     
     private func validServiceDelivery(for serviceDelivery: Siri.ServiceDelivery) -> Siri.ServiceDelivery? {
         guard let journeys = serviceDelivery
-            .StopMonitoringDelivery.first?.MonitoredStopVisit
+            .StopMonitoringDelivery.first?.MonitoredStopVisit?
             .map(\.MonitoredVehicleJourney), !journeys.isEmpty else {
             return nil
         }
         return serviceDelivery
+    }
+    
+    var combinedSituationDelivery: Siri.SituationExchangeDelivery? {
+        let situtationsElements = Set(
+            [firstServiceDelivery, secondServiceDelivery]
+                .flatMap {
+                    $0.SituationExchangeDelivery?.first?.Situations.situationElement ?? []
+                }
+        )
+        return .init(
+            Situations: .init(situationElement: Array(situtationsElements))
+        )
     }
     
     private func combinedJournies(
@@ -148,7 +160,7 @@ class MultiStopMonitoringViewModel: ObservableObject {
     ) -> [Siri.MonitoredVehicleJourney] {
         serviceDeliveries
             .flatMap {
-                $0.StopMonitoringDelivery.first?.MonitoredStopVisit.map(\.MonitoredVehicleJourney) ?? []
+                $0.StopMonitoringDelivery.first?.MonitoredStopVisit?.map(\.MonitoredVehicleJourney) ?? []
             }
             .sorted(by: {
                 ($0.monitoredCall.expectedArrivalTime ?? .distantFuture)
@@ -157,7 +169,9 @@ class MultiStopMonitoringViewModel: ObservableObject {
     }
     
     private func buildFilterOptions() {
-        filterOptions = [.all] + Set(stopNamesByLineRef.values).map { FilterOption.stop(name: $0) }
+        filterOptions = [.all] +
+            Set(stopNamesByLineRef.values)
+            .map { FilterOption.stop(name: $0) }
     }
     
     private func filterDisplayedJourneys(by filterOption: FilterOption) {
@@ -175,8 +189,10 @@ class MultiStopMonitoringViewModel: ObservableObject {
     
     func getData() -> AnyPublisher<(Siri.ServiceDelivery, Siri.ServiceDelivery), Error> {
         Publishers.Zip(
-            BustimeAPI.getBusTime(stopId: firstBusStop.stopId),
+            BustimeAPI.getBusTime(stopId: firstBusStop.stopId)
+                .replaceEmpty(with: .empty),
             BustimeAPI.getBusTime(stopId: secondBusStop.stopId)
+                .replaceEmpty(with: .empty)
         )
         .eraseToAnyPublisher()
     }
