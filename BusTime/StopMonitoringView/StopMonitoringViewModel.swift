@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 import Combine
-import Shared
+@preconcurrency import Shared
 
 enum BusTimeError: Error {
     case none
@@ -108,7 +108,7 @@ class StopMonitoringViewModel: ObservableObject {
                 }, receiveValue: { [weak self] result in
                     guard let self = self else { return }
                     if let journeys = result
-                        .StopMonitoringDelivery.first?.MonitoredStopVisit
+                        .StopMonitoringDelivery.first?.MonitoredStopVisit?
                         .map(\.MonitoredVehicleJourney), !journeys.isEmpty {
                         continuation.resume(with: .success(journeys))
                         if let stopName = journeys.map(\.monitoredCall).first?.stopPointName?.first,

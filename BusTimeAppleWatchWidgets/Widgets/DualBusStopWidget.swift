@@ -52,8 +52,8 @@ struct DualBusStopProvider: AppIntentTimelineProvider {
             throw NSError(domain: "No Results found", code: 0)
         }
         
-        let firstMonitoredJourney = firstResult.StopMonitoringDelivery.first?.MonitoredStopVisit.first?.MonitoredVehicleJourney
-        let secondMonitoredJourney = secondResult.StopMonitoringDelivery.first?.MonitoredStopVisit.first?.MonitoredVehicleJourney
+        let firstMonitoredJourney = firstResult.StopMonitoringDelivery.first?.MonitoredStopVisit?.first?.MonitoredVehicleJourney
+        let secondMonitoredJourney = secondResult.StopMonitoringDelivery.first?.MonitoredStopVisit?.first?.MonitoredVehicleJourney
         
         return SimpleEntry(
             date: Date(),

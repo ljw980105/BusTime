@@ -46,7 +46,7 @@ struct SingleBusStopProvider: AppIntentTimelineProvider {
     
     func getEntryMinimal(stop: BusStop) async throws -> SimpleEntry {
         let result = try await BustimeAPI.getBusTimeAsync(stopId: stop.stopId, maximumStopVisits: 1)
-        let monitoredJourney = result.StopMonitoringDelivery.first?.MonitoredStopVisit.first?.MonitoredVehicleJourney
+        let monitoredJourney = result.StopMonitoringDelivery.first?.MonitoredStopVisit?.first?.MonitoredVehicleJourney
         return SimpleEntry(
             date: Date(),
             dataSets: [

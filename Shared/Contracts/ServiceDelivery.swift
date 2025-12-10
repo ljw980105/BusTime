@@ -35,7 +35,7 @@ public extension Siri {
 // MARK: - Stop Monitoring
 public extension Siri {
     struct StopMonitoringDelivery: Codable {
-        public let MonitoredStopVisit: [MonitoredStopVisit]
+        public let MonitoredStopVisit: [MonitoredStopVisit]?
         public let ResponseTimestamp: Date?
         public let ValidUntil: Date?
     }
@@ -203,12 +203,20 @@ public extension Siri {
 public extension Siri {
     struct SituationExchangeDelivery: Codable {
         public let Situations: Situations
+        
+        public init(Situations: Situations) {
+            self.Situations = Situations
+        }
     }
 }
 
 public extension Siri {
     struct Situations: Codable {
         public let situationElement: [SituationElement]
+        
+        public init(situationElement: [SituationElement]) {
+            self.situationElement = situationElement
+        }
         
         public enum CodingKeys: String, CodingKey {
             case situationElement = "PtSituationElement"
@@ -217,7 +225,7 @@ public extension Siri {
 }
 
 public extension Siri {
-    struct SituationElement: Codable {
+    struct SituationElement: Codable, Hashable, Equatable {
         public let publicationWindow: PublicationWindow?
         public let severity: String?
         public let summary: [String]?
@@ -234,6 +242,14 @@ public extension Siri {
             case affects = "Affects"
             case creationTime = "CreationTime"
             case situationNumber = "SituationNumber"
+        }
+        
+        public func hash(into hasher: inout Hasher) {
+            hasher.combine(situationNumber)
+        }
+        
+        public static func == (lhs: SituationElement, rhs: SituationElement) -> Bool {
+            lhs.situationNumber == rhs.situationNumber
         }
     }
 }
@@ -344,5 +360,15 @@ public extension Array where Element == Siri.MonitoredVehicleJourney {
             .sorted(by: >)
             .first ?? 0
         return filter { $0.knownLineRef?.priority == highestPriority }
+    }
+    
+    var stopNamesByLineRef: [String: String] {
+        reduce(into: [String: String]()) { result, next in
+            guard let lineRef = next.lineRef,
+                  let stopName = next.monitoredCall.stopPointName?.first else {
+                return
+            }
+            result[lineRef] = stopName
+        }
     }
 }

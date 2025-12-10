@@ -10,6 +10,7 @@ import Foundation
 public enum LineRef {
     case q44
     case q20
+    case q15
     case other(lineRef: String)
     
     public init (lineRef: String) {
@@ -29,6 +30,8 @@ public enum LineRef {
             "MTA NYCT_Q44+"
         case .q20:
             "MTA NYCT_Q20"
+        case .q15:
+            "MTA NYCT_Q15"
         case .other(let lineRef):
             lineRef
         }
@@ -36,7 +39,7 @@ public enum LineRef {
     
     public var priority: Int {
         switch self {
-        case .q44:
+        case .q44, .q15:
             2
         case .q20:
             1
