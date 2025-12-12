@@ -91,6 +91,10 @@ class RouteDetailViewModel: ObservableObject {
         .region(mapRegion)
     }
     
+    var shouldDisplayLiveActivity: Bool {
+        expectedArrivalTime.timeIntervalSince(.now) > 90
+    }
+    
     func trackAsLiveAcitivty() {
         do {
             let dateDiff = expectedArrivalTime.timeIntervalSince(.now)

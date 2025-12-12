@@ -44,6 +44,10 @@ struct CountDownDialView: View {
         .onAppear {
             viewModel.startTimer()
         }
+//        Text(
+//            timerInterval: Date.now...Date(timeInterval: totalTimeInterval, since: .now)
+//        )
+//        .foregroundStyle(.cyan)
     }
 }
 
