@@ -27,16 +27,10 @@ struct LiveActivityWidgetLiveActivity: Widget {
                         Circle()
                             .frame(width: 60, height: 60)
                             .foregroundStyle(Color.cyan.opacity(0.2))
-                        Image(systemName: "xmark")
+                        Image(systemName: "bus.fill")
                             .resizable()
                             .foregroundStyle(Color.cyan)
-                            .frame(width: 25, height: 25)
-                    }
-                    .onTapGesture {
-                        Task {
-//                            let content = ActivityContent(state: context.state, staleDate: .now)
-//                            await activity?.end(content, dismissalPolicy: .immediate)
-                        }
+                            .frame(width: 30, height: 30)
                     }
                 }
                 DynamicIslandExpandedRegion(.trailing) {
@@ -53,7 +47,7 @@ struct LiveActivityWidgetLiveActivity: Widget {
                 DynamicIslandExpandedRegion(.center) {
                     HStack(alignment: .bottom) {
                         Spacer()
-                        VStack {
+                        VStack(alignment: .trailing) {
                             Spacer()
                             Text(context.attributes.name)
                             Text("Arrives in")
@@ -71,7 +65,6 @@ struct LiveActivityWidgetLiveActivity: Widget {
                     .foregroundStyle(Color.cyan)
                     .frame(width: 18, height: 18)
             } compactTrailing: {
-                // Special initializer for countdown timers
                 countDownText(for: context.state)
                     .frame(maxWidth: .minimum(50, 50), alignment: .leading)
                     .foregroundStyle(.cyan)
@@ -84,6 +77,7 @@ struct LiveActivityWidgetLiveActivity: Widget {
     }
     
     func countDownText(for state: LiveActivityAttributes.ContentState) -> some View {
+        // Special initializer for countdown timers
         Text(
             timerInterval: Date.now...Date(
                 timeInterval: state.countdown,

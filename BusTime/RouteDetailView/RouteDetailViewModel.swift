@@ -5,6 +5,7 @@
 //  Created by Jing Wei Li on 2/18/23.
 //
 
+import Combine
 import Foundation
 import MapKit
 import SwiftUI
@@ -25,6 +26,9 @@ class RouteDetailViewModel: ObservableObject {
     let stopsAway: String
     let numberOfPassengers: Int?
     @Published var mapRegion: MKCoordinateRegion
+    @Published var shouldRefreshView = UUID()
+    var cancellables = [AnyCancellable]()
+    
     let situations: Situations
     
     init(vehicleJourney: Siri.MonitoredVehicleJourney, situations: Siri.SituationExchangeDelivery?) {
@@ -75,6 +79,12 @@ class RouteDetailViewModel: ObservableObject {
             self.situations = .none
         }
         
+        LiveActivityManager.shared.onChangePublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                self?.shouldRefreshView = $0
+            })
+            .store(in: &cancellables)
     }
     
     func openInMaps() {
@@ -95,20 +105,31 @@ class RouteDetailViewModel: ObservableObject {
         expectedArrivalTime.timeIntervalSince(.now) > 90
     }
     
-    func trackAsLiveAcitivty() {
+    var shouldShowCancelLiveAcitivtyButton: Bool {
+        LiveActivityManager.shared.hasLiveActivity
+    }
+    
+    func trackAsLiveAcitivty() async {
         do {
             let dateDiff = expectedArrivalTime.timeIntervalSince(.now)
-            let activity = try Activity<LiveActivityAttributes>.request(
+            await cancelLiveActivity()
+            let currentLiveActivity = try Activity<LiveActivityAttributes>.request(
                 attributes: .init(name: title),
                 content: .init(
                     state: .init(countdown: dateDiff),
                     staleDate: nil
                 ),
             )
-            print("Live activity started: \(activity.id)")
+            print("Live activity started: \(currentLiveActivity.id)")
+            LiveActivityManager.shared.startLiveActivity(activity: currentLiveActivity)
+            
         } catch {
             print("Failed to start live activity: \(error)")
         }
+    }
+    
+    func cancelLiveActivity() async {
+        await LiveActivityManager.shared.endLiveActivity()
     }
 }
 

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import SharedIOS
 
 struct RouteDetailView: View {
     @ObservedObject var viewModel: RouteDetailViewModel
@@ -46,11 +47,27 @@ struct RouteDetailView: View {
                             .cornerRadius(12)
                             .foregroundStyle(.blue)
                             .onTapGesture {
-                                viewModel.trackAsLiveAcitivty()
+                                Task {
+                                    await viewModel.trackAsLiveAcitivty()
+                                }
+                            }
+                    }
+                    if viewModel.shouldShowCancelLiveAcitivtyButton {
+                        Text("Cancel Live Acitivity")
+                            .font(.caption)
+                            .bold()
+                            .padding(5)
+                            .cornerRadius(12)
+                            .foregroundStyle(.red)
+                            .onTapGesture {
+                                Task {
+                                    await viewModel.cancelLiveActivity()
+                                }
                             }
                     }
                         
                 }
+                    .id(viewModel.shouldRefreshView)
                 Section(header: Text("Location")) {
                     Map(position: Binding(get: {
                         viewModel.mapCameraPosition
