@@ -14,11 +14,9 @@ struct LiveActivityWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: LiveActivityAttributes.self) { context in
             // Lock screen/banner UI goes here
-            VStack {
-                Text("Testing")
-            }
-            .activityBackgroundTint(Color.black)
-            .activitySystemActionForegroundColor(Color.black)
+            LiveActivityLockScreenView(context: context)
+                .activityBackgroundTint(Color.black)
+                .activitySystemActionForegroundColor(Color.black)
 
         } dynamicIsland: { context in
             DynamicIsland {
@@ -59,17 +57,13 @@ struct LiveActivityWidgetLiveActivity: Widget {
                     .padding(.trailing, 10)
                 }
             } compactLeading: {
-                Image(systemName: "bus.fill")
-                    .resizable()
-                    .symbolRenderingMode(.monochrome)
-                    .foregroundStyle(Color.cyan)
-                    .frame(width: 18, height: 18)
+                smallBusImage
             } compactTrailing: {
                 countDownText(for: context.state)
                     .frame(maxWidth: .minimum(50, 50), alignment: .leading)
                     .foregroundStyle(.cyan)
             } minimal: {
-                
+                smallBusImage
             }
             //.widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.cyan)
@@ -85,16 +79,24 @@ struct LiveActivityWidgetLiveActivity: Widget {
             )
         )
     }
+    
+    var smallBusImage: some View {
+        Image(systemName: "bus.fill")
+            .resizable()
+            .symbolRenderingMode(.monochrome)
+            .foregroundStyle(Color.cyan)
+            .frame(width: 18, height: 18)
+    }
 }
 
 extension LiveActivityAttributes {
     fileprivate static var preview: LiveActivityAttributes {
-        LiveActivityAttributes(name: "World")
+        LiveActivityAttributes(name: "Q44-SBS")
     }
 }
 
 #Preview("Notification", as: .content, using: LiveActivityAttributes.preview) {
    LiveActivityWidgetLiveActivity()
 } contentStates: {
-    LiveActivityAttributes.ContentState(countdown: 50)
+    LiveActivityAttributes.ContentState(countdown: 600)
 }

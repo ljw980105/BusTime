@@ -10,6 +10,7 @@ import SharedIOS
 import WidgetKit
 import ActivityKit
 
+// TODO: See if you can fix it to work with activityKit animaitions
 struct CountDownDialView: View {
     let totalTimeInterval: TimeInterval
     let size: CGFloat
